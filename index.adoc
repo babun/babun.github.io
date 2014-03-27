@@ -1,0 +1,24 @@
+= Babun - a windows shell you will love
+pronounced "Baboon"
+
+You love your Mac's or Linux's terminal but you have to work on Windows? 
+You would like to install new tools but you have no or limited admin rights?
+Or maybe you are a Windows user that got tired with that silly, non resizable cmd prompt?
+
+Try Babun - a windows shell you will love! Simply download the dist file from TODO unzip it and run the install.bat script. Thats it. Your new beautiful windows shell is ready to use.
+
+== Benefits
+
+* it is a bundled and tweaked Cygwin
+* it provides an automatic, silent command-line installer
+* it can be installed on Windows without admin rights
+* it provides a linux-like package manager called pact (similar to apt-get)
+* it provides an xterm-256 compatible console
+* it natively supports HTTP proxying
+* it provides a lof plugins and convenience scripts
+* it has preconfigured git 
+* it has integrated .oh-my-zsh
+* it is really cool :)
+
+Enjoy 
+Tom Bujok @tombujok
