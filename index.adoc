@@ -6,15 +6,10 @@
 :github-issues: https://github.com/babun/babun/issues
 pronounced "Baboon"
 
-Babun is an open source, bundeled and tweaked Cygwin based tool with an apt-get-like package manager. It gives you a real shell experience on the Windows OS. 
-Download the dist file from {download-link}[TODO], unzip it and run the install.bat script. Thats it. Your new beautiful windows shell is ready to use.
+Babun is an open source windows shell with an apt-get-like package manager.
 
-== Who should use it
-* Mac's or Linux's users who have to work on a Windows machine
-* Users with limited or no admin rights
-* Windows users who are looking for a powerful console
-* Cygwin users
-* Everybody who needs or wants to have a really cool shell on windows
+It is build on top of cygwin and has lots of tweaks and customization. 
+Download the dist file from {download-link}[TODO], unzip it and run the install.bat script. Thats it. Your new beautiful windows shell is ready to use.
 
 == Features
 * Automatic, silent command-line installer
@@ -23,13 +18,20 @@ Download the dist file from {download-link}[TODO], unzip it and run the install.
 * xTerm-256 compatible console
 * Native HTTP proxying support
 * Pluggable architecture
-* Preconfigured git and other development tools
+* Preconfigured git
 * Integrated .oh-my-zsh
 * Auto update
 
-== Getting started
+== Audience
+* Mac's or Linux's users who have to work on a Windows 
+* Users with limited or no admin rights
+* Windows users who are looking for a powerful console
+* Cygwin users
+* Everybody who needs/wants a really cool shell on windows
+
+== Usage
 === Installation
-Download the dist file from TODO, unzip it and run the install.bat script. After a few minutes babun starts automatically.
+Download the dist file, unzip it and run the install.bat script. After a few minutes babun starts automatically.
 The application will be installed in the %USER_HOME%\.babun directory.
 
 === Setting up proxy
@@ -79,7 +81,7 @@ git config --global user.email "your@email.com"
 Babun is integrated with .oh-my-zsh. The zsh shell is the default shell after installation. You can still change to bash if you wish.
 TODO - explain how to setup default shell
 
-== Auto update
+=== Updates
 Babun checks every time on start up it if a new version is available. You can also enforce it by typing:
 ----
 babun check
@@ -91,7 +93,7 @@ babun update
 ----
 Please note that your local configuration files will not be overwritten during update. 
 
-== Plugins
+=== Plugins
 TODO
 
 == Contributing
