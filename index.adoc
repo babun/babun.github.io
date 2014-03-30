@@ -18,7 +18,7 @@ Download the dist file from {download-link}[TODO], unzip it and run the install.
 * xTerm-256 compatible console
 * Native HTTP proxying support
 * Pluggable architecture
-* Preconfigured git
+* Pre-configured git
 * Integrated .oh-my-zsh
 * Auto update
 
@@ -31,11 +31,11 @@ Download the dist file from {download-link}[TODO], unzip it and run the install.
 
 == Usage
 === Installation
-Download the dist file, unzip it and run the install.bat script. After a few minutes babun starts automatically.
-The application will be installed in the %USER_HOME%\.babun directory.
+Download the dist file, unzip it and run the +install.bat+ script. After a few minutes babun starts automatically.
+The application will be installed in the +%USER_HOME%\.babun+ directory.
 
 === Setting up proxy
-To setup proxy uncomment following lines in the .babunrc file (%USER_HOME%\.babun\cygwin\home\USER\.babunrc)
+To setup proxy uncomment following lines in the +.babunrc+ file +(%USER_HOME%\.babun\cygwin\home\USER\.babunrc)+
 ----
 # Uncomment this lines to set up your proxy
 # export http_proxy=http://user:password@server:port
@@ -45,7 +45,7 @@ To setup proxy uncomment following lines in the .babunrc file (%USER_HOME%\.babu
 ----
 
 === Installing new packages
-Babun is shipped with *pact* - a linux like package manager. It uses the cygwin repository for downloading packages:
+Babun is shipped with +pact+ - a Linux like package manager. It uses the cygwin repository for downloading packages:
 ----
 { ~ } » pact install arj                                                                     ~ 1
 Working directory is /setup
@@ -77,7 +77,7 @@ git config --global user.email "your@email.com"
 ----
 
 === .oh-my-zsh
-Babun has an integrated .oh-my-zsh plugin. The zsh is the default shell in babun. You can still change it to bash if you wish.
+Babun has an integrated +.oh-my-zsh+ plugin. The zsh is the default shell in babun. You can still change it to bash if you wish.
 TODO - explain how to setup default shell
 
 === Updates
