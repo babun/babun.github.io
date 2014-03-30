@@ -24,9 +24,9 @@ profiles:
     deploy: nil
   production:
     base_url: http://babun.guthub.io
-    disqus_developer: false
+    #disqus_developer: false
     #google_analytics: UA-38215684-1
     compass_output_style: :compressed
     deploy:
-      host: github_pages
-      branch: gh-pages
+      host: babun.github.io
+      branch: master
