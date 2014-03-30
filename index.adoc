@@ -1,4 +1,5 @@
 = Babun - a windows shell you will love
+:awestruct-layout: base
 pronounced "Baboon"
 
 You love your Mac's or Linux's terminal but you have to work on Windows? 
