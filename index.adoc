@@ -6,10 +6,10 @@
 :github-issues: https://github.com/babun/babun/issues
 pronounced "Baboon"
 
-Babun is an open source windows shell with an apt-get-like package manager.
+Babun is an open source windows shell with an linux-like package manager.
 
 It is build on top of cygwin and has lots of tweaks and customization. 
-Download the dist file from {download-link}[TODO], unzip it and run the install.bat script. Thats it. Your new beautiful windows shell is ready to use.
+Download the dist file from {download-link}[TODO], unzip it and run the install.bat script. That's it. Your new beautiful windows shell is ready to use.
 
 == Features
 * Automatic, silent command-line installer
