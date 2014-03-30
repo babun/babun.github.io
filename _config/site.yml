@@ -28,5 +28,5 @@ profiles:
     #google_analytics: UA-38215684-1
     compass_output_style: :compressed
     deploy:
-      host: babun.github.io
+      host: github_pages
       branch: master
