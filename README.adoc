@@ -1,6 +1,0 @@
-babun.github.io
-===============
-
-:asciidoctor-source: https://raw.githubusercontent.com/babun/babun.github.io/master
-
-include::{asciidoctor-source}/README.adoc[]
