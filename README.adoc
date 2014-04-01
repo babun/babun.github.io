@@ -1,3 +1,4 @@
 babun.github.io
 ===============
- include::https://raw.githubusercontent.com/babun/babun.github.io/master/index.adoc[]
+:asciidoctor-source: https://raw.githubusercontent.com/babun/babun.github.io/master/
+include::{asciidoctor-source}/README.adoc[]
