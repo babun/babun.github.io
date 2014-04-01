@@ -1,4 +1,3 @@
 babun.github.io
 ===============
-
-Project Page
+ include::https://raw.githubusercontent.com/babun/babun.github.io/master/index.adoc[]
