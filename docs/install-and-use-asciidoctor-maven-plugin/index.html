@@ -1,0 +1,394 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Installing and Using the Asciidoctor Maven Plugin | Babun</title><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul></nav><div class="container"><header><div class="row"><div class="large-12 columns"><h1>Installing and Using the Asciidoctor Maven Plugin</h1></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="http://github.com/asciidoctor/asciidoctor-maven-plugin">Asciidoctor Maven plugin</a> is the official means of using <a href="/">Asciidoctor</a> to render your <a href="http://asciidoc.org">AsciiDoc</a> documentation using <a href="http://maven.apache.org">Apache Maven</a>.</p>
+</div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#distribution">Distribution</a></li>
+<li><a href="#install-or-upgrade">Install or upgrade</a></li>
+<li><a href="#usage">Usage</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#configuration-options">Configuration options</a></li>
+<li><a href="#built-in-attributes">Built-in attributes</a></li>
+<li><a href="#multiple-outputs-for-the-same-file">Multiple outputs for the same file</a></li>
+</ul>
+</li>
+<li><a href="#maven-site-integration">Maven site integration</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="distribution"><a class="anchor" href="#distribution"></a>Distribution</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Asciidoctor Maven plugin is published to the Maven Central repository.
+The artifact information is summarized in the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:100%; ">
+<caption class="title">Plugin artifact information</caption>
+<colgroup>
+<col style="width:16%;">
+<col style="width:33%;">
+<col style="width:16%;">
+<col style="width:33%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Group Id</th>
+<th class="tableblock halign-left valign-top">Artifact Id</th>
+<th class="tableblock halign-center valign-top">Version</th>
+<th class="tableblock halign-left valign-top">Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">org.asciidoctor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.asciidoctor%22%20AND%20a%3A%22asciidoctor-maven-plugin%22">asciidoctor-maven-plugin</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://search.maven.org/#artifactdetails%7Corg.asciidoctor%7Casciidoctor-maven-plugin%7C0.1.3.1%7Cmaven-plugin">0.1.3.1</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctor-maven-plugin/0.1.3.1/asciidoctor-maven-plugin-0.1.3.1.pom">pom</a> <a href="http://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctor-maven-plugin/0.1.3.1/asciidoctor-maven-plugin-0.1.3.1.jar">jar</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">org.asciidoctor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.asciidoctor%22%20AND%20a%3A%22asciidoctor-maven-plugin%22">asciidoctor-maven-plugin</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://search.maven.org/#artifactdetails%7Corg.asciidoctor%7Casciidoctor-maven-plugin%7C0.1.2%7Cmaven-plugin">0.1.2</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctor-maven-plugin/0.1.2/asciidoctor-maven-plugin-0.1.2.pom">pom</a> <a href="http://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctor-maven-plugin/0.1.2/asciidoctor-maven-plugin-0.1.2.jar">jar</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">org.asciidoctor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.asciidoctor%22%20AND%20a%3A%22asciidoctor-maven-plugin%22">asciidoctor-maven-plugin</a></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><a href="http://search.maven.org/#artifactdetails%7Corg.asciidoctor%7Casciidoctor-maven-plugin%7C0.1.1.1%7Cmaven-plugin">0.1.1.1</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="http://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctor-maven-plugin/0.1.1.1/asciidoctor-maven-plugin-0.1.1.1.pom">pom</a> <a href="http://search.maven.org/remotecontent?filepath=org/asciidoctor/asciidoctor-maven-plugin/0.1.1.1/asciidoctor-maven-plugin-0.1.1.1.jar">jar</a></p></td>
+</tr>
+</tbody>
+</table>
+
+<div class="paragraph">
+<p>This plugin depends on the <a href="http://github.com/asciidoctor/asciidoctor-java-integration">Asciidoctor Java integration</a> library.
+If you want to learn more about the library, read the <a href="/docs/install-and-use-asciidoctor-java-integration">How to Install and Use the Asciidoctor Java Integration guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="install-or-upgrade"><a class="anchor" href="#install-or-upgrade"></a>Install or upgrade</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As this is a typical Maven plugin, there isn&#8217;t much to do to use it, simply add it to your plugins section in your pom:</p>
+</div>
+<div class="listingblock">
+<div class="title">Plugin declaration</div>
+<div class="content">
+<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;plugins&gt;</span>
+  <span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.asciidoctor<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>asciidoctor-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>${asciidoctor.version}<span class="tag">&lt;/version&gt;</span> <i class="conum" data-value="1"></i><b>(1)</b>
+  <span class="tag">&lt;/plugin&gt;</span>
+<span class="tag">&lt;/plugins&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This plugin tracks the version of Asciidoctor, so you can use which ever version of Asciidoctor you prefer.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Upgrading the plugin to the next version is simple.
+Just update the version in your Maven POM.
+All the necessary dependencies are retrieved from Maven Central the next time you run Maven.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="usage"><a class="anchor" href="#usage"></a>Usage</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Execution setup</div>
+<div class="content">
+<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;plugin&gt;</span>
+  ...
+  <span class="tag">&lt;executions&gt;</span>
+    <span class="tag">&lt;execution&gt;</span>
+      <span class="tag">&lt;id&gt;</span>output-html<span class="tag">&lt;/id&gt;</span>               <i class="conum" data-value="1"></i><b>(1)</b>
+      <span class="tag">&lt;phase&gt;</span>generate-resources<span class="tag">&lt;/phase&gt;</span>  <i class="conum" data-value="2"></i><b>(2)</b>
+      <span class="tag">&lt;goals&gt;</span>
+        <span class="tag">&lt;goal&gt;</span>process-asciidoc<span class="tag">&lt;/goal&gt;</span>    <i class="conum" data-value="3"></i><b>(3)</b>
+      <span class="tag">&lt;/goals&gt;</span>
+    <span class="tag">&lt;/execution&gt;</span>
+  <span class="tag">&lt;/executions&gt;</span>
+  ...
+<span class="tag">&lt;/plugin&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>This is simply an unique id for the execution.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The Asciidoctor Maven plugin does not run in a specific phase, so one must be specified.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>The Asciidoctor Maven plugin goal.</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="configuration-options"><a class="anchor" href="#configuration-options"></a>Configuration options</h3>
+<div class="paragraph">
+<p>There are several configuration options that the Asciidoctor Maven plugin accepts:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">sourceDirectory</dt>
+<dd>
+<p>defaults to <em class="path">${basedir}/src/main/asciidoc</em></p>
+</dd>
+<dt class="hdlist1">sourceDocumentName</dt>
+<dd>
+<p>an override to process a single source file; defaults to all files in <em class="path">${sourcedirectory}</em></p>
+</dd>
+<dt class="hdlist1">outputDirectory</dt>
+<dd>
+<p>defaults to <em class="path">${project.build.directory}/generated-docs</em></p>
+</dd>
+<dt class="hdlist1">imagesDir</dt>
+<dd>
+<p>defaults to <code>images</code>, which will be relative to the directory containing the source files</p>
+</dd>
+<dt class="hdlist1">backend</dt>
+<dd>
+<p>defaults to <code>docbook</code></p>
+</dd>
+<dt class="hdlist1">doctype</dt>
+<dd>
+<p>defaults to <code>article</code></p>
+</dd>
+<dt class="hdlist1">eruby</dt>
+<dd>
+<p>defaults to erb, the version used in jruby</p>
+</dd>
+<dt class="hdlist1">headerFooter</dt>
+<dd>
+<p>defaults to <code>true</code></p>
+</dd>
+<dt class="hdlist1">compact</dt>
+<dd>
+<p>defaults to <code>false</code></p>
+</dd>
+<dt class="hdlist1">templateDir</dt>
+<dd>
+<p>disabled by default</p>
+</dd>
+<dt class="hdlist1">templateEngine</dt>
+<dd>
+<p>disabled by default</p>
+</dd>
+<dt class="hdlist1">sourceHighlighter</dt>
+<dd>
+<p>enables and sets the source highlighter; currently <code>coderay</code> and <code>highlightjs</code> are supported</p>
+</dd>
+<dt class="hdlist1">templateDir</dt>
+<dd>
+<p>defaults to <code>null</code></p>
+</dd>
+<dt class="hdlist1">attributes</dt>
+<dd>
+<p>a <code>Map&lt;String,String&gt;</code> of attributes to pass to Asciidoctor, defaults to <code>null</code></p>
+</dd>
+<dt class="hdlist1">extensions</dt>
+<dd>
+<p>a <code>List&lt;String&gt;</code> of non-standard extensions to render; currently <code>.ad</code>, <code>.adoc</code>, and <code>.asciidoc</code> will be rendered by default</p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="built-in-attributes"><a class="anchor" href="#built-in-attributes"></a>Built-in attributes</h3>
+<div class="paragraph">
+<p>There are various attributes Asciidoctor recognizes.
+Below is a list of them and what they do::</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">title</dt>
+<dd>
+<p>An override for the title of the document.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+This attribute, for backwards compatibility, can still be used in the top level configuration options.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Many other attributes are possible and more will be added in the future to take advantage of other options and attributes of Asciidoctor.
+Any setting in the <code>attributes</code> section that conflicts with an explicitly named attribute configuration will be overidden by the explicitly named attribute configuration.
+These settings can be changed in the <code>&lt;configuration&gt;</code> section of the plugin section.</p>
+</div>
+<div class="listingblock">
+<div class="title">Plugin configuration options</div>
+<div class="content">
+<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;plugin&gt;</span>
+  ...
+    <span class="tag">&lt;/executions&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+      <span class="tag">&lt;sourceDirectory&gt;</span>src/main/doc<span class="tag">&lt;/sourceDirectory&gt;</span>
+      <span class="tag">&lt;outputDirectory&gt;</span>target/docs<span class="tag">&lt;/outputDirectory&gt;</span>
+      <span class="tag">&lt;backend&gt;</span>html<span class="tag">&lt;/backend&gt;</span>
+      <span class="tag">&lt;doctype&gt;</span>book<span class="tag">&lt;/doctype&gt;</span>
+      <span class="tag">&lt;attributes&gt;</span>
+        <span class="tag">&lt;style</span><span class="attribute-name">sheet</span><span class="tag">&gt;</span><span class="inline"><span class="tag">my-theme</span><span class="class">.css</span><span class="error">&lt;</span>/<span class="tag">stylesheet</span>&gt;
+      <span class="error">&lt;</span>/<span class="tag">attributes</span>&gt;
+    <span class="error">&lt;</span>/<span class="tag">configuration</span>&gt;
+    ...
+<span class="error">&lt;</span>/<span class="tag">plugin</span>&gt;
+...</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="multiple-outputs-for-the-same-file"><a class="anchor" href="#multiple-outputs-for-the-same-file"></a>Multiple outputs for the same file</h3>
+<div class="paragraph">
+<p>Maven has the ability to execute a Mojo multiple times.
+Instead of reinventing the wheel inside the Mojo, we&#8217;ll push this off to Maven to handle the multiple executions.
+An example of this setup is below:</p>
+</div>
+<div class="listingblock">
+<div class="title">Multiple configuration extract</div>
+<div class="content">
+<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;plugin&gt;</span>
+    <span class="tag">&lt;groupId&gt;</span>org.asciidoctor<span class="tag">&lt;/groupId&gt;</span>
+    <span class="tag">&lt;artifactId&gt;</span>asciidoctor-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+    <span class="tag">&lt;version&gt;</span>0.1.2<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;executions&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>output-html<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>generate-resources<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>process-asciidoc<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+            <span class="tag">&lt;configuration&gt;</span>
+                <span class="tag">&lt;sourceHighlighter&gt;</span>coderay<span class="tag">&lt;/sourceHighlighter&gt;</span>
+                <span class="tag">&lt;backend&gt;</span>html<span class="tag">&lt;/backend&gt;</span>
+                <span class="tag">&lt;attributes&gt;</span>
+                    <span class="tag">&lt;toc</span><span class="tag">/&gt;</span>
+                    <span class="tag">&lt;linkcss&gt;</span>false<span class="tag">&lt;/linkcss&gt;</span>
+                <span class="tag">&lt;/attributes&gt;</span>
+            <span class="tag">&lt;/configuration&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+        <span class="tag">&lt;execution&gt;</span>
+            <span class="tag">&lt;id&gt;</span>output-docbook<span class="tag">&lt;/id&gt;</span>
+            <span class="tag">&lt;phase&gt;</span>generate-resources<span class="tag">&lt;/phase&gt;</span>
+            <span class="tag">&lt;goals&gt;</span>
+                <span class="tag">&lt;goal&gt;</span>process-asciidoc<span class="tag">&lt;/goal&gt;</span>
+            <span class="tag">&lt;/goals&gt;</span>
+            <span class="tag">&lt;configuration&gt;</span>
+                <span class="tag">&lt;backend&gt;</span>docbook<span class="tag">&lt;/backend&gt;</span>
+                <span class="tag">&lt;doctype&gt;</span>book<span class="tag">&lt;/doctype&gt;</span>
+            <span class="tag">&lt;/configuration&gt;</span>
+        <span class="tag">&lt;/execution&gt;</span>
+    <span class="tag">&lt;/executions&gt;</span>
+    <span class="tag">&lt;configuration&gt;</span>
+        <span class="tag">&lt;sourceDirectory&gt;</span>src/main/asciidoc<span class="tag">&lt;/sourceDirectory&gt;</span>
+        <span class="tag">&lt;headerFooter&gt;</span>true<span class="tag">&lt;/headerFooter&gt;</span>
+        <span class="tag">&lt;imagesDir&gt;</span>../resources/images<span class="tag">&lt;/imagesDir&gt;</span>                  <i class="conum" data-value="1"></i><b>(1)</b>
+    <span class="tag">&lt;/configuration&gt;</span>
+<span class="tag">&lt;/plugin&gt;</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>imagesDir</code> should be relative to the source directory.
+It defaults to <code>images</code> but in this example the images used in the docs are also used elsewhere in the project.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Any configuration specified outside the executions section is inherited by each execution.
+This allows an easier way of defining common configuration options.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="maven-site-integration"><a class="anchor" href="#maven-site-integration"></a>Maven site integration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To author your Maven-generated site in AsciiDoc, you must first add a dependency on the Asciidoctor plugin to your maven-site-plugin config:</p>
+</div>
+<div class="listingblock">
+<div class="title">Maven site integration</div>
+<div class="content">
+<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;build&gt;</span>
+    <span class="tag">&lt;plugins&gt;</span>
+        <span class="tag">&lt;plugin&gt;</span>
+            <span class="tag">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/groupId&gt;</span>
+            <span class="tag">&lt;artifactId&gt;</span>maven-site-plugin<span class="tag">&lt;/artifactId&gt;</span>
+            <span class="tag">&lt;version&gt;</span>3.2<span class="tag">&lt;/version&gt;</span>
+            <span class="tag">&lt;dependencies&gt;</span>
+                <span class="tag">&lt;dependency&gt;</span>
+                    <span class="tag">&lt;groupId&gt;</span>org.asciidoctor<span class="tag">&lt;/groupId&gt;</span>
+                    <span class="tag">&lt;artifactId&gt;</span>asciidoctor-maven-plugin<span class="tag">&lt;/artifactId&gt;</span>
+                    <span class="tag">&lt;version&gt;</span>${asciidoctor.version}<span class="tag">&lt;/version&gt;</span>
+                <span class="tag">&lt;/dependency&gt;</span>
+            <span class="tag">&lt;/dependencies&gt;</span>
+        <span class="tag">&lt;/plugin&gt;</span>
+    <span class="tag">&lt;/plugins&gt;</span>
+<span class="tag">&lt;/build&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All of your AsciiDoc-based files should be placed in <em class="path">src/site/asciidoc</em> with an extension of <code>.ad</code>.</p>
+</div>
+<div class="paragraph">
+<p>For example, the file <em class="path">src/site/asciidoc/usage.ad</em> will be rendered into <em class="path">target/site/usage.html</em>.</p>
+</div>
+<div class="paragraph">
+<p>As always, make sure you add a <code>menu</code> item for each page:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay nowrap"><code class="xml language-xml"><span class="tag">&lt;body&gt;</span>
+...
+    <span class="tag">&lt;menu</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">User guide</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;item</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">usage.html</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">Usage</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/menu&gt;</span>
+...
+<span class="tag">&lt;/body&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="resources"><a class="anchor" href="#resources"></a>Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you&#8217;re interested in modifying or impoving this plugin, checkout the <a href="/docs/hack-asciidoctor-maven-plugin">Hacking on the Asciidoctor Maven plugin guide</a>.
+To file an issue regarding this plugin, visit the <a href="http://github.com/asciidoctor/asciidoctor-maven-plugin/issues">plugin&#8217;s repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>Also, don&#8217;t forget to join the <a href="http://discuss.asciidoctor.org">Asciidoctor discussion list</a>, where you can ask questions and leave comments.</p>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script>(function() { var p1 = document.createElement('script'); p1.async = true; p1.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p1, s);})();</script></body></html>

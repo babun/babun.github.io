@@ -1,0 +1,489 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Differences between Asciidoctor and AsciiDoc | Babun</title><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul></nav><div class="container"><header><div class="row"><div class="large-12 columns"><h1>Differences between Asciidoctor and AsciiDoc</h1></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Asciidoctor aims to be compliant with the AsciiDoc syntax, but there are some differences to keep in mind.
+Many of these differences exist so that Asciidoctor can:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>enforce rules we believe are too lax or ambiguous in AsciiDoc</p>
+</li>
+<li>
+<p>process documents faster and smarter</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additionally, Asciidoctor offers new syntax, attributes, and features to help you write, style, and publish your documents.</p>
+</div>
+<div class="paragraph">
+<p>The known cases where Asciidoctor differs from AsciiDoc are categorized and listed in the sections below.</p>
+</div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#syntax">Syntax</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#header">Header</a></li>
+<li><a href="#attributes-and-macros">Attributes and Macros</a></li>
+<li><a href="#table-of-contents-toc">Table of Contents (ToC)</a></li>
+<li><a href="#sections">Sections</a></li>
+<li><a href="#blocks">Blocks</a></li>
+<li><a href="#source-code-highlighting">Source code highlighting</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#horizontal-rule">Horizontal rule</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#images">Images</a></li>
+<li><a href="#icons">Icons</a></li>
+<li><a href="#markdown-style-syntax">Markdown-style syntax</a></li>
+</ul>
+</li>
+<li><a href="#outputs-and-stylesheets">Outputs and Stylesheets</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#html-backend-and-output">HTML backend and output</a></li>
+<li><a href="#stylesheets">Stylesheets</a></li>
+</ul>
+</li>
+<li><a href="#processor">Processor</a></li>
+<li>
+<ul class="sectlevel2">
+<li><a href="#safemode">SafeMode</a></li>
+</ul>
+</li>
+<li><a href="#next-steps-and-help">Next steps and help</a></li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="syntax"><a class="anchor" href="#syntax"></a>Syntax</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor does not support the deprecated index term syntax (<code>++</code> and <code>+++</code>)</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="header"><a class="anchor" href="#header"></a>Header</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In the Header, Asciidoctor does not wrap the email next to the author name in angle brackets</p>
+</li>
+<li>
+<p>Asciidoctor allows the email field to be a URL and renders it as such</p>
+</li>
+<li>
+<p>Asciidoctor properly calculates author initials if attribute reference is used in name</p>
+</li>
+<li>
+<p>Asciidoctor allows the author and revision attributes to be referenced in subsequent attribute entries in header (unlike AsciiDoc)</p>
+</li>
+<li>
+<p>Asciidoctor allows multiple authors to be defined, separated by semicolon. In DocBook backend, the authors are listed in an <code>&lt;authorgroup&gt;</code> element.</p>
+</li>
+<li>
+<p>Asciidoctor allows the document id to be set using <a id="id"></a> above the document header (adds id attribute to <code>&lt;body&gt;</code> tag)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attributes-and-macros"><a class="anchor" href="#attributes-and-macros"></a>Attributes and Macros</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor is much more lenient about attribute list parsing (double quotes are rarely needed, though you may want to keep them for compatibility)</p>
+</li>
+<li>
+<p>Asciidoctor adds the <code>type</code> attribute on ordered lists to provide hint for numbering style when stylesheet is absent (such as in embedded mode)</p>
+</li>
+<li>
+<p>Asciidoctor recognizes <code>opts</code> as an alias for the <code>options</code> attribute</p>
+</li>
+<li>
+<p>Asciidoctor introduces the <code>hardbreaks</code> attribute, which inserts a line break character after each line of wrapped text</p>
+</li>
+<li>
+<p>Asciidoctor will parse attributes in link macros if the <code>linkattrs</code> attribute is set on the document</p>
+</li>
+<li>
+<p>The <code>ifeval::[]</code> macro is constrained for the strict purpose of comparing values of attributes</p>
+</li>
+<li>
+<p>Assigning value to the <code>listing-caption</code> attribute will enable automatic captions for listings (like examples, tables and figures)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="table-of-contents-toc"><a class="anchor" href="#table-of-contents-toc"></a>Table of Contents (ToC)</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor reifies the ToC in the header of the document instead of relying on JavaScript to create it</p>
+</li>
+<li>
+<p>Asciidoctor sets CSS class on ToC element, read from the <code>toc-class</code> attribute; defaults to ToC attribute name (<code>toc</code> or <code>toc2</code>).</p>
+</li>
+<li>
+<p>Asciidoctor honors the id, title, role and levels attributes set on the <code>toc</code> macro.</p>
+</li>
+<li>
+<p>Asciidoctor does not output two ToCs with the same id.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sections"><a class="anchor" href="#sections"></a>Sections</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Section title underlines must be within 1 character of the length of the title (AsciiDoc allows an offset of 3)</p>
+</li>
+<li>
+<p>Asciidoctor introduces the <code>idseparator</code> attribute to customize the separator used in generated section ids (AsciiDoc hardcodes <code>_</code>)</p>
+</li>
+<li>
+<p>Asciidoctor supports up to 6 section levels (to cover all heading levels in HTML) whereas AsciiDoc stops at 5; note the 6 section level is only available using the single-line section title syntax</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="blocks"><a class="anchor" href="#blocks"></a>Blocks</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor enforces symmetric block delimiters (the length of start and end delimiters for a block must match!)</p>
+</li>
+<li>
+<p>Asciidoctor does not require commas between attributes with quoted values in a block attribute list</p>
+</li>
+<li>
+<p>Asciidoctor is nice about using a section title syntax inside a delimited block by simply ignoring it (AsciiDoc issues warnings)</p>
+</li>
+<li>
+<p>The Admonition block caption can be overridden in Asciidoctor using the <code>caption</code> block attribute</p>
+</li>
+<li>
+<p>Asciidoctor honors the alternate style name "discrete" for a floating title (i.e., <code>[discrete]</code>)</p>
+</li>
+<li>
+<p>Asciidoctor supports the <code>pass</code> style on open blocks and paragraphs</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="source-code-highlighting"><a class="anchor" href="#source-code-highlighting"></a>Source code highlighting</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor supports syntax highlighting of listing, literal or open blocks that have the "source" style out of the box</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor honors the source-highlighter values <code>coderay</code> and <code>highlightjs</code>, using CodeRay or highlight.js, respectively</p>
+</li>
+<li>
+<p>Asciidoctor does not currently support Pygments for source highlighting (implemented in 0.1.4)</p>
+</li>
+<li>
+<p>Asciidoctor gracefully falls back to a listing block if no source language is specified</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="lists"><a class="anchor" href="#lists"></a>Lists</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor removes indentation for non-literal paragraphs in a list item</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+In general, Asciidoctor handles whitespace much more intelligently
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Asciidoctor does not output an empty <code>&lt;dd&gt;</code> for labeled list items that don&#8217;t have a definition</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="horizontal-rule"><a class="anchor" href="#horizontal-rule"></a>Horizontal rule</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>In Asciidoctor, a horizontal ruler can have attributes</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tables"><a class="anchor" href="#tables"></a>Tables</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor skips over line comments in tables, whereas AsciiDoc doesn&#8217;t</p>
+</li>
+<li>
+<p>Asciidoctor uses its own API rather than a commandline invocation to handle table cells that have AsciiDoc content</p>
+</li>
+<li>
+<p>Asciidoctor supports resolving variables from parent document in table cells with AsciiDoc content</p>
+</li>
+<li>
+<p>AsciiDoc doesn&#8217;t carry over the <code>doctype</code> attribute passed from the commandline when rendering AsciiDoc table cells, whereas Asciidoctor does</p>
+</li>
+<li>
+<p>Asciidoctor does not support deprecated tables (you don&#8217;t want them anyway)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="images"><a class="anchor" href="#images"></a>Images</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor strips the file extension from the target image when generating alt text if no alt text is provided</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="icons"><a class="anchor" href="#icons"></a>Icons</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor can set the extension for icons using the <code>icontype</code> attribute (AsciiDoc defaults to .png)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="markdown-style-syntax"><a class="anchor" href="#markdown-style-syntax"></a>Markdown-style syntax</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor supports markdown-style blockquotes as well as a shorthand for a blockquote paragraph.</p>
+</li>
+<li>
+<p>Asciidoctor supports markdown-style headings (section titles)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="outputs-and-stylesheets"><a class="anchor" href="#outputs-and-stylesheets"></a>Outputs and Stylesheets</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="html-backend-and-output"><a class="anchor" href="#html-backend-and-output"></a>HTML backend and output</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor&#8217;s default backend is the HTML 5 backend; it matches AsciiDoc&#8217;s HTML 5 backend (AsciiDoc&#8217;s default HTML backend is XHTML 1.1)</p>
+</li>
+<li>
+<p>Asciidoctor adds the viewport meta tag to <code>&lt;head&gt;</code> to optimize mobile viewing</p>
+</li>
+<li>
+<p>Asciidoctor handles inline anchors cleanly</p>
+<div class="ulist">
+<ul>
+<li>
+<p>AsciiDoc adds an <code>&lt;a&gt;</code> tag in the line and that markup gets caught in
+the generated id</p>
+</li>
+<li>
+<p>Asciidoctor promotes the id of the anchor as the section id</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Asciidoctor strips XML entities from the section title before
+generating the id (makes for cleaner section ids)</p>
+</li>
+<li>
+<p>Asciidoctor uses <code>&lt;code&gt;</code> instead of <code>&lt;span class="monospace"&gt;</code> around
+inline literal text in the HTML backend</p>
+</li>
+<li>
+<p>Asciidoctor creates xref labels using the text from the linked section title when rendering HTML to match how DocBook works</p>
+</li>
+<li>
+<p>Asciidoctor allows commas to be used in xref labels, whereas AsciiDoc cuts off the label at the location of the first comma</p>
+</li>
+<li>
+<p>Asciidoctor uses the <code>&lt;blockquote&gt;</code> for the content and <code>&lt;cite&gt;</code> tag for attribution title in the HTML output for quote blocks, requiring some additional styling to match AsciiDoc</p>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">blockquote.content { padding: 0; margin; 0 }
+cite { color: navy; }</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Admonition block style is added to class of outer div in Asciidoctor&#8217;s <code>html5</code> backend</p>
+</li>
+<li>
+<p>Asciidoctor wraps <code>&lt;col&gt;</code> elements in <code>&lt;colgroup&gt;</code> in tables</p>
+</li>
+<li>
+<p>Asciidoctor uses <code>&lt;code&gt;</code> around content in monospaced table cells</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="stylesheets"><a class="anchor" href="#stylesheets"></a>Stylesheets</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor includes a modern default stylesheet based on Foundation.</p>
+</li>
+<li>
+<p>Asciidoctor links to, rather than embeds, the default stylesheet into the document by default (e.g., <code>linkcss</code>).
+To include the default stylesheet, you can either use the <code>copycss</code> attribute to tell Asciidoctor to copy it to the output directory, or you can embed it into the document using the <code>linkcss!</code> attribute.
+You can also provide your own stylesheet using the <code>stylesheet</code> attribute.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="processor"><a class="anchor" href="#processor"></a>Processor</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor sets these additional intrinsic attributes</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>asciidoctor</code></dt>
+<dd>
+<p>indicates Asciidoctor is being used; useful for conditional
+processing</p>
+</dd>
+<dt class="hdlist1"><code>asciidoctor-version</code></dt>
+<dd>
+<p>indicates which version of Asciidoctor is in use</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Asciidoctor does not support system evaluation macros</p>
+</li>
+<li>
+<p>Asciidoctor does not support displaying comments in rendered documents</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="safemode"><a class="anchor" href="#safemode"></a>SafeMode</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Asciidoctor enables safe mode by default when using the API (<code>SafeMode::SECURE</code>)</p>
+</li>
+<li>
+<p>Asciidoctor safe mode is even more safe than AsciiDoc&#8217;s safe mode</p>
+</li>
+<li>
+<p>The <code>include::[]</code> macro is converted to a link to the target document when SafeMode is SECURE or greater (this makes for a friendly experience on GitHub)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="next-steps-and-help"><a class="anchor" href="#next-steps-and-help"></a>Next steps and help</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If there&#8217;s a difference you don&#8217;t see in this list, check the <a href="https://github.com/asciidoctor/asciidoctor/issues">issue tracker</a> to see if it&#8217;s an outstanding feature, or file an issue to report the difference.</p>
+</div>
+<div class="paragraph">
+<p>Now that you&#8217;ve reviewed how AsciiDoc and Asciidoctor differ, you may want to learn more about the AsciiDoc syntax and the growing variety of integrations, backends, and customizations the Asciidoctor project is developing.</p>
+</div>
+<div class="paragraph">
+<p>First, learn how to install the Asciidoctor toolchain.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/docs/install-toolchain">Installation Guide</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Need an overview of the AsciiDoc syntax?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/docs/asciidoc-syntax-quick-reference">AsciiDoc Quick Reference</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Want to dive deep into the details of the syntax?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/docs/asciidoc-writers-guide">AsciiDoc Writer&#8217;s Guide</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Are you ready to convert your AsciiDoc document into HTML, DocBook or PDF?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="/docs/render-documents">How do I render my document</a>?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Interested in building a theme from the Asciidoctor Stylesheet Factory or applying a custom stylesheet?</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://github.com/asciidoctor/asciidoctor-stylesheet-factory/blob/master/README.adoc">How do I create and build and a theme</a>?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Additional guides are listed on the <a href="/docs">Documentation</a> page.
+Also, don&#8217;t forget to join the <a href="http://discuss.asciidoctor.org">Asciidoctor mailing list</a>, where you can ask questions and leave comments.</p>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script>(function() { var p1 = document.createElement('script'); p1.async = true; p1.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p1, s);})();</script></body></html>

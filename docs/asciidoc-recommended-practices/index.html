@@ -1,0 +1,507 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>AsciiDoc Recommended Practices | Babun</title><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul></nav><div class="container"><header><div class="row"><div class="large-12 columns"><h1>AsciiDoc Recommended Practices</h1></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document catalogs a set of recommended practices for composing documents in AsciiDoc.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">DRAFT</div>
+<div class="paragraph">
+<p>This document is only a rough draft. These recommendations are not doctrine and are subject to change.</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>AsciiDoc offers multiple ways to accomplish the same thing, and is often very lenient with the syntax. This guide helps bring consistency to your documents that will maximize efficiency, improve readability and minimize maintainence.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="document-extension"><a class="anchor" href="#document-extension"></a>Document extension</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>AsciiDoc doesn&#8217;t care which extension you use. GitHub supports the extensions <code>.asciidoc</code>, <code>.adoc</code> and <code>.asc</code>. I&#8217;d like to throw in my vote for <code>.ad</code>, which I hope becomes the defacto standard extension (for those not using <code>.txt</code>).</p>
+</div>
+<div class="paragraph">
+<p>I think the <code>.ad</code> extension is a good choice for these reasons:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>it parallels the extension of Markdown (<code>.md</code>), arguably the most widely used lightweight markup language&#8230;for now :)</p>
+</li>
+<li>
+<p>it&#8217;s short (unlike <code>.asciidoc</code>, which is just absurdly long)</p>
+</li>
+<li>
+<p>it doesn&#8217;t conflict with known extensions (<code>.asc</code> for instance is used for several file types, one of which is a PGP armored file)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>I understand the arguments for recommending the <code>.txt</code> extension, because just about any OS knows that&#8217;s a text file. However, I would augment that point by recommending the use of a double extension (e.g., <code>.ad.txt</code> or <code>.adoc.txt</code>). That way, at least there is <em>some</em> indication that it&#8217;s an AsciiDoc file. Otherwise, it&#8217;s <em>really</em> hard to search for AsciiDoc files (which is often necessary in code repositories).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+I recommend <em>against</em> using the <code>.asc</code> extension. The connection to AsciiDoc isn&#8217;t obvious (at least to me) and it gets identified as a PGP file on Linux.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="text-wrapping"><a class="anchor" href="#text-wrapping"></a>Text Wrapping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Don&#8217;t do it!</p>
+</div>
+<div class="paragraph">
+<p>Sentence per line? (Neo4j recommendation)</p>
+</div>
+<div class="paragraph">
+<p>AsciiDoc doesn&#8217;t treat a wrapped line break as a hard line break.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="section-titles"><a class="anchor" href="#section-titles"></a>Section Titles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are three ways to define a section title. These variants can be classified into two types of styles, <em>atx</em> and <em>setext</em> (historical names).</p>
+</div>
+<div class="paragraph">
+<div class="title">Atx-style</div>
+<p>In the Atx-style, the section title is defined on a single line. The section title begins with one or more equal characters (i.e., <code>=</code>) followed by a space and the section title. The number of leading characters representing the depth. The top-level section is reserved for the document title, so the first section in the document will have two leading characters.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">== First Section</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example uses the asymmetric Atx-style. <strong>The asymmetric Atx-style is the style I recommend using to define your section titles</strong>. It requires the least number of characters and it&#8217;s intuitive since the number of leading characters represents the heading level.</p>
+</div>
+<div class="paragraph">
+<p>When using the HTML backend, this section title will be transformed into an h2 heading (likely wrapped in a section block for styling):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">&lt;h2&gt;First Section&lt;/h2&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The symmetric Atx-style bookends the section title between a matching pair of delimiters.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">== First Section ==</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>While this syntax may look nicer to some, it requires twice the number of delimiters without adding any additional semantics. Therefore, I consider it a waste of keystrokes and don&#8217;t recommend using it. However, either of the Atx-style section titles are better than the Setext style.</p>
+</div>
+<div class="paragraph">
+<div class="title">Setext</div>
+<p>In the Setext-style, the section title is defined on two lines. The second line is a string of characters that form an underline below the section title. Here&#8217;s an example of a section title from above defined in the Setext-style.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">First Section
+-------------</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Since the length of the line is determined by the number of characters in the section title, another dimension must be introduced to determine the level. That dimension is the character used for the underline. The mapping is as follows:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width:25%; ">
+<colgroup>
+<col style="width:50%;">
+<col style="width:50%;"> 
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Character</th>
+<th class="tableblock halign-left valign-top">Heading level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>=</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 (title)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>-</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>~</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>^</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>+</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5</p></td>
+</tr>
+</tbody>
+</table>
+
+<div class="paragraph">
+<p>I <em>strongly</em> recommend against using the Setext style for section titles. Keeping the length of the underline in sync with the title length is an unnecessary task and time waster. A more substantial reason is that the mapping between character and heading level is <strong>very</strong> difficult to remember and not obvious to new AsciiDoc adopters. All in all, using Setext section titles is a <em>bad practice</em>. <strong>Don&#8217;t use them!</strong></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the asymmetric Atx-style to define your section titles.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Document title</div>
+<p>Since the document title occurs only once in a document, I consider it acceptable to use the Setext style in this instance.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">Document Title
+==============
+Author Name &lt;author@example.org&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Be sure to include your name immediately following the document title.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+AsciiDoc only supports an e-mail following the author line. It does not support a personal URL. This feature is planned for Asciidoctor.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>It&#8217;s a good practice to also include a revision line following the author line.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">Document Title
+==============
+Author Name &lt;author@example.org&gt;
+v1.0, 2012-02-10</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The version number is optional. The revision line may consist of a date only.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">Document Title
+==============
+Author Name &lt;author@example.org&gt;
+2012-02-10</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delimited-blocks"><a class="anchor" href="#delimited-blocks"></a>Delimited Blocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Delimited blocks contain special text such as code listings, quotes, sidebar text, tables and so on. As you may have guessed, they are bounded by a string of delimiters. The delimiters are defined on a line by themselves. The content goes in between the delimiter lines. Here&#8217;s an example of a listing:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">----
+$ asciidoc -b html5 recommended-practices.ad
+----</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Delimited blocks require four or more repeating characters on a line by themselves to mark the boundary of the block. The one exception is the open block, which only requires two <code>-</code> repeating characters.</p>
+</div>
+<div class="paragraph">
+<p>You may be tempting to extend the line furthur, either to a predetermined length or to match the length of the content.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">--------------------------------------------
+$ asciidoc -b html5 recommended-practices.ad
+--------------------------------------------</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Don&#8217;t do this!</strong></p>
+</div>
+<div class="paragraph">
+<p>Maintaining long delimiter lines is <em>a colossal waste of time</em>, not to mention arbitrary and error prone. I strong urge you to <em>use the minimum number of characters necessary</em> to form a delimited block and move on to drafting the content. The reader will never see these long strings of delimiters anyway since they are not carried over to the output (HTML, DocBook, etc).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-note" title="Note"></i>
+</td>
+<td class="content">
+AsciiDoc does not enforce that the length of the line that opens the delimited block match the length of the line that closes the delimited block, but I think <em>it should</em>. Asciidoctor enforces this requirement, so make sure they match.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="attributes-i-e-variables"><a class="anchor" href="#attributes-i-e-variables"></a>Attributes (i.e., Variables)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="paragraph">
+<p>What they are, use them to stay DRY, such as URLs</p>
+</div>
+<div class="paragraph">
+<div class="title">Positional attributes</div>
+<p>Save some typing</p>
+</div>
+<div class="literalblock">
+<div class="title">Numbering</div>
+<div class="content">
+<pre class="nowrap">{counter:counter-name}</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="document-settings"><a class="anchor" href="#document-settings"></a>Document settings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Document settings are configured using attribute entries immediately following the document title (without any blank lines in between). There are several options of interest.</p>
+</div>
+<div class="paragraph">
+<div class="title">Section numbering</div>
+<p>You can enable numbering of sections using the <code>numbered</code> attribute (off by default).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">:numbered:</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Document description</div>
+<p>You can set the description of the document using the <code>description</code> attribute. The description is included in the header of the document.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">:description: This document catalogs a set of recommended practices for writing in AsciiDoc.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can break any attribute value across several lines by ending the lines in a <code>&#43;</code> preceded by a space.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">:description: This document catalogs a set of recommended practices +
+              for composing documents in AsciiDoc.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use this text anywhere in the document by referencing it as an attribute.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">{description}</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Section title IDs and ID prefixes</div>
+<p>IDs are generated for each section title by default. The ID is generated from the section title, prefixed with an underscore (i.e., <code>_</code>) by default. You can change the prefix using the <code>idprefix</code> attribute.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">:idprefix: -</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to remove the prefix, assign it to an empty value:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">:idprefix:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To disable the auto-generation of section IDs, unset the <code>sectids</code> attribute:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">:sectids!:</pre>
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Table of contents</div>
+<p>Set the <code>toc</code> attribute to activate an auto-generated table of contents at the top of document:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">:toc:</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="images-and-other-media"><a class="anchor" href="#images-and-other-media"></a>Images and Other Media</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="paragraph">
+<div class="title">Paths</div>
+<p>don&#8217;t include the images directory in each image reference</p>
+</div>
+<div class="paragraph">
+<div class="title">Block vs inline</div>
+<p>&#8230;</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="conditional-inclusion"><a class="anchor" href="#conditional-inclusion"></a>Conditional Inclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="paragraph">
+<p>how to use, reason for using</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lists"><a class="anchor" href="#lists"></a>Lists</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Unordered list markers</div>
+<p>AsciiDoc supports both <code>*</code> (one or more) and <code>-</code> (only one) as markers for a top-level list item.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">* first
+* second
+* third</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">- first
+- second
+- third</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>However, the dash marker <em>cannot</em> be repeated when defining a list item. This can lead to confusion since AsciiDoc increases the nesting level each time it encounters a <em>different</em> marker. For instance, in the following case, the item that have an asterisk marker is <strong>nested</strong> inside the first item.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">- first
+* nested item
+- second
+- third</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This nesting rule is true even when the number of asterisks seems to indicate the level:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">*** first
+* nested item
+*** second
+*** third</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><em>Yep, that&#8217;s right, the second list item is nested inside the first list item.</em></p>
+</div>
+<div class="paragraph">
+<p>If you stick to convention, the number of asterisks <em>can</em> represent the nesting level:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">* first
+** nested item
+* second
+* third</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now <strong>that&#8217;s</strong> intuitive.</p>
+</div>
+<div class="paragraph">
+<p>I strongly recommend using the asterisk marker if you are going to be using nested lists.</p>
+</div>
+<div class="paragraph">
+<p>If you only have top-level list items, then using either marker is reasonable. I may even recommend using the dash marker for lists that are not intended to have nested items and the asterisk marker for lists that do have nested items. That way it&#8217;s easy to identify them as different types.</p>
+</div>
+<div class="paragraph">
+<div class="title">Definition lists</div>
+<p>They exist!</p>
+</div>
+<div class="paragraph">
+<div class="title">Separating lists</div>
+<p>Adjacent lists sometimes like to fuse. To force the start of a new list, offset the two lists by an empty line comment:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">* apples
+* oranges
+* bananas
+
+//
+
+* carrots
+* tomatoes
+* celery</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="literal-text"><a class="anchor" href="#literal-text"></a>Literal Text</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO</p>
+</div>
+<div class="paragraph">
+<p>backticks vs plus and passthough stuffs</p>
+</div>
+<div class="paragraph">
+<p>recommendation for inline code quote char</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="tables"><a class="anchor" href="#tables"></a>Tables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<div class="title">Stacked cells</div>
+<p>Leverage them, makes it easy to read</p>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script>(function() { var p1 = document.createElement('script'); p1.async = true; p1.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p1, s);})();</script></body></html>

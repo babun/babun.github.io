@@ -1,0 +1,246 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Editing AsciiDoc with Live Preview | Babun</title><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul></nav><div class="container"><header><div class="row"><div class="large-12 columns"><h1>Editing AsciiDoc with Live Preview</h1></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here&#8217;s a quick way to setup live preview of AsciiDoc (or any markup language) using available tools on Linux.
+At the very least you&#8217;ll need Ruby, a web browser and a text editor.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="file-monitor"><a class="anchor" href="#file-monitor"></a>File monitor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first step is to setup a file monitor to watch for changes.
+We&#8217;ll use <a href="http://rubydoc.info/gems/guard/frames">Guard</a> for that task.
+Install Guard and the shell file monitor using:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">gem install guard guard-shell rb-inotify</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You&#8217;ll need <a href="http://asciidoctor.org">Asciidoctor</a> to process the document.
+Install Asciidoctor using:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">gem install asciidoctor</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, create a file named <code>Guardfile</code> in the same directory as your document.
+Configure <code>Guardfile</code> to monitor the file (or files) you are editing and then regenerate the HTML file whenever a change is detected.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of a basic Guard configuration for monitoring a single file:</p>
+</div>
+<div class="listingblock">
+<div class="title">Guardfile</div>
+<div class="content">
+<pre class="CodeRay nowrap"><code class="ruby language-ruby">require <span class="string"><span class="delimiter">'</span><span class="content">asciidoctor</span><span class="delimiter">'</span></span>
+require <span class="string"><span class="delimiter">'</span><span class="content">erb</span><span class="delimiter">'</span></span>
+
+guard <span class="string"><span class="delimiter">'</span><span class="content">shell</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+  watch(<span class="regexp"><span class="delimiter">/</span><span class="content">^mydoc</span><span class="char">\.</span><span class="content">adoc$</span><span class="delimiter">/</span></span>) {|m|
+    <span class="constant">Asciidoctor</span>.render_file(m[<span class="integer">0</span>], <span class="symbol">:in_place</span> =&gt; <span class="predefined-constant">true</span>)
+  }
+<span class="keyword">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now start Guard:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">guard start</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Whenever Guard detects a change in the <code>mydoc.adoc</code> file, Asciidoctor will process it using its render API and update (overwrite) the <code>mydoc.html</code> file.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Instead of monitoring a single file, you can monitor all files matching a glob expression.
+In the <code>watch</code> block, replace <code>mydoc.adoc</code> with <code>.*\.adoc</code> to monitor all files that end in <code>.adoc</code> in the current directory.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="using-bundler"><a class="anchor" href="#using-bundler"></a>Using Bundler</h3>
+<div class="paragraph">
+<p>An alternative way to do retrieve all the required gems is to use <a href="http://gembundler.com">Bundler</a>.
+Bundler is a dependency management system for ruby.
+The easiest way to get started is to follow the steps below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install the bundler gem</p>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">gem install bundler</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Start a basic <code>Gemfile</code></p>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">bundler init</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Edit the <code>Gemfile</code> to add all the required gems</p>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay nowrap"><code class="ruby language-ruby">source <span class="string"><span class="delimiter">'</span><span class="content">https://rubygems.org`
+
+gem </span><span class="delimiter">'</span></span>guard<span class="string"><span class="delimiter">'</span><span class="content">
+gem </span><span class="delimiter">'</span></span>guard-shell<span class="string"><span class="delimiter">'</span><span class="content">
+gem </span><span class="delimiter">'</span></span>rb-inotify<span class="string"><span class="delimiter">'</span><span class="content">
+gem </span><span class="delimiter">'</span></span>asciidoctor<span class="string"><span class="delimiter">'</span></span></code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Install the bundle</p>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">bundler install</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Run</p>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">bundler exec guard</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="web-preview"><a class="anchor" href="#web-preview"></a>Web preview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Next, install <a href="http://projects.gnome.org/epiphany/">Epiphany</a> (now called Web).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Alternatively, you can use any browser with an auto-refresh plugin.
+Epiphany just happens to do it out of the box by monitoring the file system for changes (similar to how Guard works).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Open Epiphany (Web) (or your web browser of choice w/ the auto-refresh plugin) and navigate to the <code>mydoc.html</code> file.
+Also open up the source file in your editor.
+Put the windows side-by-side so that you can see both of them.
+(Use Alt+F5 to unmaximize Epiphany (Web) if you don&#8217;t see the draggable window frame).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/tiled-editor-and-web-preview.png" alt="Tiled editor and web preview" width="100%">
+</div>
+</div>
+<div class="paragraph">
+<p>Once the two windows are tiled, make a change to the source document.
+Observe that the preview is automatically updated without affecting the scroll offset.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="survey-says"><a class="anchor" href="#survey-says"></a>Survey says&#8230;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Asciidoctor + Guard + Epiphany (Web) == Doc writing pleasure!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="alternative-options"><a class="anchor" href="#alternative-options"></a>Alternative options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Below are some other tools you can use to setup a similar environment to the one described above.</p>
+</div>
+<div class="sect2">
+<h3 id="livereload"><a class="anchor" href="#livereload"></a>LiveReload</h3>
+<div class="paragraph">
+<p>If you want to use Chrome or Firefox instead of Epiphany, check out <a href="http://livereload.com/">LiveReload</a>. It describes itself as:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<strong>The Web Developer Wonderland</strong><br>
+(a happy land where browsers don&#8217;t need a Refresh button)
+</blockquote>
+</div>
+<div class="paragraph">
+<p>LiveReload monitors changes in the file system. As soon as a file is saved, it is sent to the browser using a WebSocket. In addition to reloading the HTML, it supports live updating of CSS and JavaScript in the page.</p>
+</div>
+<div class="paragraph">
+<p>You can setup LiveReload (for free) on any operating system using the <a href="https://github.com/guard/guard-livereload">Guard::LiveReload</a> plugin and the companion LiveReload extension for <a href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en">Chrome</a> or <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-">Firefox</a>.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s the command to install the Guard::LiveReload plugin:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">gem install guard-livereload yajl-ruby</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, install one of the two browser extensions.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="icon-important" title="Important"></i>
+</td>
+<td class="content">
+After installing the Chrome LiveReload extension, you need to check the "Allow access to file URLs" checkbox in Tools &gt; Extensions &gt; LiveReload in order for it to work with local files.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Add the following stanza at the bottom of the <code>Guardfile</code> you created above.</p>
+</div>
+<div class="listingblock">
+<div class="title">Guardfile, LiveReload block</div>
+<div class="content">
+<pre class="CodeRay nowrap"><code class="ruby language-ruby">guard <span class="string"><span class="delimiter">'</span><span class="content">livereload</span><span class="delimiter">'</span></span> <span class="keyword">do</span>
+  watch(<span class="regexp"><span class="delimiter">%r{</span><span class="content">^.+</span><span class="char">\.</span><span class="content">(css|js|html)$</span><span class="delimiter">}</span></span>)
+<span class="keyword">end</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Start Guard, navigate to the HTML file in your browser, then activate the LiveReload on that page by clicking the LiveReload button in the toolbar.</p>
+</div>
+<div class="paragraph">
+<p>Whenever the AsciiDoc file is changed, first the Guard "shell" plugin will be triggered to generate the HTML file, then the "livereload" plugin will be triggered to send the HTML to the browser.</p>
+</div>
+<div class="paragraph">
+<p>Asciidoctor + Guard + LiveReload + Chrome or Firefox == The Documentation Writer Wonderland</p>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script>(function() { var p1 = document.createElement('script'); p1.async = true; p1.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p1, s);})();</script></body></html>

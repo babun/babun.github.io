@@ -1,0 +1,77 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hacking on the Asciidoctor Maven Plugin | Babun</title><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul></nav><div class="container"><header><div class="row"><div class="large-12 columns"><h1>Hacking on the Asciidoctor Maven Plugin</h1></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="http://github.com/asciidoctor/asciidoctor-maven-plugin">Asciidoctor Maven plugin</a> is the official means of using Asciidoctor to render your <a href="http://asciidoc.org">AsciiDoc</a> documentation using <a href="http://maven.apache.org">Apache Maven</a>.
+This guide teaches you how to hack on it.</p>
+</div>
+<div class="paragraph">
+<p>For help running this plugin, review the <a href="/docs/install-and-use-asciidoctor-maven-plugin">How do I install and use the Asciidoctor Maven plugin guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="hacking"><a class="anchor" href="#hacking"></a>Hacking</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Developer setup for hacking on this project isn&#8217;t difficult.
+The requirements are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java</p>
+</li>
+<li>
+<p>Maven 3</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All the other dependencies will be brought in by Maven.
+You should be able to use IntelliJ, Eclipse, or Netbeans without any issue for hacking on the project.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="building"><a class="anchor" href="#building"></a>Building</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Standard Maven build:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">$ mvn clean install</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing"><a class="anchor" href="#testing"></a>Testing</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://spockframework.org">Spock</a> is used for testing the calling of the Mojo.
+This will be downloaded by Maven.
+Tests are run simply by:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre class="nowrap">$ mvn clean test</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Or any of the other goals which run tests.
+If I can figure out a good way to setup a Ruby testing environment I&#8217;ll do that as well, but none exists at this time.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="resources"><a class="anchor" href="#resources"></a>Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To file an issue regarding this plugin, visit the <a href="http://github.com/asciidoctor/asciidoctor-maven-plugin/issues">plugin&#8217;s repository</a>.</p>
+</div>
+<div class="paragraph">
+<p>Also, don&#8217;t forget to join the <a href="http://discuss.asciidoctor.org">Asciidoctor discussion list</a>, where you can ask questions and leave comments.</p>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script>(function() { var p1 = document.createElement('script'); p1.async = true; p1.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p1, s);})();</script></body></html>
