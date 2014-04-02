@@ -32,6 +32,7 @@ GEM
       compass (>= 0.10.0)
     erubis (2.7.0)
     ffi (1.9.3)
+    ffi (1.9.3-x86-mingw32)
     fssm (0.2.10)
     git (1.2.6)
     haml (4.0.5)
@@ -45,6 +46,7 @@ GEM
     mime-types (2.2)
     nio4r (1.0.0)
     nokogiri (1.5.10)
+    nokogiri (1.5.10-x86-mingw32)
     rack (1.5.2)
     rake (10.0.4)
     rb-fsevent (0.9.4)
@@ -74,6 +76,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   asciidoctor (= 0.1.4)
