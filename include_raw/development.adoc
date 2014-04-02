@@ -24,6 +24,7 @@ The release goal expects the following environment variables: +bintray_user+ and
 === Developing a plugin
 
 Every plugins has to consist of two main files:
+
 * install.sh - a file that will be invoke during the creation of the babun's distribution
 * install_home.sh - a file that will be invoked during the installation of babun to the user's home folder 
 

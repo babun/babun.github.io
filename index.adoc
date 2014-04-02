@@ -10,4 +10,4 @@ include::{includedir}/usage.adoc[]
 
 == Development and contribution
 
-Are you interested in contribution or want to develop some plugins? Read more link:development[here]
+Are you interested in contribution or want to develop some plugins? Read more link:development[here].
