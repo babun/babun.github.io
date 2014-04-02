@@ -1,4 +1,3 @@
-// this file contains no styling, it is intended to be imported 
 
 == Development
 
