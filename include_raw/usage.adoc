@@ -79,7 +79,7 @@ Babun contains an auto-update feature which enables updating both the microkerne
 
 Babun features an silent command-line installation script that may be executed without admin rights on Windows hosts.
 
-=== Project Sturcture
+== Project Sturcture
 
 The project consists of four main modules.
 
