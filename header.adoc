@@ -1,6 +1,0 @@
-= Babun - a windows shell you will love
-pronounced "Baboon"
-
-Would you like to use a linux-like console on a Windows host without a lot of fuzz? Do you like oh-my-zsh?
-Stop hating Windows and try out babun - you will simply love it!
-

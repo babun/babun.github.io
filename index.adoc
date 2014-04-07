@@ -1,6 +1,6 @@
 = Babun - a windows shell you will love
 :awestruct-layout: base
-:includedir: include_raw
+:includedir: page_include
 pronounced "Baboon"
 
 Would you like to use a linux-like console on a Windows host without a lot of fuzz? Do you like oh-my-zsh?
@@ -8,6 +8,8 @@ Stop hating Windows and try out babun - you will simply love it!
 
 include::{includedir}/usage.adoc[]
 
-== Development and contribution
+include::{includedir}/licence.adoc[]
 
-Are you interested in contribution or want to develop some plugins? Read more link:development[here].
+include::{includedir}/footer.adoc[]
+
+
