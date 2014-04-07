@@ -1,0 +1,370 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Babun - a windows shell you will love | Babun</title><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li></ul><section class="top-bar-section"><ul class="right"><li class="divider"></li><li><a href="/">About</a></li><li class="divider"></li><li><a href="/development/">Development</a></li></ul></section></nav><div class="container"><header><div class="row"><div class="large-12 columns"><h1>Babun - a windows shell you will love</h1></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div class="sect2">
+<h3 id="features-in-10-seconds"><a class="anchor" href="#features-in-10-seconds"></a>Features in 10 seconds</h3>
+<div class="paragraph">
+<p>Babun features the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pre-configured Cygwin with a lot of addons</p>
+</li>
+<li>
+<p>Silent command-line installer, no admin rights required</p>
+</li>
+<li>
+<p>pact - advanced package manager (like apt-get or yum)</p>
+</li>
+<li>
+<p>xTerm-256 compatible console</p>
+</li>
+<li>
+<p>HTTP(s) proxying support</p>
+</li>
+<li>
+<p>Plugin-oriented architecture</p>
+</li>
+<li>
+<p>Pre-configured git and shell</p>
+</li>
+<li>
+<p>Integrated oh-my-zsh</p>
+</li>
+<li>
+<p>Auto update feature</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="features-in-3-minutes"><a class="anchor" href="#features-in-3-minutes"></a>Features in 3 minutes</h3>
+<div class="sect3">
+<h4 id="cygwin"><a class="anchor" href="#cygwin"></a>Cygwin</h4>
+<div class="paragraph">
+<p>The core of Babun consists of a pre-configured Cygwin. Cygwin is a great tool, but there&#8217;s a lot of quirks and tricks that makes you loose a lot of time to make it actually <em>usable</em>. Not only does babun solve most of these problems, but also contains a lot of vital packages, so that you can be productive from the very first minute.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="package-manager"><a class="anchor" href="#package-manager"></a>Package manager</h4>
+<div class="paragraph">
+<p>Babun provides a package manager called <code>pact</code>. It is similar to <em>apt-get</em> or <em>yum</em>. Pact enables installing/searching/upgrading and deinstalling cygwin packages with no hassle at all. Just invoke <code>pact --help</code> to check how to use it.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="shell"><a class="anchor" href="#shell"></a>Shell</h4>
+<div class="paragraph">
+<p>Babun&#8217;s shell is tweaked in order to provide the best possible user-experience. There are two shell types that are pre-configured and avaiable right away - bash and zsh (zsh is the default one). Babun&#8217;s shell features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>syntax highlighting</p>
+</li>
+<li>
+<p>unix tools</p>
+</li>
+<li>
+<p>software development tools</p>
+</li>
+<li>
+<p>git-aware prompt</p>
+</li>
+<li>
+<p>custom scripts and aliases</p>
+</li>
+<li>
+<p>and much more!</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="console"><a class="anchor" href="#console"></a>Console</h4>
+<div class="paragraph">
+<p>Mintty is the console used in babun. It features an <code>xterm-256</code> mode, nice fonts and simply looks great!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="proxying"><a class="anchor" href="#proxying"></a>Proxying</h4>
+<div class="paragraph">
+<p>Babun supports HTTP proxying out of the box. Just add the address and the credentials of your HTTP proxy server to the <code>.babunrc</code> file located in your home folder and execute <code>source .babunrc</code> to enable HTTP proxying. SOCKS proxies are not supported for now.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="developer-tools"><a class="anchor" href="#developer-tools"></a>Developer tools</h4>
+<div class="paragraph">
+<p>Babun provides many packages, convenience tools and scripts that make your life much easier. The long list of features includes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>programming languages (python, perl, groovy, etc.)</p>
+</li>
+<li>
+<p>git (with a wide variety of aliases and tweaks)</p>
+</li>
+<li>
+<p>unix tools (grep, wget, curl, etc.)</p>
+</li>
+<li>
+<p>oh-my-zsh</p>
+</li>
+<li>
+<p>custom scripts (pbcopy, pbpaste, babun, etc.)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="plugin-architecture"><a class="anchor" href="#plugin-architecture"></a>Plugin architecture</h4>
+<div class="paragraph">
+<p>Babun has a very small microkernel (cygwin, a couple of bash scripts and a bit of a convention) and a plugin architecture on the top of it. It means that almost everything is a plugin in the babun&#8217;s world! Not only does it structure babun in a clean way, but also enables others to contribute small chunks of code. Currently, babun comprises of six plugins:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>cacert</p>
+</li>
+<li>
+<p>core</p>
+</li>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>oh-my-zsh</p>
+</li>
+<li>
+<p>pact</p>
+</li>
+<li>
+<p>shell</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="auto-update"><a class="anchor" href="#auto-update"></a>Auto-update</h4>
+<div class="paragraph">
+<p>Self-update is at the very heart of babun! Many Cygwin tools are simple bash scripts - once you install them there is no chance of getting the newer version in a smooth way. You either delete the older version or overwrite it with the newest one loosing all the changes you have made in between.</p>
+</div>
+<div class="paragraph">
+<p>Babun contains an auto-update feature which enables updating both the microkernel and the plugins. Files located in your home folder will not be delted nor overwritten which preserves your local config and customizations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installer"><a class="anchor" href="#installer"></a>Installer</h4>
+<div class="paragraph">
+<p>Babun features an silent command-line installation script that may be executed without admin rights on any Windows hosts.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="using-babun"><a class="anchor" href="#using-babun"></a>Using babun</h3>
+<div class="sect3">
+<h4 id="setting-up-proxy"><a class="anchor" href="#setting-up-proxy"></a>Setting up proxy</h4>
+<div class="paragraph">
+<p>To setup proxy uncomment following lines in the <code>.babunrc</code> file <code>(%USER_HOME%\.babun\cygwin\home\USER\.babunrc)</code></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap"># Uncomment this lines to set up your proxy
+# export http_proxy=http://user:password@server:port
+# export https_proxy=$http_proxy
+# export ftp_proxy=$http_proxy
+# export no_proxy=localhost</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="setting-up-git"><a class="anchor" href="#setting-up-git"></a>Setting up git</h4>
+<div class="paragraph">
+<p>Babun has a pre-configured git. The only thing you should do after the installation is to add your name and email to the git config:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">git config --global user.name "your name"
+git config --global user.email "your@email.com"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>There&#8217;s a lot of great git aliases provided by the git plugin:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">gitalias['alias.cp']='cherry-pick'
+gitalias['alias.st']='status -sb'
+gitalias['alias.cl']='clone'
+gitalias['alias.ci']='commit'
+gitalias['alias.co']='checkout'
+gitalias['alias.br']='branch'
+gitalias['alias.dc']='diff --cached'
+gitalias['alias.lg']="log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue&lt;%an&gt;%Creset' --abbrev-commit --date=relative --all"
+gitalias['alias.last']='git log -1 --stat'
+gitalias['alias.unstage']='reset HEAD --'</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installing-and-removing-packages"><a class="anchor" href="#installing-and-removing-packages"></a>Installing and removing packages</h4>
+<div class="paragraph">
+<p>Babun is shipped with <code>pact</code> - a Linux like package manager. It uses the cygwin repository for downloading packages:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">{ ~ } » pact install arj                                                                      ~
+Working directory is /setup
+Mirror is http://mirrors.kernel.org/sourceware/cygwin/
+setup.ini taken from the cache
+
+Installing arj
+Found package arj
+--2014-03-30 19:34:38--  http://mirrors.kernel.org/sourceware/cygwin//x86/release/arj/arj-3.10.22-1.tar.bz2
+Resolving mirrors.kernel.org (mirrors.kernel.org)... 149.20.20.135, 149.20.4.71, 2001:4f8:1:10:0:1994:3:14, ...
+Connecting to mirrors.kernel.org (mirrors.kernel.org)|149.20.20.135|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 189944 (185K) [application/x-bzip2]
+Saving to: `arj-3.10.22-1.tar.bz2'
+
+100%[==========================================================&gt;] 189,944      193K/s   in 1.0s
+
+2014-03-30 19:34:39 (193 KB/s) - `arj-3.10.22-1.tar.bz2' saved [189944/189944]
+
+Unpacking...
+Package arj installed</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s the list of all pact&#8217;s features:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">{ ~ }  » pact --help                                                                         ~
+pact: Installs and removes Cygwin packages.
+
+Usage:
+  "pact install &lt;package names&gt;" to install packages
+  "pact remove &lt;package names&gt;" to remove packages
+  "pact update" to update setup.ini
+  "pact show" to show installed packages
+  "pact find &lt;patterns&gt;" to find packages matching patterns
+  "pact describe &lt;patterns&gt;" to describe packages matching patterns
+  "pact packageof &lt;commands or files&gt;" to locate parent packages
+Options:
+  --mirror, -m &lt;url&gt; : set mirror
+  --update, -u       : force update setup.ini from mirror
+  --help
+  --version</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="changing-the-default-shell"><a class="anchor" href="#changing-the-default-shell"></a>Changing the default shell</h4>
+<div class="paragraph">
+<p>The zsh (with .oh-my-zsh) is the default babun&#8217;s shell.</p>
+</div>
+<div class="paragraph">
+<p>Executing the following command will output your default shell:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">{ ~ } » babun shell                                                                          ~
+/bin/zsh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to change your default shell execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">{ ~ } » babun shell /bin/bash                                                                ~
+/bin/zsh
+/bin/bash</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output contains two lines: the previous default shell and the new default shell</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="checking-the-configuration"><a class="anchor" href="#checking-the-configuration"></a>Checking the configuration</h4>
+<div class="paragraph">
+<p>Execute the following command the check the configuration:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">{ ~ } » babun check                                                                          ~
+Executing babun check
+Prompt speed      [OK]
+Connection check  [OK]
+Update check      [OK]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It will check if there are problems with the speed of the git prompt, if there&#8217;s access to the Internet or finally if you are running the newest version of babun.</p>
+</div>
+<div class="paragraph">
+<p>The command will output hints if problems occur:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">{ ~ } » babun check                                                                          ~
+Executing babun check
+Prompt speed      [SLOW]
+Hint: your prompt is very slow. Check the installed 'BLODA' software.
+Connection check  [OK]
+Update check      [OK]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>On each startup, but only every 24 hours, babun will execute this check automatically. You can disable the automatic check in the ~/.babunrc file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tweaking-the-configuration"><a class="anchor" href="#tweaking-the-configuration"></a>Tweaking the configuration</h4>
+<div class="paragraph">
+<p>You can tweak some config options in the ~/.babunrc file. Here&#8217;s the full list of variables that may be modified:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap"># JVM options
+export JAVA_OPTS="-Xms128m -Xmx256m"
+
+# Modify these lines to set your locale
+export LANG="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Uncomment these lines to the set your machine's default locale (and comment out the UTF-8 ones)
+# export LANG=$(locale -uU)
+# export LC_CTYPE=$(locale -uU)
+# export LC_ALL=$(locale -uU)
+
+# Uncomment this to disable daily auto-update &amp; proxy checks on startup (not recommended!)
+# export DISABLE_CHECK_ON_STARTUP="true"
+
+# Uncomment to increase/decrease the check connection timeout
+# export CHECK_TIMEOUT_IN_SECS=4
+
+# Uncomment this lines to set up your proxy
+# export http_proxy=http://user:password@server:port
+# export https_proxy=$http_proxy
+# export ftp_proxy=$http_proxy
+# export no_proxy=localhost</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="updating-babun"><a class="anchor" href="#updating-babun"></a>Updating babun</h4>
+<div class="paragraph">
+<p>To update babun to the newest version execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">babun update</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Please note that your local configuration files will not be overwritten.</p>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script>(function() { var p1 = document.createElement('script'); p1.async = true; p1.src = 'https://apis.google.com/js/plusone.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p1, s);})();</script></body></html>
