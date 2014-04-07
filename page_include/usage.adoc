@@ -1,5 +1,4 @@
 
-//== Usage
 
 === Features in 10 seconds
 
