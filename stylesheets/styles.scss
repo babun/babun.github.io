@@ -657,7 +657,7 @@ ol dd,
 .olist .olist,
 .ulist .olist,
 .olist .ulist {
-  margin-bottom: $paragraph-margin-bottom / 2;
+  margin-bottom: 0.2em;
 }
 
 // AsciiDoc list styles
@@ -683,6 +683,15 @@ ul.checklist li > p:first-child > input[type="checkbox"]:first-child {
 ul.checklist li > p:first-child > input[type="checkbox"]:first-child {
   position: relative;
   top: 1px;
+}
+
+p {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 0.65em;
+  text-rendering: optimizeLegibility;
 }
 
 ul.inline {
