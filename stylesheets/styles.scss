@@ -317,16 +317,21 @@ table #preamble .sectionbody > .paragraph:first-of-type p {
 // these blocks that don't inherit panel styles
 .imageblock,
 .literalblock,
-.listingblock,
 .verseblock,
+.listingblock {
+  margin-bottom: $panel-margin-bottom;
+  //text-align: left;
+}
+
 .videoblock {
   margin-bottom: $panel-margin-bottom;
+  text-align: center;
 }
 
 .admonitionblock > table td.content,
 .exampleblock,
 .imageblock,
-.videoblock,
+//.videoblock,
 .listingblock,
 .literalblock,
 .openblock,

@@ -5,48 +5,44 @@ head
   meta charset='utf-8'
   meta name='viewport' content='width=device-width, initial-scale=1.0'
   title=(page.title && page.title != site.title ? [page.title, site.title] : [site.title, site.description]) * ' | '
-  - if page.layout == 'post'
-    meta name='author' content=page.author
+  meta name='author' content=page.author
   link rel='stylesheet' href='/stylesheets/styles.css'
   script src='/javascripts/vendor/custom.modernizr.js'
+
 body.antialiased
   nav.top-bar
     ul.title-area
       li.name
         h1: a href='/' Babun (pronounced Baboon)
-	  li.toggle-topbar.menu-icon: a href='#': span
+    li.toggle-topbar.menu-icon: a href='#': span
     section.top-bar-section
       ul.right
         li.divider
         li: a href='/' About
         li.divider
         li: a href='/development/' Development
+
   .container
-    - unless page.url.start_with? '/news/'
-      header
-        .row
-          - if page.url == '/'
-            .large-8.columns.hero
-              h1 
-              	|Babun
-              p: strong a windows shell you will love!
-            .large-4.columns.hero
-              .actions
-                a.button.secondary href='http://github.com/babun/babun' style='color: #6d180b; max-width: 220px;'
-                  i.icon-download.icon-2x.pull-left
-                  |Download latest stable version
-                a.button.secondary href='http://github.com/babun/babun' style='max-width: 220px;'
-                  i.icon-github.icon-2x.pull-left
-                  |Get source from GitHub                              
-          - else
-            .large-12.columns
-              h1=page.title
+    header
+      .row
+        .large-8.columns.hero
+          h1 Babun
+          p: strong a windows shell you will love!
+        .large-4.columns.hero
+          .actions
+            a.button.secondary href='http://github.com/babun/babun' style='color: #6d180b; max-width: 220px;'
+              i.icon-download.icon-2x.pull-left
+              |Download latest stable version
+            a.button.secondary href='http://github.com/babun/babun' style='max-width: 220px;'
+              i.icon-github.icon-2x.pull-left
+              |Get source from GitHub
+
     .row
       div class=["large-12", 'columns']
         .row
           .large-12.columns
             =content
-      
+
   footer
     .row.full-width
       .large-6.columns
@@ -55,6 +51,7 @@ body.antialiased
           br
           |Babun is licensed under the Apache License v2.
       .large-6.columns
+
   script
     |document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')
   script src='/javascripts/foundation/foundation.js'
@@ -64,11 +61,4 @@ body.antialiased
     |$(document).foundation();
   - (page.javascripts || []).each do |javascript|
     script src="/javascripts/#{javascript}.js"
-  script
-    |(function() {
-    |  var p1 = document.createElement('script'); p1.async = true; p1.src = 'https://apis.google.com/js/plusone.js';
-    |  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p1, s);
-    |})();
-  - if site.google_analytics
-    =google_analytics_async
 |</html>

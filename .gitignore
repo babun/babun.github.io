@@ -6,3 +6,5 @@
 _site
 _tmp
 Gemfile.lock
+.idea
+*.iml
