@@ -1,2 +1,2 @@
 
-Visit Babun's project http://www.github.babun.io[website].
+Visit Babun's project http://babun.github.io[website].
