@@ -1,4 +1,4 @@
-#!/bin/bash
+﻿#!/bin/bash
 
 BABUN_DOC_REPO='https://raw.githubusercontent.com/babun/babun/master/babun-doc/adoc/'
 DOWNLOAD_DIR='../page_include'
