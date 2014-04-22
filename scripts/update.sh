@@ -1,11 +1,10 @@
 ﻿#!/bin/bash
 
-BABUN_DOC_REPO='https://raw.githubusercontent.com/babun/babun/master/babun-doc/adoc/'
+BABUN_DOC_REPO='https://raw.githubusercontent.com/babun/babun/master/babun-doc/adoc'
 DOWNLOAD_DIR='../page_include'
 
 echo "Cleaning out old files"
 rm -f $DOWNLOAD_DIR"/*.adoc"
-
 
 echo "Downloading document contents"
 curl -o $DOWNLOAD_DIR"/development.adoc" $BABUN_DOC_REPO"/development.adoc"
