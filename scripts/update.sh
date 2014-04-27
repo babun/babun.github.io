@@ -11,7 +11,7 @@ rm -rf "$DEV_DIR"
 mkdir "$DOWNLOAD_DIR"
 
 echo "Downloading document contents"
-curl -o "$DOWNLOAD_DIR/../development.adoc" "$BABUN_DOC_REPO/development.adoc"
+curl -o "$DOWNLOAD_DIR/development.adoc" "$BABUN_DOC_REPO/development.adoc"
 curl -o "$DOWNLOAD_DIR/footer.adoc" "$BABUN_DOC_REPO/footer.adoc"
 curl -o "$DOWNLOAD_DIR/header.adoc" "$BABUN_DOC_REPO/header.adoc"
 curl -o "$DOWNLOAD_DIR/installation.adoc" "$BABUN_DOC_REPO/installation.adoc"
