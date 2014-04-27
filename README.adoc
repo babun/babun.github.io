@@ -1,6 +1,6 @@
 = Babun - a Windows shell you will love!
 
-Website of the project.
+Website of the project babun.
 
 == Building the site from source
 
@@ -40,4 +40,6 @@ You're done!
  $ ./all.sh
 
 
-Visit Babun's project http://babun.github.io[website].
+== Visit the website
+
+Visit babun's project: http://babun.github.io[website].
