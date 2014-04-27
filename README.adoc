@@ -29,9 +29,14 @@ At this point, you could install Awestruct directly, but since the site build ha
 
 You're done!
 
-== Deploying the website
+== Running the site locally
+
+ $ rake preview
+
+== Deploying the website to github pages
 
  $ cd scripts
+ $ chmod 755 all.sh
  $ ./all.sh
 
 
