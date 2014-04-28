@@ -1,7 +1,6 @@
 :awestruct-layout: base
 :includedir: page_include
 :linkattrs:
-pronounced "Baboon"
 
 include::{includedir}/header.adoc[]
 
