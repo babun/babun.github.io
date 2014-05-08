@@ -19,5 +19,5 @@ curl -o "$DOWNLOAD_DIR/licence.adoc" "$BABUN_DOC_REPO/licence.adoc"
 curl -o "$DOWNLOAD_DIR/screencast.adoc" "$BABUN_DOC_REPO/screencast.adoc"
 curl -o "$DOWNLOAD_DIR/supporters.adoc" "$BABUN_DOC_REPO/supporters.adoc"
 curl -o "$DOWNLOAD_DIR/usage.adoc" "$BABUN_DOC_REPO/usage.adoc"
-
+curl -o "$DOWNLOAD_DIR/screenshots.adoc" "$BABUN_DOC_REPO/screenshots.adoc"
 
