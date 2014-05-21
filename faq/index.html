@@ -1,0 +1,67 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Babun - a windows shell you will love | Babun</title><meta name="author" content="pronounced "Baboon""><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li><section class="top-bar-section"><ul class="right"><li class="divider"></li><li><a href="/">About</a></li><li class="divider"></li><li><a href="/development/">Development</a></li><li class="divider"></li><li><a href="/screenshots/">Screenshots</a></li><li class="divider"></li><li><a href="/faq/">FAQ</a></li><li class="divider"></li><li><a href="/blog/">Blog</a></li></ul></section></nav><div class="container"><header><div class="row"><div class="large-8 columns hero"><h1>Babun</h1><p><strong>a windows shell you will love!</strong></p></div><div class="large-4 columns hero"><div class="actions"><a class="button secondary" href="http://projects.reficio.org/babun/babun-dist.zip" style="color: #6d180b; max-width: 220px;"><i class="icon-download icon-2x pull-left"></i>Download latest stable version</a><a class="button secondary" href="http://github.com/babun/babun" style="max-width: 220px;"><i class="icon-github icon-2x pull-left"></i>Get source from GitHub</a></div></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div class="sect2">
+<h3 id="frequent-asked-questions"><a class="anchor" href="#frequent-asked-questions"></a>Frequent Asked Questions</h3>
+<div class="sect3">
+<h4 id="i-cloned-babun-from-github-but-when-i-try-to-start-it-i-get-some-weird-error-message"><a class="anchor" href="#i-cloned-babun-from-github-but-when-i-try-to-start-it-i-get-some-weird-error-message"></a>I cloned babun from github but when i try to start it I get some weird error message</h4>
+<div class="paragraph">
+<p>You have to download the distribution package from <a href="http://projects.reficio.org/babun/babun-dist.zip">here</a>.
+On github we only host raw source files. The dist package is enriched by cygwin and some other stuff you need to run Babun.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-can-i-uninstall-babun"><a class="anchor" href="#how-can-i-uninstall-babun"></a>How can I uninstall Babun?</h4>
+<div class="paragraph">
+<p>Why would you :-) Seriously, just delete the .babun folder (by default installed in %USER_HOME%).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-daily-babun-check-sometimes-complains-that-em-my-prompt-is-very-slow-em"><a class="anchor" href="#the-daily-babun-check-sometimes-complains-that-em-my-prompt-is-very-slow-em"></a>The daily babun check sometimes complains that <em>my prompt is very slow</em></h4>
+<div class="paragraph">
+<p>Sometimes the prompt is slow when you start babun as the initialization and loading of dll&#8217;s take time. You are find with that.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="old-version-of-git-doesn-t-like-my-gitconfig"><a class="anchor" href="#old-version-of-git-doesn-t-like-my-gitconfig"></a>Old version of Git doesn&#8217;t like my .gitconfig</h4>
+<div class="paragraph">
+<p>If you run git in Babun and get error like this</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">git clone git@github.com:Painted-Fox/docker-postgresql.git
+Cloning into 'docker-postgresql'...
+error: Malformed value for push.default: simple
+error: Must be one of nothing, matching, tracking or current.
+fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The fix is described <a href="http://stackoverflow.com/questions/14330050/how-to-get-git-1-8-in-cygwin">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="when-i-run-git-status-in-git-shell-and-in-babun-i-get-different-results"><a class="anchor" href="#when-i-run-git-status-in-git-shell-and-in-babun-i-get-different-results"></a>When I run git status in git shell and in babun I get different results</h4>
+<div class="paragraph">
+<p>It is probably an end-of-line issue. Execute <code>git config --list</code> both in cmd and in babun and compare the core.autocrlf value. If your cmd prints <code>core.autocrlf = true</code> execute <code>git config --global core.autocrlf true</code> in Babun.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-do-i-install-gvm-tool"><a class="anchor" href="#how-do-i-install-gvm-tool"></a>How do I install gvm tool</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>download gvmtool: <code>curl -s get.gvmtool.net | bash</code></p>
+</li>
+<li>
+<p>edit .bash_profile, .bashrc and .zshrc and replace all occurrences of <code>/c/Users/&#8230;</code> with <code>/cygdrive/c/Users/&#8230;</code></p>
+</li>
+<li>
+<p>restart babun</p>
+</li>
+</ul>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-51064780-1', 'babun.github.io');
+ga('send', 'pageview');</script></body></html>
