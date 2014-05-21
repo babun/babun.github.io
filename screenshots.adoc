@@ -4,4 +4,4 @@
 :linkattrs:
 pronounced "Baboon"
 
-include::{includedir}/screenshots.adoc[]
+include::{includedir}/_screenshots.adoc[]

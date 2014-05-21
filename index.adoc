@@ -2,18 +2,18 @@
 :includedir: page_include
 :linkattrs:
 
-include::{includedir}/header.adoc[]
+include::{includedir}/_header.adoc[]
 
-include::{includedir}/screencast.adoc[]
+include::{includedir}/_screencast.adoc[]
 
-include::{includedir}/installation.adoc[]
+include::{includedir}/_installation.adoc[]
 
-include::{includedir}/usage.adoc[]
+include::{includedir}/_usage.adoc[]
 
-include::{includedir}/licence.adoc[]
+include::{includedir}/_licence.adoc[]
 
-include::{includedir}/supporters.adoc[]
+include::{includedir}/_supporters.adoc[]
 
-include::{includedir}/footer.adoc[]
+include::{includedir}/_footer.adoc[]
 
 

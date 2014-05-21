@@ -25,7 +25,7 @@ profiles:
   production:
     base_url: http://babun.guthub.io
     #disqus_developer: false
-    #google_analytics: UA-38215684-1
+    google_analytics: UA-51064780-1
     compass_output_style: :compressed
     deploy:
       host: github_pages
