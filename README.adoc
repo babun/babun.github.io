@@ -13,7 +13,7 @@ On OSX only: install Developer Tools
 
 Then, install http://rvm.io[RVM]. 
 
- $ curl -#L https://get.rvm.io | bash -s stable --ruby
+ $ curl -L https://get.rvm.io | bash -s stable --ruby
 
 Next, install ruby:
 
