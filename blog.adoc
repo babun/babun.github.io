@@ -1,7 +1,7 @@
 = Babun - a windows shell you will love
 :awestruct-layout: base
-:includedir: page_include
+:blogdir: blog_include
 :linkattrs:
 pronounced "Baboon"
 
-Comming soon.
+include::{blogdir}/_001_rel_1.adoc[]
