@@ -64,7 +64,6 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig
 
 The fix for the error above was described http://stackoverflow.com/questions/14330050/how-to-get-git-1-8-in-cygwin[here].
 
-
 ==== I get 'error while loading shared libraries' when I execute git commands.
 
 Install gettext, libsasl2 and ca-certificates using pact.
