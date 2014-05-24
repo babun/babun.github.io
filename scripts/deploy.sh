@@ -2,7 +2,7 @@
 
 cd ../
 
-echo "[generator] Deploying to github"
+echo "Deploying to github"
 awestruct -P production -g --deploy
 
 cd -
