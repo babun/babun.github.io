@@ -7,7 +7,7 @@ SCREENSHOTS_DIR='../screenshots'
 FAQ_DIR='../faq'
 BLOG_DIR='../blog'
 
-echo "Cleaning out old files"
+echo "[generator] Cleaning out old files"
 rm -rf "$DOWNLOAD_DIR"
 rm -rf "$DEV_DIR"
 rm -rf "$SCREENSHOTS_DIR"
@@ -16,7 +16,7 @@ rm -rf "$BLOG_DIR"
 
 mkdir "$DOWNLOAD_DIR"
 
-echo "Downloading document contents"
+echo "[generator] Downloading documents content"
 curl -o "$DOWNLOAD_DIR/_development.adoc" "$BABUN_DOC_REPO/_development.adoc"
 curl -o "$DOWNLOAD_DIR/_footer.adoc" "$BABUN_DOC_REPO/_footer.adoc"
 curl -o "$DOWNLOAD_DIR/_faq.adoc" "$BABUN_DOC_REPO/_faq.adoc"

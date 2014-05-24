@@ -1,13 +1,14 @@
 #!/bin/bash
 
-./update.sh
+bash update.sh
 
-cd ..
+cd ../
 
+echo "[generator] Commiting and pushing changes"
 git add . -u
 git commit -m "page updated and regenerated"
 git push
 
 cd -
 
-./deploy.sh
+bash deploy.sh
