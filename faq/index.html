@@ -1,0 +1,159 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Babun - a windows shell you will love | Babun</title><meta name="author" content="pronounced "Baboon""><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li><section class="top-bar-section"><ul class="right"><li class="divider"></li><li><a href="/">About</a></li><li class="divider"></li><li><a href="/development/">Development</a></li><li class="divider"></li><li><a href="/screenshots/">Screenshots</a></li><li class="divider"></li><li><a href="/faq/">FAQ</a></li><li class="divider"></li><li><a href="/blog/">Blog</a></li></ul></section></nav><div class="container"><header><div class="row"><div class="large-8 columns hero"><h1>Babun</h1><p><strong>a windows shell you will love!</strong></p></div><div class="large-4 columns hero"><div class="actions"><a class="button secondary" href="http://projects.reficio.org/babun/babun-dist.zip" style="color: #6d180b; max-width: 220px;"><i class="icon-download icon-2x pull-left"></i>Download latest stable version</a><a class="button secondary" href="http://github.com/babun/babun" style="max-width: 220px;"><i class="icon-github icon-2x pull-left"></i>Get source from GitHub</a></div></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div class="sect2">
+<h3 id="frequent-asked-questions"><a class="anchor" href="#frequent-asked-questions"></a>Frequent Asked Questions</h3>
+<div class="sect3">
+<h4 id="i-cloned-babun-from-github-but-when-i-try-to-start-it-i-get-some-weird-error-messages"><a class="anchor" href="#i-cloned-babun-from-github-but-when-i-try-to-start-it-i-get-some-weird-error-messages"></a>I cloned Babun from github but when i try to start it I get some weird error messages.</h4>
+<div class="paragraph">
+<p>You have to download the distribution package from <a href="http://projects.reficio.org/babun/babun-dist.zip">here</a>.
+On github we only host raw source files. The dist package is enriched by cygwin and some other stuff you need to be able to run Babun.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-can-i-uninstall-babun"><a class="anchor" href="#how-can-i-uninstall-babun"></a>How can I uninstall Babun?</h4>
+<div class="paragraph">
+<p>Why would you? :-) Seriously, just delete the .babun folder (by default installed in %USER_HOME%).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="what-is-bloda-software"><a class="anchor" href="#what-is-bloda-software"></a>What is BLODA software?</h4>
+<div class="paragraph">
+<p>BLODA is a list of applications that may interfere with cygwin. This could be for example an anty virus program or
+a graphics card driver. See the <a href="https://cygwin.com/faq/faq.html#faq.using.bloda">cygwin page</a> for more details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="when-i-run-babun-i-can-see-em-your-prompt-is-very-slow-check-the-installed-bloda-software-em-how-to-fix-that"><a class="anchor" href="#when-i-run-babun-i-can-see-em-your-prompt-is-very-slow-check-the-installed-bloda-software-em-how-to-fix-that"></a>When I run Babun I can see: <em>Your prompt is very slow. Check the installed BLODA software</em>. How to fix that?</h4>
+<div class="paragraph">
+<p>Sometimes the prompt is slow when you start Babun as the initialization and loading of dll&#8217;s take time.
+But when you execute <code>babun check</code> it is usually ok again. In such case you can ignore this message.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-to-disable-bloda-warnings"><a class="anchor" href="#how-to-disable-bloda-warnings"></a>How to disable BLODA warnings?</h4>
+<div class="paragraph">
+<p>Put <code>export CYGWIN="nodosfilewarning mintty"</code> in the <code>~/.babunrc</code> file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="i-often-get-following-error-message-bash-2216-child_info_fork-abort-data-segment-start"><a class="anchor" href="#i-often-get-following-error-message-bash-2216-child_info_fork-abort-data-segment-start"></a>I often get following error message: "bash 2216 child_info_fork::abort: data segment start".</h4>
+<div class="paragraph">
+<p>This is a known cygwin issue. It may be caused by BLODA software. Sometimes <code>rebaseall</code> resolves this issue. Follow this <a href="http://stackoverflow.com/questions/9300722/cygwin-error-bash-fork-retry-resource-temporarily-unavailable">link</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-do-i-integrate-babun-with-conemu"><a class="anchor" href="#how-do-i-integrate-babun-with-conemu"></a>How do I integrate Babun with ConEmu?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Update to the latest ConEmu</p>
+</li>
+<li>
+<p>In ConEmu</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to Settings&gt;Startup&gt;Tasks</p>
+</li>
+<li>
+<p>Create a new task</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Task parameters - /icon "%userprofile%.babun\cygwin\bin\mintty.exe" /dir "%userprofile%"</p>
+</li>
+<li>
+<p>Commands %userprofile%.babun\cygwin\bin\mintty.exe -</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Babun is available in the "Create new console" menu.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-do-i-pin-babun-to-the-taskbar-in-windows-7-8"><a class="anchor" href="#how-do-i-pin-babun-to-the-taskbar-in-windows-7-8"></a>How do I pin Babun to the taskbar in Windows 7/8?</h4>
+<div class="paragraph">
+<p>Sometimes it happens that Babun does not start if it was previously pined from the running window and sometimes it
+shows different icon in the taskbar.</p>
+</div>
+<div class="paragraph">
+<p>This is how you can get around this problem:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Right click on the icon in the taskbar, right click on terminal and select properties</p>
+</li>
+<li>
+<p>In properties set the target to <code>C:\Users\&lt;user&gt;\.babun\babun.bat</code> (where &lt;user&gt; is your windows username)</p>
+</li>
+<li>
+<p>Set the icon to be the same as <code>MinTTY.exe</code> found in <code>C:\Users\&lt;user&gt;\.babun\cygwin\bin\MinTTY.exe</code> (you will need to click the dropdown and select Programs (*.exe) so you can see MinTTY.exe</p>
+</li>
+<li>
+<p>Click apply and you should now have a working taskbar item that runs Babun.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="old-version-of-git-doesn-t-like-my-gitconfig"><a class="anchor" href="#old-version-of-git-doesn-t-like-my-gitconfig"></a>Old version of Git doesn&#8217;t like my .gitconfig.</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">git clone git@github.com:Painted-Fox/docker-postgresql.git
+Cloning into 'docker-postgresql'...
+error: Malformed value for push.default: simple
+error: Must be one of nothing, matching, tracking or current.
+fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The fix for the error above was described <a href="http://stackoverflow.com/questions/14330050/how-to-get-git-1-8-in-cygwin">here</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="i-get-em-error-while-loading-shared-libraries-em-when-i-execute-git-commands"><a class="anchor" href="#i-get-em-error-while-loading-shared-libraries-em-when-i-execute-git-commands"></a>I get <em>error while loading shared libraries</em> when I execute git commands.</h4>
+<div class="paragraph">
+<p>Install gettext, libsasl2 and ca-certificates using pact.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="when-i-run-git-status-in-git-shell-and-in-babun-i-get-different-results"><a class="anchor" href="#when-i-run-git-status-in-git-shell-and-in-babun-i-get-different-results"></a>When I run git status in git shell and in Babun I get different results.</h4>
+<div class="paragraph">
+<p>It is probably an end-of-line issue. Execute <code>git config --list</code> both in cmd and in Babun and compare the
+<code>core.autocrlf</code> values. If your cmd prints <code>core.autocrlf = true</code> execute <code>git config --global core.autocrlf true</code> in Babun.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-do-i-install-gvm-tool"><a class="anchor" href="#how-do-i-install-gvm-tool"></a>How do I install gvm tool?</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>download gvmtool: <code>curl -s get.gvmtool.net | bash</code></p>
+</li>
+<li>
+<p>edit .bash_profile, .bashrc and .zshrc and replace all occurrences of <code>/c/Users/&#8230;</code> with <code>/cygdrive/c/Users/&#8230;</code></p>
+</li>
+<li>
+<p>restart babun</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="how-do-i-install-ruby"><a class="anchor" href="#how-do-i-install-ruby"></a>How do I install ruby?</h4>
+<div class="paragraph">
+<p>If you can live with ruby 1.9.3 then just install it via <code>pact install ruby</code>. If you need a newer version have a look at this <a href="https://github.com/babun/babun/issues/93">link</a>.</p>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2014.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-51064780-1', 'babun.github.io');
+ga('send', 'pageview');</script></body></html>
