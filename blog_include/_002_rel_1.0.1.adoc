@@ -24,6 +24,7 @@ jsevol https://github.com/babun/babun/pull/108[#108] https://github.com/babun/ba
 prabirshrestha https://github.com/babun/babun/pull/129[#129],
 dogrizz https://github.com/babun/babun/pull/138[#138],
 mmounirou https://github.com/babun/babun/pull/153[#153] https://github.com/babun/babun/pull/156[#156],
-bentsai https://github.com/babun/babun/pull/162[#162],
+bentsai https://github.com/babun/babun/pull/162[#162], 
+Johann-S https://github.com/babun/babun/pull/141[#141]
 jktravis,
 bitdeli-chef
