@@ -4,6 +4,7 @@
 Babun 1.0.1 is out! 
 
 There's a lot of goodies that have been included in this release - the most importants ones are:
+
 * There is no interference with the existing Cygwin installations.
 * You may have whicespace or accent characters in your Windows username.
 * You may install to a custom folder using the install.bat /t "d:\babun_folder" switch.
