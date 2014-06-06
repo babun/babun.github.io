@@ -1,0 +1,22 @@
+
+
+=== Supporters
+
+Special thanks go to companies who provided free hosting! 
+
+===== XCLOUD
+
+http://xcloud.me/[XCLOUD.ME] provided a free hosted OS X instance (a free Xcloud Mini Server subscription). It works like a charm! Thank you!
+
+image::https://raw.githubusercontent.com/babun/babun.github.io/master/images/xcloud_logo.png["XCLOUD", link="http://xcloud.me/", window="_blank"]
+"Run, manage and scale your virtual dedicated OS X Server in the Cloud."
+
+_XCLOUD is a trademark of AG from Switzerland._
+
+===== Windows Azure
+
+http://www.azure.microsoft.com[Windows Azure] provided a free Windows Hosting (a free, renewable MSDN subscription). Everything was organised by @bureado. Thank you!
+
+image::https://raw.githubusercontent.com/babun/babun.github.io/master/images/ms_azure_logo.png["Windows Azure", link="http://www.azure.microsoft.com", window="_blank"]
+
+_Microsoft and Windows are registered trademarks of Microsoft Corporation in the United States of America and other countries. Windows Azure is a trademark of Microsoft Corporation._
