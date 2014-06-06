@@ -8,7 +8,8 @@ There's a lot of goodies that have been included in this release - the most impo
 * There is no interference with the existing Cygwin installations.
 * You may have whicespace or accent characters in your Windows username.
 * You may install to a custom folder using the install.bat /t "d:\babun_folder" switch.
-* You may install having the %HOME% env variable set (babun will reuse user's Windows home folder)
+* You may install babun having the %HOME% env variable set (babun will reuse the user's Windows home folder)
+* You can easily pin babun to taskbar
 
 If you already have babun 1.0.0 just invoke "babun update" and enjoy the newest version!
 
