@@ -13,7 +13,6 @@ rm -rf "$DEV_DIR"
 rm -rf "$SCREENSHOTS_DIR"
 rm -rf "$FAQ_DIR"
 rm -rf "$BLOG_DIR"
-rm -rf "../index.html"
 
 mkdir "$DOWNLOAD_DIR"
 
