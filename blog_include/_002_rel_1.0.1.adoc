@@ -16,15 +16,25 @@ If you already have babun 1.0.0 just invoke "babun update" and enjoy the newest 
 We would like to thank the community for being very active and supportive. Special thanks to Babun's contributors:
 
 austingreco https://github.com/babun/babun/pull/75[#75],
+
 SamMorrowDrums https://github.com/babun/babun/pull/85[#85],
+
 meeech https://github.com/babun/babun/pull/85[#85],
+
 olivierdagenais https://github.com/babun/babun/pull/91[#91],
+
 simonbasle https://github.com/babun/babun/pull/103[#103],
+
 jsevol https://github.com/babun/babun/pull/108[#108] https://github.com/babun/babun/pull/110[#110],
+
 prabirshrestha https://github.com/babun/babun/pull/129[#129],
+
 dogrizz https://github.com/babun/babun/pull/138[#138],
+
 mmounirou https://github.com/babun/babun/pull/153[#153] https://github.com/babun/babun/pull/156[#156],
+
 bentsai https://github.com/babun/babun/pull/162[#162], 
+
 Johann-S https://github.com/babun/babun/pull/141[#141]
-jktravis,
-bitdeli-chef
+
+jktravis
