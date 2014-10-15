@@ -28,11 +28,11 @@ The core of Babun consists of a pre-configured Cygwin. Cygwin is a great tool, b
 
 ==== Package manager
 
-Babun provides a package manager called +pact+. It is similar to 'apt-get' or 'yum'. Pact enables installing/searching/upgrading and deinstalling cygwin packages with no hassle at all. Just invoke +pact --help+ to check how to use it.
+Babun provides a package manager called +pact+. It is similar to 'apt-get' or 'yum'. Pact enables installing/searching/upgrading and uninstalling cygwin packages with no hassle at all. Just invoke +pact --help+ to check how to use it.
 
 ==== Shell
 
-Babun's shell is tweaked in order to provide the best possible user-experience. There are two shell types that are pre-configured and avaiable right away - bash and zsh (zsh is the default one). Babun's shell features:
+Babun's shell is tweaked in order to provide the best possible user-experience. There are two shell types that are pre-configured and available right away - bash and zsh (zsh is the default one). Babun's shell features:
 
 * syntax highlighting
 * unix tools
@@ -75,7 +75,7 @@ Babun has a very small microkernel (cygwin, a couple of bash scripts and a bit o
 
 Self-update is at the very heart of babun! Many Cygwin tools are simple bash scripts - once you install them there is no chance of getting the newer version in a smooth way. You either delete the older version or overwrite it with the newest one losing all the changes you have made in between.
 
-Babun contains an auto-update feature which enables updating both the microkernel and the plugins. Files located in your home folder will not be delted nor overwritten which preserves your local config and customizations.
+Babun contains an auto-update feature which enables updating both the microkernel and the plugins. Files located in your home folder will not be deleted nor overwritten which preserves your local config and customizations.
 
 ==== Installer
 
