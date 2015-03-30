@@ -183,5 +183,6 @@ Once you completed all the tests please let us know
 - on which OS you have tested
 - send us the output if the test fails
 - let us know also if all tests pass
-- you can post your feedback directly in https://github.com/babun/babun/issues/266
+
+You can post your feedback directly to https://github.com/babun/babun/issues/266
 
