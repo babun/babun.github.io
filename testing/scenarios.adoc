@@ -5,16 +5,21 @@
 
 == Update your existing babun instance to 1.1.0
 
-*Before you start testing please zip your current babun instance for backup*
+*Before you start testing please zip your current babun instance for backup!*
 
 - Open babun
 - Execute babun check to check if your internet connection works
-- Run the http://babun.github.io/testing/test_setup_script.sh[test_setup_script.sh] in babun: (!!!!)
+- Run 'test_setup_script.sh' script in babun like this: (!)
 
 ----
+wget http://static.reficio.org/babun/babun-betatest-setup.sh
+
 dos2unix test_setup_script.sh
+
 chmod 755 test_setup_script.sh
+
 ./test_setup_script.sh
+
 source ~/.babunrc
 ----
 
@@ -27,11 +32,11 @@ source ~/.babunrc
 - cygwin update ended successfully
 - babun window popped up at the end of the installation process
 
-Execute steps described in Verification after installation
+Execute steps described in <<verify, Verification after installation>>
 
 == Fresh install 1.1.0 to user home
 
-- download babun 1.1.0 candidate from ... (please do not redistribute this file!)
+- download babun 1.1.0 candidate from http://static.reficio.org/babun/babun-1.1.0-candidate-dist.zip (please do not redistribute this file!)
 - install babun (execute 'install.bat')
 - execute 'babun check' (enter proxy in '~/.babunrc' if necessary)
 
@@ -39,20 +44,22 @@ Execute steps described in Verification after installation
 
 - The installation ended successfully and babun window popped up at the end of the installation process
 
-Execute steps described in Verification after installation
+Execute steps described in <<verify, Verification after installation>>
 
 == Fresh install 1.1.0 to folder with space
 
-- download babun 1.1.0 from ...
-- install babun to any folder with space (for example execute 'install.bat /t "d:/babun new"')
+- download babun 1.1.0 candidate from http://static.reficio.org/babun/babun-1.1.0-candidate-dist.zip (please do not redistribute this file!)
+- install babun to any folder with space (for example execute 'install.bat /t "d:/babun rocks"')
 - execute 'babun check' (enter proxy in '~/.babunrc' if necessary)
+
 
 === Verify installation
 
 - The installation ended successfully and babun window popped up at the end of the installation process
 
-Execute steps described in Verification after installation
+Execute steps described in <<verify, Verification after installation>>
 
+[[verify]]
 == Verification after installation
 
 *A*
@@ -65,7 +72,7 @@ expected: you should see symlinks to all your drives, like
 
 ----
 ...
-lrwxrwxrwx   1 tester Domain Users     11 Mar 30 20:37 c -> /cygdrive/c
+lrwxrwxrwx   1 rock star Domain Users     11 Mar 30 20:37 c -> /cygdrive/c
 ...
 ----
 
@@ -125,8 +132,8 @@ pact install ruby tmux
 expected: ruby and tmux are installed correctly
 
 ----
-ruby --version (prints its version)
-tmux (runs tmux. type 'exit' to exit)
+ruby --version (prints ruby's version)
+tmux (starts tmux. type 'exit' to exit)
 ----
 
 *F*
@@ -136,7 +143,7 @@ pact update arj
 arj --version
 ----
 
-expected arj is installed and prints it's version
+expected: arj is installed and prints it's version
 
 *G*
 
@@ -157,6 +164,15 @@ expected: command not found: arj
 
 *I*
 
+----
+open .
+open www.gmail.com
+----
+
+expected: should open windows explorer, should open web browser
+
+*J*
+
 Execute your daily tasks to see if everything works for you!!
 
 == Feedback
@@ -167,3 +183,5 @@ Once you completed all the tests please let us know
 - on which OS you have tested
 - send us the output if the test fails
 - let us know also if all tests pass
+- you can post your feedback directly in https://github.com/babun/babun/issues/266
+
