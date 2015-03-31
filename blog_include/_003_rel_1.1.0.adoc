@@ -1,0 +1,43 @@
+
+=== Babun 1.1.0 released (01.04.2015)
+
+After months of hard work the Babun 1.1.0 was finally promoted to production. 
+
+This release features an important change in the auto-update behavior.
+
+From now on the +babun update+ command will apart of updating babun itself also upgrade the underlying cygwin version with all already installed cygwin packages.
+
+The main reason for this change was to make sure that packages installed with +pact+ will not break when a new version of cygwin is released. Pact always fetches the newest available package from the cygwin repository, but it does not refresh cygwin's internal DLLs', thus it was possible that a new version of given package like git, ruby, emacs etc. was not working on top of the older cygwin version embedded in babun.
+
+For this reason it is important to keep packages and cygwin core libraries 'in sync'.
+
+Babun will check at startup if there is a newer cygwin version available and prompt the user to update it. 
+If the update is executed babun will start the cygwin installer, close itself and restart once the installation is completed.
+If the user does not perform the update he will not be able to install packages using pact normally. Instead he will be prompted with the following message:
+
+----
+{ ~ }  » pact install arj                                                                       ~
+-------------------------------------------------------------------------------
+CRITICAL: The underlying Cygwin version is outdated!
+It's forbidden to install new packages as they may fail to work.
+Execute 'babun update' and follow the instructions to update Cygwin.
+If you know what you are doing add '--force' flag to proceed.
+-------------------------------------------------------------------------------
+----
+
+As you can see it is still possible to install packages using the +--force+ option but it is not guaranteed that the downloaded package will work correctly.
+
+Big thanks to @v-yadli for helping us designing and developing the concept of this feature.
+
+
+The auto-update improvement is not the only change in 1.1.0. This release is shipped with other new features coded up during several hackergartens ('fake sudo', soft links to cygdrives, improved pact, etc) and a bunch of bug fixes.
+
+Many thanks to everybody who contributed to this release via pull requests, fixing typos and grammar mistakes and helping other users replying to reported issues.
+
+Thanks to @almorelle, @vanushv, @tonilampela, @v-yadli, @airborn and @kubamarchwicki for taking time and effort of testing the this version.
+
+We really hope that you'll like this relase. If you do, tweet about it, star babun on github or just... enjoy :)
+
+Cheers
+
+@lukaszpielak, @tombujok

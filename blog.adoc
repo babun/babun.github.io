@@ -4,6 +4,8 @@
 :linkattrs:
 pronounced "Baboon"
 
+//include::{blogdir}/_003_rel_1.1.0.adoc[]
+
 include::{blogdir}/_002_rel_1.0.1.adoc[]
 
 include::{blogdir}/_001_rel_1.0.0.adoc[]
