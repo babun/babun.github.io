@@ -34,7 +34,7 @@ The auto-update improvement is not the only change in 1.1.0. This release is shi
 
 * 'pact update', so that you may update a package to a newer version
 * 'fake sudo', so that you can run scripts containg sudo 
-* soft links to harddrives in /, like /c, /d, so that you may forget about /cygdrive/c
+* soft links to harddrives, like /c, /d, so that you may forget about /cygdrive/c
 * a lot of fixed bugs; all of them are listed here: https://github.com/babun/babun/issues/266
 
 
