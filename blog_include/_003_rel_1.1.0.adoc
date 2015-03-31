@@ -31,6 +31,7 @@ Big thanks to @v-yadli for helping us designing and developing the concept of th
 
 
 The auto-update improvement is not the only change in 1.1.0. This release is shipped with other new features coded up during several hackergartens, hacking sessions and long coding nights. The most important features are:
+
 * 'pact update', so that you may update a package to a newer version
 * 'fake sudo', so that you can run scripts containg sudo 
 * soft links to harddrives in /, like /c, /d, so that you may forget about /cygdrive/c
