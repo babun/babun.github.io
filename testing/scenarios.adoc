@@ -14,11 +14,11 @@
 ----
 wget http://static.reficio.org/babun/babun-betatest-setup.sh
 
-dos2unix test_setup_script.sh
+dos2unix babun-betatest-setup.sh
 
-chmod 755 test_setup_script.sh
+chmod 755 babun-betatest-setup.sh
 
-./test_setup_script.sh
+./babun-betatest-setup.sh
 
 source ~/.babunrc
 ----
