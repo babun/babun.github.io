@@ -143,7 +143,7 @@ pact update arj
 arj --version
 ----
 
-expected: arj is installed and prints it's version
+expected: arj is installed and prints it's version (ignore the arj's 'invalid switch' warning)
 
 *G*
 
