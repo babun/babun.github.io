@@ -27,7 +27,7 @@ If you know what you are doing add '--force' flag to proceed.
 
 As you can see it is still possible to install packages using the +--force+ option but it is not guaranteed that the downloaded package will work correctly.
 
-Big thanks to @v-yadli for helping us designing and developing the concept of this feature.
+Big thanks to https://github.com/v-yadli[@v-yadli] for helping us designing and developing the concept of this feature.
 
 
 The auto-update improvement is not the only change in 1.1.0. This release is shipped with other new features coded up during several hackergartens, hacking sessions and long coding nights. The most important features are:
@@ -40,7 +40,7 @@ The auto-update improvement is not the only change in 1.1.0. This release is shi
 
 Many thanks to everybody who contributed to this release via pull requests, by helping other users, or even by fixing typos!
 
-Also a big thank you to @almorelle, @vanushv, @tonilampela, @v-yadli, @harijoe, @airborn and @kubamarchwicki for taking time and effort of testing the this version.
+Also a big thank you to https://github.com/almorelle[@almorelle], https://github.com/vanushv[@vanushv], https://github.com/tonilampela[@tonilampela], https://github.com/v-yadli[@v-yadli], https://github.com/harijoe[@harijoe], https://github.com/airborn[@airborn] and https://github.com/kubamarchwicki[@kubamarchwicki] for taking time and effort of testing the this version.
 
 In case you have the previous version installed it's important to invoke 'babun update' to stay up-to-date!
 
