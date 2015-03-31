@@ -36,7 +36,9 @@ Many thanks to everybody who contributed to this release via pull requests, fixi
 
 Thanks to @almorelle, @vanushv, @tonilampela, @v-yadli, @airborn and @kubamarchwicki for taking time and effort of testing the this version.
 
-We really hope that you'll like this relase. If you do, tweet about it, star babun on github or just... enjoy :)
+In case you have the previous version installed, just invode 'babun update'. 
+
+We really hope that you'll like this release. If you do, tweet about it, star babun on github or just... enjoy :)
 
 Cheers
 
