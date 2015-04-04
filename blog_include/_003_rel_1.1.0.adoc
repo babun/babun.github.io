@@ -52,24 +52,24 @@ Cheers
 
 P.S. If somebody is interested in the full list of issues that have been squashed in 1.1.0, just have a look:
 
-* MD5 sum did not patch, exiting #265
-* Package 'git' is broken after update #259
-* Cmake just returns to prompt without doing anything #252
-* Upgrading Git #242
-* versioning in pact, and pact upgrade & pact dist-upgrade (or the other way) #239
-* Updating git #232
-* Numpy not working after pact install #231
-* Command exits with 127 on Babun, but works on Cygwin #225
-* Unable to start X server after pact install xorg-server xinit #222
-* Emacs doesn't run #210
-* g++ compilation doesn't produce any resulting file #203
-* Upgrading with pact not available #199
-* shellshock: bash 4.1.10(4) and zsh 5.0.2 (i686-cygwin) vulnerablility #198
-* Pact Installer, Md5 checksum not matching... #257
-* Add "login" command to babun's script #253
-* Rerun babun startup scripts after running 'babun update' #250
-* Duplicate call of babun.zsh in /etc/zshrc #249
-* Git plugin changes my gitconfig #247
-* Cannot update oh-my-zsh on start #211
-* etc/zprofile is being called twice causing CHERE_INVOKING to fail. #205
-* `.bashrc` running three times #166
+* MD5 sum did not patch, exiting https://github.com/babun/babun/issues/265[#265]
+* Package 'git' is broken after update https://github.com/babun/babun/issues/259[#259]
+* Cmake just returns to prompt without doing anything https://github.com/babun/babun/issues/252[#252]
+* Upgrading Git https://github.com/babun/babun/issues/242[#242]
+* versioning in pact, and pact upgrade & pact dist-upgrade (or the other way) https://github.com/babun/babun/issues/239[#239]
+* Updating git https://github.com/babun/babun/issues/232[#232]
+* Numpy not working after pact install https://github.com/babun/babun/issues/231[#231]
+* Command exits with 127 on Babun, but works on Cygwin https://github.com/babun/babun/issues/225[#225]
+* Unable to start X server after pact install xorg-server xinit https://github.com/babun/babun/issues/222[#222]
+* Emacs doesn't run https://github.com/babun/babun/issues/210[#210]
+* g++ compilation doesn't produce any resulting file https://github.com/babun/babun/issues/203[#203]
+* Upgrading with pact not available https://github.com/babun/babun/issues/199[#199]
+* shellshock: bash 4.1.10(4) and zsh 5.0.2 (i686-cygwin) vulnerablility https://github.com/babun/babun/issues/198[#198]
+* Pact Installer, Md5 checksum not matching... https://github.com/babun/babun/issues/257[#257]
+* Add "login" command to babun's script https://github.com/babun/babun/issues/253[#253]
+* Rerun babun startup scripts after running 'babun update' https://github.com/babun/babun/issues/250[#250]
+* Duplicate call of babun.zsh in /etc/zshrc https://github.com/babun/babun/issues/249[#249]
+* Git plugin changes my gitconfig https://github.com/babun/babun/issues/247[#247]
+* Cannot update oh-my-zsh on start https://github.com/babun/babun/issues/211[#211]
+* etc/zprofile is being called twice causing CHERE_INVOKING to fail. https://github.com/babun/babun/issues/205[#205]
+* `.bashrc` running three times https://github.com/babun/babun/issues/166[#166]
