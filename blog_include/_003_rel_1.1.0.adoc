@@ -1,5 +1,5 @@
 
-=== Babun 1.1.0 released (01.04.2015)
+=== Babun 1.1.0 released (04.04.2015)
 
 After months of hard work a new version of Babun has been finally promoted to production! 
 
@@ -49,3 +49,27 @@ We really hope that you'll like this release. If you do, tweet about it, star ba
 Cheers
 
 @lukaszpielak, @tombujok
+
+P.S. If somebody is interested in the full list of issues that have been squashed in 1.1.0, just have a look:
+
+* MD5 sum did not patch, exiting #265
+* Package 'git' is broken after update #259
+* Cmake just returns to prompt without doing anything #252
+* Upgrading Git #242
+* versioning in pact, and pact upgrade & pact dist-upgrade (or the other way) #239
+* Updating git #232
+* Numpy not working after pact install #231
+* Command exits with 127 on Babun, but works on Cygwin #225
+* Unable to start X server after pact install xorg-server xinit #222
+* Emacs doesn't run #210
+* g++ compilation doesn't produce any resulting file #203
+* Upgrading with pact not available #199
+* shellshock: bash 4.1.10(4) and zsh 5.0.2 (i686-cygwin) vulnerablility #198
+* Pact Installer, Md5 checksum not matching... #257
+* Add "login" command to babun's script #253
+* Rerun babun startup scripts after running 'babun update' #250
+* Duplicate call of babun.zsh in /etc/zshrc #249
+* Git plugin changes my gitconfig #247
+* Cannot update oh-my-zsh on start #211
+* etc/zprofile is being called twice causing CHERE_INVOKING to fail. #205
+* `.bashrc` running three times #166
