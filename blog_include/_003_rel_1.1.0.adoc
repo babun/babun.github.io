@@ -48,7 +48,7 @@ We really hope that you'll like this release. If you do, tweet about it, star ba
 
 Cheers
 
-@lukaszpielak, @tombujok
+https://twitter.com/lukaszpielak[@lukaszpielak], https://twitter.com/tombujok[@tombujok]
 
 P.S. If somebody is interested in the full list of issues that have been squashed in 1.1.0, just have a look:
 
