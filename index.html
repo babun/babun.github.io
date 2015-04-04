@@ -26,7 +26,7 @@ The application will be installed to the <code>%USER_HOME%\.babun</code> directo
 <i class="icon-note" title="Note"></i>
 </td>
 <td class="content">
-There is no inteference with existing Cygwin installation
+There is no interference with existing Cygwin installation
 </td>
 </tr>
 </table>
@@ -38,7 +38,7 @@ There is no inteference with existing Cygwin installation
 <i class="icon-note" title="Note"></i>
 </td>
 <td class="content">
-You may have "whitespace" chars in your username - it is not recommende by Cygwin though <a href="http://cygwin.com/faq.html#faq.setup.name-with-space">FAQ</a>
+You may have "whitespace" chars in your username - it is not recommended by Cygwin though <a href="http://cygwin.com/faq.html#faq.setup.name-with-space">FAQ</a>
 </td>
 </tr>
 </table>
@@ -109,7 +109,7 @@ You may have "whitespace" chars in your username - it is not recommende by Cygwi
 <div class="sect3">
 <h4 id="shell"><a class="anchor" href="#shell"></a>Shell</h4>
 <div class="paragraph">
-<p>Babun&#8217;s shell is tweaked in order to provide the best possible user-experience. There are two shell types that are pre-configured and avaiable right away - bash and zsh (zsh is the default one). Babun&#8217;s shell features:</p>
+<p>Babun&#8217;s shell is tweaked in order to provide the best possible user-experience. There are two shell types that are pre-configured and available right away - bash and zsh (zsh is the default one). Babun&#8217;s shell features:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -117,7 +117,7 @@ You may have "whitespace" chars in your username - it is not recommende by Cygwi
 <p>syntax highlighting</p>
 </li>
 <li>
-<p>unix tools</p>
+<p>UNIX tools</p>
 </li>
 <li>
 <p>software development tools</p>
@@ -154,13 +154,13 @@ You may have "whitespace" chars in your username - it is not recommende by Cygwi
 <div class="ulist">
 <ul>
 <li>
-<p>programming languages (python, perl, etc.)</p>
+<p>programming languages (Python, Perl, etc.)</p>
 </li>
 <li>
 <p>git (with a wide variety of aliases and tweaks)</p>
 </li>
 <li>
-<p>unix tools (grep, wget, curl, etc.)</p>
+<p>UNIX tools (grep, wget, curl, etc.)</p>
 </li>
 <li>
 <p>vcs (svn, git)</p>
@@ -197,6 +197,12 @@ You may have "whitespace" chars in your username - it is not recommende by Cygwi
 <p>pact</p>
 </li>
 <li>
+<p>cygdrive</p>
+</li>
+<li>
+<p>dist</p>
+</li>
+<li>
 <p>shell</p>
 </li>
 </ul>
@@ -208,7 +214,7 @@ You may have "whitespace" chars in your username - it is not recommende by Cygwi
 <p>Self-update is at the very heart of babun! Many Cygwin tools are simple bash scripts - once you install them there is no chance of getting the newer version in a smooth way. You either delete the older version or overwrite it with the newest one losing all the changes you have made in between.</p>
 </div>
 <div class="paragraph">
-<p>Babun contains an auto-update feature which enables updating both the microkernel and the plugins. Files located in your home folder will not be delted nor overwritten which preserves your local config and customizations.</p>
+<p>Babun contains an auto-update feature which enables updating both the microkernel, the plugins and even the underlying cygwin. Files located in your home folder will never be deleted nor overwritten which preserves your local config and customizations.</p>
 </div>
 </div>
 <div class="sect3">
@@ -298,20 +304,22 @@ Package arj installed</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">{ ~ }  » pact --help                                                                         ~
+<pre class="nowrap">{ ~ }  » pact --help
 pact: Installs and removes Cygwin packages.
 
 Usage:
-  "pact install &lt;package names&gt;" to install packages
-  "pact remove &lt;package names&gt;" to remove packages
-  "pact update" to update setup.ini
+  "pact install &lt;package names&gt;" to install given packages
+  "pact remove &lt;package names&gt;" to remove given packages
+  "pact update &lt;package names&gt;" to update given packages
   "pact show" to show installed packages
   "pact find &lt;patterns&gt;" to find packages matching patterns
   "pact describe &lt;patterns&gt;" to describe packages matching patterns
   "pact packageof &lt;commands or files&gt;" to locate parent packages
+  "pact invalidate" to invalidate pact caches (setup.ini, etc.)
 Options:
   --mirror, -m &lt;url&gt; : set mirror
-  --update, -u       : force update setup.ini from mirror
+  --invalidate, -i       : invalidates pact caches (setup.ini, etc.)
+  --force, -f : force the execution
   --help
   --version</pre>
 </div>
@@ -352,11 +360,26 @@ Options:
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="nowrap">{ ~ } » babun check                                                                          ~
+<pre class="nowrap">{ ~ }  » babun check                                                                         ~
 Executing babun check
 Prompt speed      [OK]
 Connection check  [OK]
-Update check      [OK]</pre>
+Update check      [OK]
+Cygwin check      [OK]</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By executing this command you can also check whether there is a newer cygwin version available:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">{ ~ }  » babun check                                                                            ~
+Executing babun check
+Prompt speed      [OK]
+Connection check  [OK]
+Update check      [OK]
+Cygwin check      [OUTDATED]
+Hint: the underlying Cygwin kernel is outdated. Execute 'babun update' and follow the instructions!</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -372,7 +395,8 @@ Executing babun check
 Prompt speed      [SLOW]
 Hint: your prompt is very slow. Check the installed 'BLODA' software.
 Connection check  [OK]
-Update check      [OK]</pre>
+Update check      [OK]
+Cygwin check      [OK]</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -425,6 +449,9 @@ export LC_ALL="en_US.UTF-8"
 </div>
 <div class="paragraph">
 <p>Please note that your local configuration files will not be overwritten.</p>
+</div>
+<div class="paragraph">
+<p>The <em>babun update</em> command will also update the underlying cygwin version if a newer version is available. In such case babun will download the new cygwin installer, close itself and start the cygwin installation process. Once cygwin installation is completed babun will restart.</p>
 </div>
 </div>
 </div>
@@ -493,10 +520,13 @@ export LC_ALL="en_US.UTF-8"
 <li>
 <p>Fork it on <a href="https://github.com/babun/babun">github</a> and submit pull request</p>
 </li>
+<li>
+<p>Motivate the community, tweet about the project and star it on github :)</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
-<p>We are looking for new contributors, so if you fancy bash progamming and if you would like to contribute a patch or a code up a new plugin give us a shout!</p>
+<p>We are looking for new contributors, so if you fancy bash programming and if you would like to contribute a patch or a code up a new plugin give us a shout!</p>
 </div>
 <div class="paragraph">
 <p>Visit the <a href="http://babun.github.io/development/">development</a> section to find out how to create plugins and extensions.</p>

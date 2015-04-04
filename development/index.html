@@ -1,0 +1,279 @@
+<!DOCTYPE html><!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]--><!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]--><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Babun - a windows shell you will love | Babun</title><meta name="author" content="pronounced "Baboon""><link rel="stylesheet" href="/stylesheets/styles.css"><script src="/javascripts/vendor/custom.modernizr.js"></script></head><body class="antialiased"><nav class="top-bar"><ul class="title-area"><li class="name"><h1><a href="/">Babun (pronounced Baboon)</a></h1></li></ul><li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li><section class="top-bar-section"><ul class="right"><li class="divider"></li><li><a href="/">About</a></li><li class="divider"></li><li><a href="/development/">Development</a></li><li class="divider"></li><li><a href="/screenshots/">Screenshots</a></li><li class="divider"></li><li><a href="/faq/">FAQ</a></li><li class="divider"></li><li><a href="/blog/">Blog</a></li></ul></section></nav><div class="container"><header><div class="row"><div class="large-8 columns hero"><h1>Babun</h1><p><strong>a windows shell you will love!</strong></p></div><div class="large-4 columns hero"><div class="actions"><a class="button secondary" href="http://projects.reficio.org/babun/babun-dist.zip" style="color: #6d180b; max-width: 220px;"><i class="icon-download icon-2x pull-left"></i>Download latest stable version</a><a class="button secondary" href="http://github.com/babun/babun" style="max-width: 220px;"><i class="icon-github icon-2x pull-left"></i>Get source from GitHub</a></div></div></div></header><div class="row"><div class="large-12 columns"><div class="row"><div class="large-12 columns"><div class="sect1">
+<h2 id="development"><a class="anchor" href="#development"></a>Development</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="project-structure"><a class="anchor" href="#project-structure"></a>Project structure</h3>
+<div class="paragraph">
+<p>The project consists of five modules.</p>
+</div>
+<div class="sect3">
+<h4 id="babun-packages"><a class="anchor" href="#babun-packages"></a>babun-packages</h4>
+<div class="paragraph">
+<p>The main goal of the <code>babun-packages</code> module is to download the cygwin packages listed in the <code>conf/cygwin.x86.packages</code> file.
+The above mentioned packages will be downloaded together with the whole dependency tree. Repositories which the packages are downloaded from are listed in the <code>conf/cygwin.repositories</code> file. At the beginning the first repository is taken, if a package is not available in this repo the second repo is used, etc. The process continues until all packages have been downloaded.</p>
+</div>
+<div class="paragraph">
+<p>All downloaded packages are stored in the <code>target/babun-packages</code> folder.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="babun-cygwin"><a class="anchor" href="#babun-cygwin"></a>babun-cygwin</h4>
+<div class="paragraph">
+<p>The main goal of the <code>babun-cygwin</code> module is to download and invoke the native cygwin.exe installer. The packages downloaded by the babun-packages module are used as the input - all of them will be installed in the offline cygwin installation.</p>
+</div>
+<div class="paragraph">
+<p>It is not trivial to install and zip a local instance of Cygwin - there are problems with the symlinks as the symlink-file-flags are lost during the compression process. Babun can work it around though. At first, just after the installation, the <code>symlinks_find.sh</code> script is invoked in order to store the list of all cygwin&#8217;s symlinks. This file is delivered as a part of the the babun&#8217;s core. Then, after babun is installed from the zip file on the user&#8217;s host the <code>symlinks_repair.sh</code> script is invoked - it will correct all the broken symlinks listed in the above mentioned file.</p>
+</div>
+<div class="paragraph">
+<p>Preinstalled cygwin is located in the <code>target/babun-cygwin</code> folder.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="babun-core"><a class="anchor" href="#babun-core"></a>babun-core</h4>
+<div class="paragraph">
+<p>The main goal of the <code>babun-core</code> module is to install babun&#8217;s core along with all the plugins and tools. <code>install.sh</code> script is invoked during the creation of the distribution package in order to preinstall the plugins. Whenever babun is installed on the user&#8217;s host the <code>install_home.sh</code> script is invoke in order to install the babun-related files to the cygwin-user&#8217;s home folder.</p>
+</div>
+<div class="paragraph">
+<p>Preinstalled cygwin with installed babun is located in the <code>target/babun-cygwin</code> folder.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="babun-dist"><a class="anchor" href="#babun-dist"></a>babun-dist</h4>
+<div class="paragraph">
+<p>The main goal of the <code>babun-dist</code> module is to zip the ready-made instance of babun, copy some installation scripts and zip the distribution.</p>
+</div>
+<div class="paragraph">
+<p>Distribution package is located in the <code>target/babun-dist</code> folder.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="babun-doc"><a class="anchor" href="#babun-doc"></a>babun-doc</h4>
+<div class="paragraph">
+<p>This module contains documentation written in ASCIIDOC.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="building-from-source"><a class="anchor" href="#building-from-source"></a>Building from source</h3>
+<div class="paragraph">
+<p>The project is regularly build on Jenkins, on a slave node featuring the Windows Server OS. The Windows OS is required to fully build the distribution package as one of the goals invokes the native <code>cygwin.exe</code> installer. The artifacts created by each module are cached/stored in the target folder after a successful build of each step. This mechanism is not intelligent enough to calculate the diffs so if you would like to fully rebuild the whole dist package make sure to invoke the <code>clean</code> goal before the <code>package</code> goal. For now it&#8217;s not possible to invoke a build of a selective modules only.</p>
+</div>
+<div class="paragraph">
+<p>In order to build the dist package invoke:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">groovy build.groovy package</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to clean the project target folder invoke:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">groovy build.groovy clean</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In order to publish the release version to bintray invoke:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">groovy build.groovy release</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The release goal expects the following environment variables: <code>bintray_user</code> and <code>bintray_secret</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="developing-a-plugin"><a class="anchor" href="#developing-a-plugin"></a>Developing a plugin</h3>
+<div class="paragraph">
+<p>Every plugin has to consist of three main files:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>install.sh - a file that will be executed during the creation of the babun&#8217;s distribution</p>
+</li>
+<li>
+<p>install_home.sh - a file that will be executed during the installation of babun to the user&#8217;s home folder</p>
+</li>
+<li>
+<p>plugin.desc - a plugin description that contains the plugin_name and plugin_version variables</p>
+</li>
+<li>
+<p>start.sh (optional) - a file that will be executed on babun startup</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Have a look at the pact plugin - it&#8217;s a perfect example of a relatively small plugin using all the features.</p>
+</div>
+<div class="sect3">
+<h4 id="install-sh"><a class="anchor" href="#install-sh"></a>install.sh</h4>
+<div class="paragraph">
+<p>Its main responsibility is to install the plugin - for example to copy the plugin files to, e.g. <code>/usr/local/etc</code> or <code>/usr/local/bin</code> directories. install.sh script is also responsible for preparing the user&#8217;s home folder template. The template files have to be copied to the <code>/usr/local/babun/home/&lt;plugin_name&gt;</code> folder.</p>
+</div>
+<div class="paragraph">
+<p>install.sh will be invoked many times - on every plugin update if the plugin version is higher than the version of the installed plugin - thus it&#8217;s logic has to work in an incremental way. This mechanism is invoked automatically though. The plugin does not have to contain the version check.</p>
+</div>
+<div class="paragraph">
+<p>The script has to begin with the following statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">#!/bin/bash
+set -e -f -o pipefail
+source "/usr/local/etc/babun/source/babun-core/tools/script.sh"</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="install_home-sh"><a class="anchor" href="#install_home-sh"></a>install_home.sh</h4>
+<div class="paragraph">
+<p>Its main responsibility is to configure the user&#8217;s home folder with the plugin related stuff, if necessary. For example, it may copy the files from the <code>/usr/local/babun/home/&lt;plugin_name&gt;</code> folder to the user&#8217;s home folder.
+It is also responsible for any other things that may be necessary during the user&#8217;s home configuration process.</p>
+</div>
+<div class="paragraph">
+<p>install_home.sh will be invoked many times - on every plugin update if the plugin version is higher than the version of the installed plugin - thus it&#8217;s logic has to work in an incremental way.</p>
+</div>
+<div class="paragraph">
+<p>Both scripts (install.sh and install_home.sh) scripts have to begin with the following statement:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">#!/bin/bash
+set -e -f -o pipefail
+source "/usr/local/etc/babun/source/babun-core/tools/script.sh"</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="plugin-desc"><a class="anchor" href="#plugin-desc"></a>plugin.desc</h4>
+<div class="paragraph">
+<p>A plugin descriptor looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap"># plugin descriptor
+plugin_name=pact
+plugin_version=1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Every time the plugin is changed the version has to be incremented. Otherwise the newest version will not be installed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="start-sh-optional"><a class="anchor" href="#start-sh-optional"></a>start.sh (optional)</h4>
+<div class="paragraph">
+<p>The start.sh is an optional script for plugins that require triggering certain actions on every babun start (for example update check).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="branches"><a class="anchor" href="#branches"></a>Branches</h3>
+<div class="paragraph">
+<p>The babun&#8217;s repository contains three main branches:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>master - development branch</p>
+</li>
+<li>
+<p>candidate - release candidate branch, no direct commits, only fast forwards from the master/other branch</p>
+</li>
+<li>
+<p>release - release, no direct commits, only fast forwards from the candidate branch</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In order to check babun update against other branch (for example during a development of a plugin), set the babun_branch variable to (master or candidate). External repo&#8217;s are not supporter (this mechanism has to be extended to include user&#8217;s repos).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="folder-structure-in-cygwin"><a class="anchor" href="#folder-structure-in-cygwin"></a>Folder structure in Cygwin</h3>
+<div class="paragraph">
+<p>An instance of babun installed in Cygwin is located in the <code>/usr/local/etc/babun</code> folder.
+The folder structure looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="nowrap">├── babun
+│   ├── external
+│   │   └── oh-my-zsh
+│   ├── home
+│   │   ├── core
+│   │   ├── oh-my-zsh
+│   │   ├── pact
+│   │   └── shell
+│   ├── installed
+│   │   ├── babun
+│   │   ├── cacert
+│   │   ├── core
+│   │   ├── git
+│   │   ├── oh-my-zsh
+│   │   ├── pact
+│   │   └── shell
+│   ├── source
+│   │   ├── babun.version
+│   │   ├── babun-core
+│   │   ├── babun-cygwin
+│   │   ├── babun-dist
+│   │   ├── babun-doc
+│   │   ├── babun-packages
+│   │   ├── build.groovy
+│   │   └── README.adoc
+│   └── stamps
+│       ├── check
+│       └── welcome
+├── babun.bash
+├── babun.instance
+├── babun.rc
+├── babun.start
+└── babun.zsh
+
+16 directories, 17 files</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="source"><a class="anchor" href="#source"></a>source</h4>
+<div class="paragraph">
+<p>The folder contains the sources of babun checkout from github.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="stamps"><a class="anchor" href="#stamps"></a>stamps</h4>
+<div class="paragraph">
+<p>The folder contains files which modification time indicates certain things to babun. For example <code>babun check</code> is executed automatically on babun&#8217;s start up every 24 hours. Whenever it&#8217;s invoked a file named <code>checked</code> is being modified (the content of the modification does not matter).Whenever the mod_time of this file is not within 24 hours and babun is being started a <code>babun check</code> will be invoked and the file <code>check</code> located in the <code>stamps</code> folder will be modified again.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="installed"><a class="anchor" href="#installed"></a>installed</h4>
+<div class="paragraph">
+<p>The folder contains files that indicated which versions of babun&#8217;s plugins and babun itself are installed. Each file contains a number - for example: a file named <code>core</code> contains has one line with number <code>2</code> in its content. It means that the plugin <code>core</code> is installed and has version <code>2</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="external"><a class="anchor" href="#external"></a>external</h4>
+<div class="paragraph">
+<p>The folder contains external resources, like cloned repos of other projects (for example oh-my-zsh).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="home"><a class="anchor" href="#home"></a>home</h4>
+<div class="paragraph">
+<p>The folder contains folders named like plugins. If a plugin needs to install something to user&#8217;s folder this content has to be copied to "home/&lt;plugin_name&gt;" folder. It&#8217;s just a store of the user&#8217;s home files, so that whenever a new user&#8217;s account is created babun can install user&#8217;s home related content to the user&#8217;s home folder (it&#8217;s the plugin install_home.sh script&#8217;s responsibility, however, to copy this content to the actual user&#8217;s home folder).</p>
+</div>
+</div>
+</div>
+</div>
+</div></div></div></div></div></div><footer><div class="row full-width"><div class="large-6 columns"><p>&copy; Babun Team 2015.<br>Babun is licensed under the Apache License v2.</p></div><div class="large-6 columns"></div></div></footer><script>document.write('<script src=' + ('__proto__' in {} ? '/javascripts/vendor/zepto' : '/javascripts/vendor/jquery') + '.js><\/script>')</script><script src="/javascripts/foundation/foundation.js"></script><script src="/javascripts/foundation/foundation.topbar.js"></script><script>$(document).foundation();</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-51064780-1', 'babun.github.io');
+ga('send', 'pageview');</script></body></html>
