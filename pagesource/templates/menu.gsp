@@ -28,7 +28,7 @@
                   <i class="fa fa-file-text-o"></i> &nbsp; Follow us on Twitter
                 </a>
                 <a href="http://github.com/babun/babun" target="_blank">
-                  <i class="fa fa-github"></i> &nbsp; Get sources from Github
+                  <i class="fa fa-github"></i> &nbsp; Get sources from GitHub
                 </a></li>
                 
                 <!--<li><a href="#">Something else here</a></li>
