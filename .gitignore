@@ -8,3 +8,4 @@ _tmp
 Gemfile.lock
 .idea
 *.iml
+*.log
