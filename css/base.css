@@ -13,14 +13,14 @@ body {
   height: auto !important;
   height: 100%;
   /* Negative indent footer by it's height */
-  margin: 0 auto -60px;
+  /*margin: 0 auto -60px;*/
 }
 
 /* Set the fixed height of the footer here */
-#push,
+/*#push,
 #footer {
   height: 60px;
-}
+}*/
 #footer {
   background-color: #f5f5f5;
   padding: 0;
@@ -33,6 +33,7 @@ body {
     margin-right: -20px;
     padding-left: 20px;
     padding-right: 20px;
+    /*height: 100px;*/
   }
 }
 
@@ -46,10 +47,6 @@ body {
 .container .credit {
   margin: 20px 0;
 }
-
-/*code {
-  font-size: 80%;
-}*/
 
 /* ================================== */
 /*  overriden bootstrap attributes    */
