@@ -1,3 +1,13 @@
+<!-- =================================================================================== -->
+<!-- THIS PAGE WAS GENERATED. DO NOT MODIFY IT!!! -->
+<!-- Instead edit the *.adoc files at: -->
+<%if (content.type == "post" || content.type == "blog") {%>
+<!-- https://github.com/babun/babun.github.io/tree/master/pagesource/content/blog_posts-->
+<%} else {%>
+<!-- https://github.com/babun/babun/tree/master/babun-doc/adoc-->
+<%}%>
+<!-- =================================================================================== -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head profile="http://www.w3.org/2005/10/profile">

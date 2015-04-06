@@ -1,0 +1,3 @@
+= Folder contains generated files, do not modify!
+
+If you find a typo and would like to fix it please do it in https://github.com/babun/babun/tree/master/babun-doc/adoc
