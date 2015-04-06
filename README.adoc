@@ -1,7 +1,7 @@
 
 = Babun - a Windows shell you will love!
 
-Website of the project babun.
+Website of the project http://babun.github.io[babun].
 
 == Building the site from source
 
@@ -11,21 +11,61 @@ Website of the project babun.
 gvm install jbake
 ----
 
-You're done!
-
 == Running the site locally
 
- $ jbake -s
+----
+-> jbake -s
+
+JBake v2.3.2 [http://jbake.org]
+INFO  org.jbake.launcher.JettyServer - Serving out contents of: [output] on http://localhost:8820/
+INFO  org.jbake.launcher.JettyServer - (To stop server hit CTRL-C)
+----
+
+Note that the server does neither generate nor reload changes from the filesystem. It offers a pure preview option.
+
+== Adding or editing website content
+
+Apart of blog entries the content on the website is generated out of documents located in https://github.com/babun/babun/tree/master/babun-doc/adoc. 
+If you want to make changes please make it there and run the `update.sh` script (see deployment instructions).
+
+Please note that a new root document (not included asciidoc file) needs to have a header with metadata information. Standard webpages are of `type=page`.
+
+== Adding a new blog entry
+
+Place a new asciidoc file into `pagesource/content/blog_posts` and add the following header into it:
+
+----
+title=POST_TITLE
+date=_POST_DATE
+type=post
+tags=blog, asciidoc
+status=published
+author=YOUR_NAME
+~~~~~~
+----
+
+There is no need to include blog files. Each file of `type=post` will be attached to the blog page automatically.
 
 == Deploying the website to github pages
+
+To regenerate and deploy the website to github pages do the following:
 
 ----
  $ cd pagesource/scripts
  $ chmod 755 update.sh bake.sh
  $ ./update.sh
+----
+
+This will load the most recent changes from https://github.com/babun/babun/tree/master/babun-doc/adoc
+
+Next execute the bake script to regenerate `html` files.
+
+----
  $ ./bake.sh
 ----
 
+Please pay attention if the process completed successfully and test your changes before checking in.
+
 == Visit the website
 
-Visit babun's project: http://babun.github.io[website].
+Visit babun's project: http://babun.github.io[website] and verify changes.
