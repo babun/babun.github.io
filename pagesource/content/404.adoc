@@ -1,12 +1,20 @@
-= (404) Babun - a windows shell you will love...
+= (404) Page not found 
 :jbake-type: page
 :jbake-status: published
-:jbake-tags: blog, asciidoc
-:includedir: page_include
-:linkattrs:
-:sectlinks:
-:sectanchors:
 
-== ... once you find it ;)
+== Babun - a windows shell you will love... if you find it ;)
 
-Sorry the page you are trying to open does not exist. 
+----
+{ ~ }  » babun check                                                                          ~ 1
+$ Executing babun check
+$ Source consistent [OK]
+$ Prompt speed      [OK]
+$ File permissions  [OK]
+$ Connection check  [OK]
+$ Update check      [OK]
+$ Cygwin check      [OK]
+
+{ ~ }  » open webpage
+$ locating webpage  [FAILED]
+$ Sorry the page you are trying to open does not exist!
+----
