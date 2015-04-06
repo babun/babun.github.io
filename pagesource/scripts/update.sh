@@ -3,15 +3,9 @@
 BABUN_DOC_REPO='https://raw.githubusercontent.com/babun/babun/master/babun-doc/adoc'
 CONTENT_DIR='../content'
 DOWNLOAD_DIR="$CONTENT_DIR/page_include"
-DEV_DIR="$CONTENT_DIR/development"
-SCREENSHOTS_DIR="$CONTENT_DIR/screenshots"
-FAQ_DIR="$CONTENT_DIR/faq"
 
 echo "Cleaning out old files"
 rm -rf "$DOWNLOAD_DIR"
-rm -rf "$DEV_DIR"
-rm -rf "$SCREENSHOTS_DIR"
-rm -rf "$FAQ_DIR"
 
 mkdir "$DOWNLOAD_DIR"
 
