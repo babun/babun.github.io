@@ -36,7 +36,7 @@ Place a new asciidoc file into `pagesource/content/blog_posts` and add the follo
 
 ----
 title=POST_TITLE
-date=_POST_DATE
+date=POST_DATE
 type=post
 tags=blog, asciidoc
 status=published
@@ -64,8 +64,8 @@ Next execute the bake script to regenerate `html` files.
  $ ./bake.sh
 ----
 
-Please pay attention if the process completed successfully and test your changes before checking in.
+Please check if the process completed successfully and test your changes before checking in.
 
 == Visit the website
 
-Visit babun's project: http://babun.github.io[website] and verify changes.
+Visit babun's project http://babun.github.io[website] and verify changes.
