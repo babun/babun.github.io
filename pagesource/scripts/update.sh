@@ -1,4 +1,10 @@
 #!/bin/bash
+set -e -f -o pipefail
+
+if [[ ! -f "./.scripthome" ]]; then
+	echo "You can only execute the script from the 'pagesource/scripts' directory";
+	exit 1;
+fi
 
 BABUN_DOC_REPO='https://raw.githubusercontent.com/babun/babun/master/babun-doc/adoc'
 CONTENT_DIR='../content'
