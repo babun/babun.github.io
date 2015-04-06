@@ -3,6 +3,7 @@ date=2014-06-06
 type=post
 tags=blog, asciidoc
 status=published
+author=Lukasz Pielak
 ~~~~~~
 
 Babun 1.0.1 is out! 
