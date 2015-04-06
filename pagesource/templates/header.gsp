@@ -15,8 +15,11 @@
     <link href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>css/base.css" rel="stylesheet">
     <link href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>css/prettify.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
-
+    <%if (content.type == "post") {%>
+        <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
+    <%} else {%>
+        <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <%}%>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>js/html5shiv.min.js"></script>
