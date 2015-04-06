@@ -64,7 +64,7 @@ Next execute the bake script to regenerate `html` files.
  $ ./bake.sh
 ----
 
-Please check if the process completed successfully and test your changes before checking in. The execution should end with following message:
+Please check if the process completed successfully and test your changes before checking in. The execution should end with following the message:
 
 ----
 [INFO] Executing post JBake checks
