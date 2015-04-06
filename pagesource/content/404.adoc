@@ -1,20 +1,28 @@
-= (404) Page not found 
+= (404) Whoops! Page not found 
 :jbake-type: page
 :jbake-status: published
 
-== Babun - a windows shell you will love... if you find it ;)
 
 ----
-{ ~ }  » babun check                                                                          ~ 1
-$ Executing babun check
-$ Source consistent [OK]
-$ Prompt speed      [OK]
-$ File permissions  [OK]
-$ Connection check  [OK]
-$ Update check      [OK]
-$ Cygwin check      [OK]
+{ ~ }  » babun check                             ~ 404
+Executing babun check
+Source consistent [OK]
+Prompt speed      [OK]
+File permissions  [OK]
+Connection check  [OK]
+Update check      [OK]
+Cygwin check      [OK]
+Locating webpage  [FAILED]
 
-{ ~ }  » open webpage
-$ locating webpage  [FAILED]
-$ Sorry the page you are trying to open does not exist!
+------------------------------------------------------
+404: Looks like the page you are trying to open
+    - does not exist
+    - has been moved
+    - you typed it incorrectly
+------------------------------------------------------
 ----
+
+
+[big]_"Mistakes are part of discovery..."_
+
+...but you better get back to our http://babun.github.io[homepage] :)
