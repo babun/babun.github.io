@@ -8,4 +8,4 @@ fi
 
 cd ../..
 
-jbake pagesource .
+jbake pagesource . 2>&1 | tee bake.log
