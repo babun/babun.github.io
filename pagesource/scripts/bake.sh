@@ -14,7 +14,7 @@ if [ -f $logfile ]; then
 	rm $logfile || true
 fi
 
-jbake pagesource ../../. 2>&1 | tee $logfile || true
+jbake pagesource . 2>&1 | tee $logfile || true
 
 cd -
 
