@@ -44,9 +44,6 @@ body {
 /*  overriden bootstrap attributes    */
 /* ================================== */
 
-.list-inline {
-  margin-left: 20px;
-}
 
 /* ==================================== */
 /*  end overriden bootstrap attributes  */
@@ -99,4 +96,5 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0px;
+    vertical-align: center;
 }
