@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Babun - a windows shell you will love!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Lukasz Pielak">
+    <meta name="keywords" content="babun, shell, cygwin, console">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/asciidoctor.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+		<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Babun (pronounced Baboon)</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">About</a></li>
+            <li><a href="screenshots.html">Screenshots</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="development.html">Development</a></li>
+            <!--<li><a href="feed.xml">Subscribe</a></li>-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social <b class="caret"></b></a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="https://gitter.im/babun" target="_blank">
+                  <i class="fa fa-comments"></i> &nbsp; Discuss on Gitter
+                </a></li>
+                <li><a href="https://twitter.com/babunshell" target="_blank">
+                  <i class="fa fa-file-text-o"></i> &nbsp; Follow us on Twitter
+                </a>
+                <a href="http://github.com/babun/babun" target="_blank">
+                  <i class="fa fa-github"></i> &nbsp; Get sources from Github
+                </a></li>
+                
+                <!--<li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>-->
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+<div class="jumbotron">
+  <div class="container page-title">
+    <div class="row">
+        <div class="col-lg-12 columns">
+          <h1 class="shadow">Babun</h1>
+          <h3>a Windows shell you will love!</h3>
+          <p class="shadow">
+              <a class="btn btn-success" href="http://projects.reficio.org/babun/babun-dist.zip" role="button">
+                <i class="fa fa-download"></i> Download now
+              </a> &nbsp;&nbsp;
+
+              <a class="btn btn-primary" href="http://github.com/babun/babun" target="_blank" role="button">
+                 <i class="fa fa-github"></i> Visit us on GitHub
+              </a>
+          </p>
+          
+<div class="container social">
+<p>
+    <ul class="list-inline">
+      <li>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=babun&amp;repo=babun&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" kwframeid="1"></iframe>
+      </li>
+      <li class="tweet-btn hidden-phone">
+        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.23a4a4933995b86880bb787f8ff6a082.en.html#_=1428183100291&amp;count=horizontal&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fbabun.github.io%2F&amp;related=davegandy%3ACreator%20of%20Font%20Awesome&amp;size=m&amp;text=Babun%20-%20a%20windows%20shell%20you%20will%20love!&amp;url=http%3A%2F%2Fbabun.github.io&amp;via=babunshell" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 100px; height: 20px;" kwframeid="4"></iframe>
+      </li>
+      <li class="follow-btn">
+        <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.08f0c3c199f04970eb80d854774cbb2e.en.html#_=1428183100295&amp;dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=babunshell&amp;show_count=true&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 244px; height: 20px;" kwframeid="3"></iframe>
+      </li>
+    </ul>
+
+  </p>
+    
+</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+
+	
+	<div class="page-header">
+		<h1>Tag: asciidoc</h1>
+	</div>
+	
+	<!--<ul>-->
+		
+		
+		
+			<h4>April 2015</h4>
+			<ul>
+		
+		
+		<li>04 - <a href="blog_posts/003_rel_1.1.0.html">Babun 1.1.0 released </a></li>
+		
+		
+		
+			
+				</ul>
+				<h4>June 2014</h4>
+				<ul>
+			
+		
+		
+		<li>06 - <a href="blog_posts/002_rel_1.0.1.html">Babun 1.0.1 is out </a></li>
+		
+		
+		
+			
+				</ul>
+				<h4>May 2014</h4>
+				<ul>
+			
+		
+		
+		<li>13 - <a href="blog_posts/001_rel_1.0.0.html">Babun 1.0.0 released! </a></li>
+		
+		
+	</ul>
+	
+	</div>
+  </div> 
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">
+          &copy; Babun Team 2015 | Babun is licensed under the Apache License v2. | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.2</a>.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prettify.js"></script>
+    
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-51064780-1', 'babun.github.io');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

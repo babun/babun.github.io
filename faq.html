@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Babun - a windows shell you will love!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Lukasz Pielak">
+    <meta name="keywords" content="babun, shell, cygwin, console">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/asciidoctor.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+   
+
+		<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Babun (pronounced Baboon)</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">About</a></li>
+            <li><a href="screenshots.html">Screenshots</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="development.html">Development</a></li>
+            <!--<li><a href="feed.xml">Subscribe</a></li>-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Social <b class="caret"></b></a>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="https://gitter.im/babun" target="_blank">
+                  <i class="fa fa-comments"></i> &nbsp; Discuss on Gitter
+                </a></li>
+                <li><a href="https://twitter.com/babunshell" target="_blank">
+                  <i class="fa fa-file-text-o"></i> &nbsp; Follow us on Twitter
+                </a>
+                <a href="http://github.com/babun/babun" target="_blank">
+                  <i class="fa fa-github"></i> &nbsp; Get sources from Github
+                </a></li>
+                
+                <!--<li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>-->
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+<div class="jumbotron">
+  <div class="container page-title">
+    <div class="row">
+        <div class="col-lg-12 columns">
+          <h1 class="shadow">Babun</h1>
+          <h3>a Windows shell you will love!</h3>
+          <p class="shadow">
+              <a class="btn btn-success" href="http://projects.reficio.org/babun/babun-dist.zip" role="button">
+                <i class="fa fa-download"></i> Download now
+              </a> &nbsp;&nbsp;
+
+              <a class="btn btn-primary" href="http://github.com/babun/babun" target="_blank" role="button">
+                 <i class="fa fa-github"></i> Visit us on GitHub
+              </a>
+          </p>
+          
+<div class="container social">
+<p>
+    <ul class="list-inline">
+      <li>
+        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=babun&amp;repo=babun&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px" kwframeid="1"></iframe>
+      </li>
+      <li class="tweet-btn hidden-phone">
+        <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.23a4a4933995b86880bb787f8ff6a082.en.html#_=1428183100291&amp;count=horizontal&amp;dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fbabun.github.io%2F&amp;related=davegandy%3ACreator%20of%20Font%20Awesome&amp;size=m&amp;text=Babun%20-%20a%20windows%20shell%20you%20will%20love!&amp;url=http%3A%2F%2Fbabun.github.io&amp;via=babunshell" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 100px; height: 20px;" kwframeid="4"></iframe>
+      </li>
+      <li class="follow-btn">
+        <iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.08f0c3c199f04970eb80d854774cbb2e.en.html#_=1428183100295&amp;dnt=false&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=babunshell&amp;show_count=true&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="width: 244px; height: 20px;" kwframeid="3"></iframe>
+      </li>
+    </ul>
+
+  </p>
+    
+</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+
+	
+	<div class="page-header">
+		<h1>Frequent Asked Questions</h1>
+	</div>
+
+	
+
+	<p><div class="sect1">
+<h2 id="_why_was_babun_created_cygwin_was_already_there"><a class="anchor" href="#_why_was_babun_created_cygwin_was_already_there"></a>1. Why was babun created? Cygwin was already there&#8230;&#8203;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cygwin is a great tool, but there are a lot of quirks and tricks that make you lose a lot of time to make it actually 'usable'.
+Did you see a bare Cygwin console after installation&#8230;&#8203;? grep - oops not found, curl - oops again, 16-color prompt? Wow! and so on&#8230;&#8203;</p>
+</div>
+<div class="paragraph">
+<p>You probably know that it is not that easy to install certain unix packages on Cygwin - let&#8217;s take rvm for example. Did you manage to do it?
+How would you like to share it to the others? Maybe a blog entry that will be outdated in a couple of months?
+In babun you can just code up an rvm plugin and enable thousands of users to enjoy seamless rvm installation.
+Does a newer version or rvm get released, just update your plugin and again thousands of users will enjoy an automatic update.
+Isn&#8217;t that great?</p>
+</div>
+<div class="paragraph">
+<p>We have been using Cygwin for many years and thought that it would be great to share our configuration - that&#8217;s how babun was born.
+It offers a preconfigured Cygwin distribution where everything should work out of the box.
+It is not that easy with BLODA, Windows and Cygwin quirks, firewalls, etc - but we are doing our best to provide the best possible user experience.</p>
+</div>
+<div class="paragraph">
+<p>The response of the community has been outstanding - around 1K github stars and 10K downloads in the first week only!</p>
+</div>
+<div class="paragraph">
+<p>Footnote: If it does not convince you. if you love tweaking Cygwin, if want to install everything manually and if you want to spend a lot of time updating every single thing you once installed let&#8217;s say it: babun is not for you - just use bare Cygwin in this case!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_is_there_an_interference_with_an_existing_cygwin_installation_that_i_have_already_had"><a class="anchor" href="#_is_there_an_interference_with_an_existing_cygwin_installation_that_i_have_already_had"></a>2. Is there an interference with an existing Cygwin installation that I have already had</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>No, there is not.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_will_i_face_problems_if_i_have_a_whitespace_character_in_my_username"><a class="anchor" href="#_will_i_face_problems_if_i_have_a_whitespace_character_in_my_username"></a>3. Will I face problems if I have a "whitespace" character in my username</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>No, you will not, but it&#8217;s not recommended. See Cygwin&#8217;s <a href="https://cygwin.com/faq.html#faq.setup.name-with-space">FAQ</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_can_i_install_babun_to_a_custom_folder"><a class="anchor" href="#_how_can_i_install_babun_to_a_custom_folder"></a>4. How can I install babun to a custom folder</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the install.bat script and specify the /target option.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_cloned_babun_from_github_but_when_i_try_to_start_it_i_get_some_weird_error_messages"><a class="anchor" href="#_i_cloned_babun_from_github_but_when_i_try_to_start_it_i_get_some_weird_error_messages"></a>5. I cloned Babun from github but when i try to start it I get some weird error messages.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have to download the distribution package from <a href="http://babun.github.io" class="bare">http://babun.github.io</a>.
+On github we only host raw source files. The dist package is enriched by cygwin and some other stuff you need to be able to run Babun.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_can_i_uninstall_babun"><a class="anchor" href="#_how_can_i_uninstall_babun"></a>6. How can I uninstall Babun?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Why would you? :-) Seriously, just delete the .babun folder (by default installed in %USER_HOME%).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_bloda_software"><a class="anchor" href="#_what_is_bloda_software"></a>7. What is BLODA software?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>BLODA is a list of applications that may interfere with cygwin. This could be for example an anti virus program or
+a graphics card driver. See the <a href="https://cygwin.com/faq/faq.html#faq.using.bloda">cygwin page</a> for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_when_i_run_babun_i_can_see_your_prompt_is_very_slow_check_the_installed_bloda_software_how_to_fix_that"><a class="anchor" href="#_when_i_run_babun_i_can_see_your_prompt_is_very_slow_check_the_installed_bloda_software_how_to_fix_that"></a>8. When I run Babun I can see: 'Your prompt is very slow. Check the installed BLODA software'. How to fix that?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sometimes the prompt is slow when you start Babun as the initialization and loading of dll&#8217;s take time.
+But when you execute <code>babun check</code> it is usually ok again. In such case you can ignore this message.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_disable_bloda_warnings"><a class="anchor" href="#_how_to_disable_bloda_warnings"></a>9. How to disable BLODA warnings?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Put <code>export CYGWIN="nodosfilewarning mintty"</code> in the <code>~/.babunrc</code> file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_often_get_following_error_message_bash_2216_child_info_fork_abort_data_segment_start"><a class="anchor" href="#_i_often_get_following_error_message_bash_2216_child_info_fork_abort_data_segment_start"></a>10. I often get following error message: "bash 2216 child_info_fork::abort: data segment start".</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a known cygwin issue. It may be caused by BLODA software. Sometimes <code>rebaseall</code> resolves this issue. Follow this <a href="http://stackoverflow.com/questions/9300722/cygwin-error-bash-fork-retry-resource-temporarily-unavailable">link</a>.</p>
+</div>
+<div class="paragraph">
+<p>Also, have a look at this <a href="https://github.com/babun/babun/issues/143">thread</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_integrate_babun_with_conemu"><a class="anchor" href="#_how_do_i_integrate_babun_with_conemu"></a>11. How do I integrate Babun with ConEmu?</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Update to the latest ConEmu</p>
+</li>
+<li>
+<p>In ConEmu</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Go to Settings&gt;Startup&gt;Tasks</p>
+</li>
+<li>
+<p>Create a new task</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Task parameters - /icon "%userprofile%\.babun\cygwin\bin\mintty.exe" /dir "%userprofile%"</p>
+</li>
+<li>
+<p>Commands %userprofile%\.babun\cygwin\bin\mintty.exe -</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Babun is available in the "Create new console" menu.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_pin_babun_to_the_taskbar_in_windows_7_8"><a class="anchor" href="#_how_do_i_pin_babun_to_the_taskbar_in_windows_7_8"></a>12. How do I pin Babun to the taskbar in Windows 7/8?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It should work out-of-the box now, if not have a look <a href="https://github.com/babun/babun/issues/90">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_old_version_of_git_doesn_t_like_my_gitconfig"><a class="anchor" href="#_old_version_of_git_doesn_t_like_my_gitconfig"></a>13. Old version of Git doesn&#8217;t like my .gitconfig.</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>git clone git@github.com:Painted-Fox/docker-postgresql.git
+Cloning into 'docker-postgresql'...
+error: Malformed value for push.default: simple
+error: Must be one of nothing, matching, tracking or current.
+fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The fix for the error above was described <a href="http://stackoverflow.com/questions/14330050/how-to-get-git-1-8-in-cygwin">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_get_error_while_loading_shared_libraries_when_i_execute_git_commands"><a class="anchor" href="#_i_get_error_while_loading_shared_libraries_when_i_execute_git_commands"></a>14. I get 'error while loading shared libraries' when I execute git commands.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Install <code>gettext</code>, <code>libsasl2</code> and <code>ca-certificates</code> using pact.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_when_i_run_git_status_in_git_shell_and_in_babun_i_get_different_results"><a class="anchor" href="#_when_i_run_git_status_in_git_shell_and_in_babun_i_get_different_results"></a>15. When I run git status in git shell and in Babun I get different results.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is probably an end-of-line issue. Execute <code>git config --list</code> both in cmd and in Babun and compare the
+<code>core.autocrlf</code> values. If your cmd prints <code>core.autocrlf = true</code> execute <code>git config --global core.autocrlf true</code> in Babun.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_can_i_change_the_default_fonts_and_size_of_babun_s_mintty_window_on_startup"><a class="anchor" href="#_how_can_i_change_the_default_fonts_and_size_of_babun_s_mintty_window_on_startup"></a>16. How can I change the default fonts and size of Babun&#8217;s (mintty) window on startup.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Add / edit <code>~/.minttyrc</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_babun_cannot_connect_to_the_internet"><a class="anchor" href="#_babun_cannot_connect_to_the_internet"></a>17. Babun cannot connect to the Internet.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Babun supports HTTP(s) proxying, but corporate firewalls can be tricky&#8230;&#8203; Have a look at this thread: <a href="https://github.com/babun/babun/issues/95">#95</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cannot_copy_paste_into_vim"><a class="anchor" href="#_cannot_copy_paste_into_vim"></a>18. Cannot copy/paste into VIM.</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Follow this <a href="https://github.com/babun/babun/issues/97">link</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_is_pact_based_on_apt_cyg"><a class="anchor" href="#_is_pact_based_on_apt_cyg"></a>19. Is pact based on apt-cyg</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Yes, it is. It diverged a bit, some functions have been changed, some things have been added to provide better integration with babun and make it a first class citizen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_could_i_install_and_update_babun_on_a_computer_not_directly_connected_to_the_internet"><a class="anchor" href="#_how_could_i_install_and_update_babun_on_a_computer_not_directly_connected_to_the_internet"></a>20. How could I install and update babun on a computer not directly connected to the internet?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install Babun without any problems while being offline. Just download the ZIP file with the distribution.
+You need to be online in order to update Babun - you can configure a proxy if that&#8217;s your case.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_install_gvm_tool"><a class="anchor" href="#_how_do_i_install_gvm_tool"></a>21. How do I install gvm tool?</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>download gvmtool: <code>curl -s get.gvmtool.net | bash</code></p>
+</li>
+<li>
+<p>edit .bash_profile, .bashrc and .zshrc and replace all occurrences of <code>/c/Users/&#8230;&#8203;</code> with <code>/cygdrive/c/Users/&#8230;&#8203;</code></p>
+</li>
+<li>
+<p>restart babun</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_install_ruby"><a class="anchor" href="#_how_do_i_install_ruby"></a>22. How do I install ruby?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you can live with ruby 1.9.3 then just install it via <code>pact install ruby</code>. If you need a newer version have a look at this <a href="https://github.com/babun/babun/issues/93">link</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_multtiple_shells_share_the_same_history"><a class="anchor" href="#_why_multtiple_shells_share_the_same_history"></a>23. Why multtiple shells share the same history?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a feature of zsh. oh-my-zsh has <code>INC_APPEND_HISTORY</code> on as default. To disable this put this in your .zshrc: ` setopt APPEND_HISTORY`</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_tried_to_run_python_scripts_but_get_modules_not_found"><a class="anchor" href="#_i_tried_to_run_python_scripts_but_get_modules_not_found"></a>24. I tried to run python scripts but get 'modules not found'</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://github.com/babun/babun/issues/104">Issue 104</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_run_an_x_server"><a class="anchor" href="#_how_to_run_an_x_server"></a>25. How to run an X-Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://github.com/babun/babun/issues/105">Issue 105</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_have_a_problem_with_windows_line_endings"><a class="anchor" href="#_i_have_a_problem_with_windows_line_endings"></a>26. I have a problem with Windows line endings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Try running dos2unix on these files.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_no_display_name_and_no_display_environment_variable"><a class="anchor" href="#_no_display_name_and_no_display_environment_variable"></a>27. No display name and no $DISPLAY environment variable</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://github.com/babun/babun/issues/130">Issue 130</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_install_virtualenvwrapper"><a class="anchor" href="#_how_to_install_virtualenvwrapper"></a>28. How to install virtualenvwrapper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://github.com/babun/babun/issues/147">Issue 147</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_chmod_does_not_work_as_expected"><a class="anchor" href="#_chmod_does_not_work_as_expected"></a>29. chmod does not work as expected</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See</p>
+</div>
+<div class="paragraph">
+<p><a href="http://superuser.com/questions/397288/using-cygwin-in-windows-8-chmod-600-does-not-work-as-expected" class="bare">http://superuser.com/questions/397288/using-cygwin-in-windows-8-chmod-600-does-not-work-as-expected</a></p>
+</div>
+<div class="paragraph">
+<p><a href="http://superuser.com/questions/348694/bad-owner-or-permissions-error-using-cygwins-ssh-exe" class="bare">http://superuser.com/questions/348694/bad-owner-or-permissions-error-using-cygwins-ssh-exe</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_see_compdef_unknown_command_or_service_git"><a class="anchor" href="#_i_see_compdef_unknown_command_or_service_git"></a>30. I see: compdef: unknown command or service: git</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Execute:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ compinit
+$ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ps_option_u_and_o_unknown"><a class="anchor" href="#_ps_option_u_and_o_unknown"></a>31. ps option -U and -o unknown</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See <a href="https://github.com/babun/babun/issues/172">Issue 172</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_zsh_command_not_found_emacs"><a class="anchor" href="#_zsh_command_not_found_emacs"></a>32. zsh: command not found: emacs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Try emacs-nox</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__c_as_target_directory_on_installation_fails"><a class="anchor" href="#__c_as_target_directory_on_installation_fails"></a>33. "C:\" as target directory on installation fails</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>use C:\\</p>
+</div>
+<div class="paragraph">
+<p>Note two back-slash marks</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_sshfs_command"><a class="anchor" href="#_how_to_use_sshfs_command"></a>34. How to use sshfs command</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use Dokan sshfs. Free and open source.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_ssh_id_rsa_key_from_windows"><a class="anchor" href="#_use_ssh_id_rsa_key_from_windows"></a>35. Use SSH id_rsa key from Windows</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>see <a href="https://github.com/babun/babun/issues/208">Issue 208</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_when_i_start_babun_bat_three_shell_windows_open"><a class="anchor" href="#_when_i_start_babun_bat_three_shell_windows_open"></a>36. When I start babun.bat three shell windows open</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a known issue on Windows 10. To workaround it go to <code>.babun/cygwin/bin</code> and change <code>mintty.exe</code> to Windows 8 compatibility mode.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_do_i_update_the_underlying_cygwin_version"><a class="anchor" href="#_how_do_i_update_the_underlying_cygwin_version"></a>37. How do I update the underlying cygwin version</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>just execute <code>babun update</code>. If there is a new supported cygwin version babun will upgrade it</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_get_chmod_permission_denied_errors_during_update"><a class="anchor" href="#_i_get_chmod_permission_denied_errors_during_update"></a>38. I get chmod: permission denied errors during update</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You have probably installed babun as an admin an try to upgrade it now without admin rights or using a different user. Please restart the update as an admin, or as a user you used to install babun with.</p>
+</div>
+</div>
+</div></p>
+
+	<hr />
+
+	</div>
+  </div> 
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">
+          &copy; Babun Team 2015 | Babun is licensed under the Apache License v2. | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.2</a>.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/prettify.js"></script>
+    
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-51064780-1', 'babun.github.io');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

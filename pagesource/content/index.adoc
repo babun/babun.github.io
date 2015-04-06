@@ -1,0 +1,21 @@
+= Babun - a windows shell you will love
+:jbake-type: page
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:includedir: page_include
+:linkattrs:
+Would you like to use a linux-like console on a Windows host without a lot of fuzz? Try out babun!
+
+include::{includedir}/_screencast.adoc[]
+
+include::{includedir}/_installation.adoc[]
+
+include::{includedir}/_usage.adoc[]
+
+include::{includedir}/_licence.adoc[]
+
+include::{includedir}/_supporters.adoc[]
+
+include::{includedir}/_footer.adoc[]
+
+

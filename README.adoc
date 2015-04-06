@@ -1,0 +1,31 @@
+
+= Babun - a Windows shell you will love!
+
+Website of the project babun.
+
+== Building the site from source
+
+=== Install JBake
+
+----
+gvm install jbake
+----
+
+You're done!
+
+== Running the site locally
+
+ $ jbake -s
+
+== Deploying the website to github pages
+
+----
+ $ cd pagesource/scripts
+ $ chmod 755 update.sh bake.sh
+ $ ./update.sh
+ $ ./bake.sh
+----
+
+== Visit the website
+
+Visit babun's project: http://babun.github.io[website].

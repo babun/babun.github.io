@@ -1,0 +1,10 @@
+= Frequent Asked Questions
+:jbake-type: page
+:jbake-status: published
+:jbake-tags: blog, asciidoc
+:includedir: page_include
+:linkattrs:
+:sectlinks:
+:sectanchors:
+
+include::{includedir}/_faq.adoc[]
