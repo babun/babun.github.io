@@ -1,5 +1,5 @@
-<div class="jumbotron">
-  <div class="container page-title">
+
+  <div class="container-fluid page-title">
     <div class="row">
         <div class="col-lg-12 columns">
           <h1 class="shadow">Babun</h1>
@@ -17,4 +17,3 @@
         </div>
       </div>
     </div>
-</div>

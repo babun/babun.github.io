@@ -10,7 +10,7 @@
           </button>
           <a class="navbar-brand" href="index.html">Babun (pronounced Baboon)</a>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
             <li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>index.html">About</a></li>
             <li><a href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>screenshots.html">Screenshots</a></li>
