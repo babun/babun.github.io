@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e -f -o pipefail
 
-filestorender=( "aa.txt" "index.html" "404.html" "development.html" "faq.html" "screenshots.html" "blog.html" )
+filestorender=( "index.html" "404.html" "development.html" "faq.html" "screenshots.html" "blog.html" )
 
-logfile="bake.log"
+logfile="../../bake.log"
 
 function checkLogFile {
 	if [ ! -f $logfile ]; then
