@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Babun (pronounced Baboon)</a>
+          <a class="navbar-brand" href="<%if (content.rootpath) {%>${content.rootpath}<% } else { %><% }%>index.html">Babun (pronounced Baboon)</a>
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
