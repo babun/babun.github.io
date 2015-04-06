@@ -1,5 +1,6 @@
 title=Blog
-date=2015-04-06
+date=2014-05-13
 type=blog
+tags=blog, asciidoc
 status=published
 ~~~~~~

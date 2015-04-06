@@ -7,12 +7,19 @@
 	</div>
 	<%published_posts.each {post ->%>
 		<a href="${post.uri}"><h1>${post.title}</h1></a>
-		<p>${post.date.format("dd MMMM yyyy")}</p>
+		<p>
+			<em>
+				${post.date.format("dd MMMM yyyy")}
+				<%if (post.author) {%>
+					by ${post.author}
+				<%}%>
+			</em>
+		</p>
 		<p>${post.body}</p>
   	<%}%>
 	
 	<hr />
 	
-	<!--<p>Older posts are available in the <a href="/${config.archive_file}">archive</a>.</p>-->
 	<p>Older posts are available in the <a href="archive.html">archive</a>.</p>
+
 <%include "footer.gsp"%>
