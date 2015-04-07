@@ -1,0 +1,9 @@
+title=Babun 1.1.1 with cntlm proxy support
+date=2015-04-07
+type=post
+tags=blog, asciidoc
+status=published
+author=Lukasz Pielak
+~~~~~~
+
+New: Auto update supports cntlm proxy (fix for https://github.com/babun/babun/issues/273[#273]).
