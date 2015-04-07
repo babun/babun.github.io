@@ -9,7 +9,7 @@
 		<a href="${post.uri}"><h1>${post.title}</h1></a>
 		<p>
 			<em>
-				${post.date.format("dd MMMM yyyy")}
+				${post.date.format("dd.MM.yyyy")}
 				<%if (post.author) {%>
 					by ${post.author}
 				<%}%>

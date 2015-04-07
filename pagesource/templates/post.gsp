@@ -8,7 +8,7 @@
 
 	<p>
 		<em>
-			${content.date.format("dd MMMM yyyy")}
+			${content.date.format("dd.MM.yyyy")}
 			<%if (content.author) {%>
 				by ${content.author}
 			<%}%>
