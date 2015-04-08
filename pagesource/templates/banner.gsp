@@ -5,7 +5,7 @@
           <h1 class="shadow">Babun</h1>
           <h3>a Windows shell you will love!</h3>
           <p class="shadow">
-              <a class="btn btn-success" href="http://projects.reficio.org/babun/download" role="button">
+              <a class="btn btn-success" href="http://projects.reficio.org/babun/download" role="button" onclick=”trackOutboundLink(‘http://projects.reficio.org/babun/download’); return false;">
                 <i class="fa fa-download"></i> &nbsp; Download now
               </a> &nbsp;&nbsp;&nbsp;
 

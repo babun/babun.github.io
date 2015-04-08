@@ -96,7 +96,7 @@
           <h1 class="shadow">Babun</h1>
           <h3>a Windows shell you will love!</h3>
           <p class="shadow">
-              <a class="btn btn-success" href="http://projects.reficio.org/babun/download" role="button">
+              <a class="btn btn-success" href="http://projects.reficio.org/babun/download" role="button" onclick=”trackOutboundLink(‘http://projects.reficio.org/babun/download’); return false;">
                 <i class="fa fa-download"></i> &nbsp; Download now
               </a> &nbsp;&nbsp;&nbsp;
 
@@ -189,6 +189,16 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-51064780-1', 'babun.github.io');
 ga('send', 'pageview');
+</script>
+
+<script>
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+     function () {
+     document.location = url;
+     }
+   });
+}
 </script>
 
   </body>

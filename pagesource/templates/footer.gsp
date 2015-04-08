@@ -25,5 +25,15 @@ ga('create', 'UA-51064780-1', 'babun.github.io');
 ga('send', 'pageview');
 </script>
 
+<script>
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+     function () {
+     document.location = url;
+     }
+   });
+}
+</script>
+
   </body>
 </html>
