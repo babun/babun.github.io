@@ -219,3 +219,7 @@ Execute `ping -6`. Babun uses the native Windows ping.
 == How to use the cygwin's ping
 
 Babun is unsing Windows native ping.exe because Cygwin's ping requires admin rights to be executed. If you still want to use the cygwin ping use 'cygping'.
+
+== Autocompletion 'on tab' seems slow
+
+Close all babun instances (kill all pending processes if necessary, e.g. git-credentials-.*.exe) and run `rebase.bat` which is located in babun's root folder.
