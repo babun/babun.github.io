@@ -38,7 +38,11 @@ On github we only host raw source files. The dist package is enriched by cygwin 
 
 == How can I uninstall Babun?
 
-Why would you? :-) Seriously, just delete the .babun folder (by default installed in %USER_HOME%).
+Why would you? :-) Seriously, just execute the uninstall.bat script from the installation directory.
+
+== How do I find out where Babun was installed?
+
+Execute  `echo $BABUN_HOME`
 
 == What is BLODA software?
 
@@ -215,6 +219,10 @@ Execute `babun shell-here init`
 == Open Babun here context menu opens the wrong babun instance
 
 It is possible to have multiple Babun instances installed but the context menu can be linked to only one. If you want to change the link to a particular instance open the babun instance and execute `babun shell-here init`.
+
+== I don't want the 'Open Babun here' option in the context menu
+
+Execute `babun shell-here remove`
 
 == How to use ping IPv6
 

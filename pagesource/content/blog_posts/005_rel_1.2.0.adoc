@@ -1,0 +1,62 @@
+title=Babun 1.2.0 is out
+date=2015-05-20
+type=post
+tags=blog, asciidoc
+status=published
+author=Lukasz Pielak
+~~~~~~
+
+Babun 1.2.0 was just released. We added the following:
+
+*Brand new 'shell-here' plugin*
+
+Now you can open babun directly in any folder by right clicking your mouse and choosing the `Open Babun here` option.
+
+You don't want to have that option in your windows context menu? No problem, just execute `babun shell-here remove`.
+
+*~/.local/bin and ~/bin added to the PATH*
+
+In 1.2.0 we added a `~/.local/bin` and a symlink `~/bin` pointing to `~/.local/bin` to the `PATH`.
+
+*We added ACK - the better grep*
+
+Ack is a grep replacement designed for developers. Now instead of typing
+
+----
+$ grep pattern $(find . -name '*.pl' -or -name '*.pm' -or -name '*.pod' | grep -v .svn)
+----
+
+you can type
+
+----
+$ ack --perl pattern
+----
+
+For details visit http://beyondgrep.com/.
+
+*We replaced the cygwin's ping with the windows ping*
+
+Why? Because Cygwin's ping requires admin rights to be executed. Besides the windows ping supports IPv6.
+The cygwin's ping was renamed to `cygping`.
+
+*We added uninstall.bat script*
+
+It is stored in Babun's installation directory.
+It makes sure that all footprints left by plugins (such as registry entries) are deleted when babun is uninstalled.
+
+*Full list of changes*
+
+* crontab weirdness https://github.com/babun/babun/issues/212[#212]
+* Cygwin's ping does not work without admin rights https://github.com/babun/babun/issues/300[#300]
+* find 'cygdrive/j' : Permission denied https://github.com/babun/babun/issues/282[#282]
+* BABUN_HOME not always set https://github.com/babun/babun/issues/298[#298]
+* "Open Shell Here" context menu fails to work with Babun https://github.com/babun/babun/issues/183[#183]
+* ConEmu 'Here' Integration https://github.com/babun/babun/issues/291[#291]
+* Add ack tool to the package, see http://beyondgrep.com/ https://github.com/babun/babun/issues/306[#306]
+* Race Condition in Babun Startup https://github.com/babun/babun/issues/332[#332]
+* Add ~/.local/bin to PATH variable https://github.com/babun/babun/issues/325[#325]
+* Babun uninstall script https://github.com/babun/babun/issues/324[#324]
+
+Enjoy
+
+https://twitter.com/lukaszpielak[@lukaszpielak], https://twitter.com/tombujok[@tombujok]
