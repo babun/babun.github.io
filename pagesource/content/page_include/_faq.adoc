@@ -212,7 +212,7 @@ You have probably installed babun as an admin an try to upgrade it now without a
 
 You have to convert the path with the 'cygpath -w' command. See https://github.com/babun/babun/issues/299[#299].
 
-== Open Babun here context menu doesn't work
+== Open Babun here context menu doesnt work
 
 Execute `babun shell-here init`
 
@@ -231,3 +231,7 @@ Execute `ping -6`. Babun uses the native Windows ping.
 == How to use the cygwin's ping
 
 Babun is unsing Windows native ping.exe because Cygwin's ping requires admin rights to be executed. If you still want to use the cygwin ping use 'cygping'.
+
+== Autocompletion 'on tab' seems slow
+
+Close all babun instances (kill all pending processes if necessary, e.g. git-credentials-.*.exe) and run `rebase.bat` which is located in babun's root folder.
