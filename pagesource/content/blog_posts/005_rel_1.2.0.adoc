@@ -1,5 +1,5 @@
 title=Babun 1.2.0 is out
-date=2015-05-20
+date=2015-06-22
 type=post
 tags=blog, asciidoc
 status=published
