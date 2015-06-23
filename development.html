@@ -244,6 +244,9 @@ The above mentioned packages will be downloaded together with the whole dependen
 <li>
 <p>start.sh (optional) - a file that will be executed on babun startup</p>
 </li>
+<li>
+<p>exec.sh (optional) - a file that allows adding commands to babun script</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -289,6 +292,12 @@ source "/usr/local/etc/babun/source/babun-core/tools/script.sh"</pre>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_uninstall_sh_optional">uninstall.sh (optional)</h3>
+<div class="paragraph">
+<p>Its responsibility is to cleanup all entries that a plugin may leave for example on the filesystem or in the windows registry.</p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_plugin_desc">plugin.desc</h3>
 <div class="paragraph">
 <p>A plugin descriptor looks like this:</p>
@@ -308,6 +317,14 @@ plugin_version=1</pre>
 <h3 id="_start_sh_optional">start.sh (optional)</h3>
 <div class="paragraph">
 <p>The start.sh is an optional script for plugins that require triggering certain actions on every babun start (for example update check).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exec_sh_optional">exec.sh (optional)</h3>
+<div class="paragraph">
+<p>If the plugin folder contains an exec.sh script,
+whenever <code>babun &lt;plugin_name&gt; xxx yyy</code> command is invoked, the execution is passed to <code>&lt;plugin_name&gt;/exec.sh</code> script with params <code>xxx yyy</code>.
+In this way a plugin may add some additional shell commands without implementing its own <code>/usr/local/bin/xxx</code> script.</p>
 </div>
 </div>
 </div>

@@ -133,6 +133,113 @@
 		<h1>Blog</h1>
 	</div>
 	
+		<a href="blog_posts/005_rel_1.2.0.html"><h1>Babun 1.2.0 released at DevoxxPL</h1></a>
+		<p>
+			<em>
+				23.06.2015
+				
+					by Lukasz Pielak
+				
+			</em>
+		</p>
+		<p><div class="paragraph">
+<p>Babun 1.2.0 was just released at <a href="http://devoxx.pl/">#DevoxxPL</a>! We added the following:</p>
+</div>
+<div class="paragraph">
+<p><strong>Brand new 'shell-here' plugin</strong></p>
+</div>
+<div class="paragraph">
+<p>Now you can open babun directly in any folder by right clicking your mouse and choosing the <code>Open Babun here</code> option.</p>
+</div>
+<div class="paragraph">
+<p>You don&#8217;t want to have that option in your windows context menu? No problem, just execute <code>babun shell-here remove</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>~/.local/bin and ~/bin added to the PATH</strong></p>
+</div>
+<div class="paragraph">
+<p>In 1.2.0 we added a <code>~/.local/bin</code> and a symlink <code>~/bin</code> pointing to <code>~/.local/bin</code> to the <code>PATH</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>We added ACK - the better grep</strong></p>
+</div>
+<div class="paragraph">
+<p>Ack is a grep replacement designed for developers. Now instead of typing</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ grep pattern $(find . -name '*.pl' -or -name '*.pm' -or -name '*.pod' | grep -v .svn)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>you can type</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ ack --perl pattern</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For details visit <a href="http://beyondgrep.com/" class="bare">http://beyondgrep.com/</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>We replaced the cygwin&#8217;s ping with the windows ping</strong></p>
+</div>
+<div class="paragraph">
+<p>Why? Because Cygwin&#8217;s ping requires admin rights to be executed. Besides the windows ping supports IPv6.
+The cygwin&#8217;s ping was renamed to <code>cygping</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>We added uninstall.bat script</strong></p>
+</div>
+<div class="paragraph">
+<p>It is stored in Babun&#8217;s installation directory.
+It makes sure that all footprints left by plugins (such as registry entries) are deleted when babun is uninstalled.</p>
+</div>
+<div class="paragraph">
+<p><strong>Full list of changes</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>crontab weirdness <a href="https://github.com/babun/babun/issues/212">#212</a></p>
+</li>
+<li>
+<p>Cygwin&#8217;s ping does not work without admin rights <a href="https://github.com/babun/babun/issues/300">#300</a></p>
+</li>
+<li>
+<p>find 'cygdrive/j' : Permission denied <a href="https://github.com/babun/babun/issues/282">#282</a></p>
+</li>
+<li>
+<p>BABUN_HOME not always set <a href="https://github.com/babun/babun/issues/298">#298</a></p>
+</li>
+<li>
+<p>"Open Shell Here" context menu fails to work with Babun <a href="https://github.com/babun/babun/issues/183">#183</a></p>
+</li>
+<li>
+<p>ConEmu 'Here' Integration <a href="https://github.com/babun/babun/issues/291">#291</a></p>
+</li>
+<li>
+<p>Add ack tool to the package, see <a href="http://beyondgrep.com/" class="bare">http://beyondgrep.com/</a> <a href="https://github.com/babun/babun/issues/306">#306</a></p>
+</li>
+<li>
+<p>Race Condition in Babun Startup <a href="https://github.com/babun/babun/issues/332">#332</a></p>
+</li>
+<li>
+<p>Add ~/.local/bin to PATH variable <a href="https://github.com/babun/babun/issues/325">#325</a></p>
+</li>
+<li>
+<p>Babun uninstall script <a href="https://github.com/babun/babun/issues/324">#324</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Enjoy</p>
+</div>
+<div class="paragraph">
+<p><a href="https://twitter.com/lukaszpielak">@lukaszpielak</a>, <a href="https://twitter.com/tombujok">@tombujok</a></p>
+</div></p>
+  	
 		<a href="blog_posts/004_rel_1.1.1.html"><h1>Babun 1.1.1 with cntlm proxy support</h1></a>
 		<p>
 			<em>

@@ -199,12 +199,20 @@ On github we only host raw source files. The dist package is enriched by cygwin 
 <h2 id="_how_can_i_uninstall_babun"><a class="anchor" href="#_how_can_i_uninstall_babun"></a>6. How can I uninstall Babun?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Why would you? :-) Seriously, just delete the .babun folder (by default installed in %USER_HOME%).</p>
+<p>Why would you? :-) Seriously, just execute the uninstall.bat script from the installation directory.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_what_is_bloda_software"><a class="anchor" href="#_what_is_bloda_software"></a>7. What is BLODA software?</h2>
+<h2 id="_how_do_i_find_out_where_babun_was_installed"><a class="anchor" href="#_how_do_i_find_out_where_babun_was_installed"></a>7. How do I find out where Babun was installed?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Execute  <code>echo $BABUN_HOME</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_is_bloda_software"><a class="anchor" href="#_what_is_bloda_software"></a>8. What is BLODA software?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>BLODA is a list of applications that may interfere with cygwin. This could be for example an anti virus program or
@@ -213,7 +221,7 @@ a graphics card driver. See the <a href="https://cygwin.com/faq/faq.html#faq.usi
 </div>
 </div>
 <div class="sect1">
-<h2 id="_when_i_run_babun_i_can_see_your_prompt_is_very_slow_check_the_installed_bloda_software_how_to_fix_that"><a class="anchor" href="#_when_i_run_babun_i_can_see_your_prompt_is_very_slow_check_the_installed_bloda_software_how_to_fix_that"></a>8. When I run Babun I can see: 'Your prompt is very slow. Check the installed BLODA software'. How to fix that?</h2>
+<h2 id="_when_i_run_babun_i_can_see_your_prompt_is_very_slow_check_the_installed_bloda_software_how_to_fix_that"><a class="anchor" href="#_when_i_run_babun_i_can_see_your_prompt_is_very_slow_check_the_installed_bloda_software_how_to_fix_that"></a>9. When I run Babun I can see: 'Your prompt is very slow. Check the installed BLODA software'. How to fix that?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sometimes the prompt is slow when you start Babun as the initialization and loading of dll&#8217;s take time.
@@ -222,7 +230,7 @@ But when you execute <code>babun check</code> it is usually ok again. In such ca
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_to_disable_bloda_warnings"><a class="anchor" href="#_how_to_disable_bloda_warnings"></a>9. How to disable BLODA warnings?</h2>
+<h2 id="_how_to_disable_bloda_warnings"><a class="anchor" href="#_how_to_disable_bloda_warnings"></a>10. How to disable BLODA warnings?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Put <code>export CYGWIN="nodosfilewarning mintty"</code> in the <code>~/.babunrc</code> file.</p>
@@ -230,7 +238,7 @@ But when you execute <code>babun check</code> it is usually ok again. In such ca
 </div>
 </div>
 <div class="sect1">
-<h2 id="_i_often_get_following_error_message_bash_2216_child_info_fork_abort_data_segment_start"><a class="anchor" href="#_i_often_get_following_error_message_bash_2216_child_info_fork_abort_data_segment_start"></a>10. I often get following error message: "bash 2216 child_info_fork::abort: data segment start".</h2>
+<h2 id="_i_often_get_following_error_message_bash_2216_child_info_fork_abort_data_segment_start"><a class="anchor" href="#_i_often_get_following_error_message_bash_2216_child_info_fork_abort_data_segment_start"></a>11. I often get following error message: "bash 2216 child_info_fork::abort: data segment start".</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a known cygwin issue. It may be caused by BLODA software. Sometimes <code>rebaseall</code> resolves this issue. Follow this <a href="http://stackoverflow.com/questions/9300722/cygwin-error-bash-fork-retry-resource-temporarily-unavailable">link</a>.</p>
@@ -241,7 +249,7 @@ But when you execute <code>babun check</code> it is usually ok again. In such ca
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_do_i_integrate_babun_with_conemu"><a class="anchor" href="#_how_do_i_integrate_babun_with_conemu"></a>11. How do I integrate Babun with ConEmu?</h2>
+<h2 id="_how_do_i_integrate_babun_with_conemu"><a class="anchor" href="#_how_do_i_integrate_babun_with_conemu"></a>12. How do I integrate Babun with ConEmu?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -279,7 +287,7 @@ But when you execute <code>babun check</code> it is usually ok again. In such ca
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_do_i_pin_babun_to_the_taskbar_in_windows_7_8"><a class="anchor" href="#_how_do_i_pin_babun_to_the_taskbar_in_windows_7_8"></a>12. How do I pin Babun to the taskbar in Windows 7/8?</h2>
+<h2 id="_how_do_i_pin_babun_to_the_taskbar_in_windows_7_8"><a class="anchor" href="#_how_do_i_pin_babun_to_the_taskbar_in_windows_7_8"></a>13. How do I pin Babun to the taskbar in Windows 7/8?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>It should work out-of-the box now, if not have a look <a href="https://github.com/babun/babun/issues/90">here</a>.</p>
@@ -287,7 +295,7 @@ But when you execute <code>babun check</code> it is usually ok again. In such ca
 </div>
 </div>
 <div class="sect1">
-<h2 id="_old_version_of_git_doesn_t_like_my_gitconfig"><a class="anchor" href="#_old_version_of_git_doesn_t_like_my_gitconfig"></a>13. Old version of Git doesn&#8217;t like my .gitconfig.</h2>
+<h2 id="_old_version_of_git_doesn_t_like_my_gitconfig"><a class="anchor" href="#_old_version_of_git_doesn_t_like_my_gitconfig"></a>14. Old version of Git doesn&#8217;t like my .gitconfig.</h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
@@ -304,7 +312,7 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_i_get_error_while_loading_shared_libraries_when_i_execute_git_commands"><a class="anchor" href="#_i_get_error_while_loading_shared_libraries_when_i_execute_git_commands"></a>14. I get 'error while loading shared libraries' when I execute git commands.</h2>
+<h2 id="_i_get_error_while_loading_shared_libraries_when_i_execute_git_commands"><a class="anchor" href="#_i_get_error_while_loading_shared_libraries_when_i_execute_git_commands"></a>15. I get 'error while loading shared libraries' when I execute git commands.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Install <code>gettext</code>, <code>libsasl2</code> and <code>ca-certificates</code> using pact.</p>
@@ -312,7 +320,7 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_when_i_run_git_status_in_git_shell_and_in_babun_i_get_different_results"><a class="anchor" href="#_when_i_run_git_status_in_git_shell_and_in_babun_i_get_different_results"></a>15. When I run git status in git shell and in Babun I get different results.</h2>
+<h2 id="_when_i_run_git_status_in_git_shell_and_in_babun_i_get_different_results"><a class="anchor" href="#_when_i_run_git_status_in_git_shell_and_in_babun_i_get_different_results"></a>16. When I run git status in git shell and in Babun I get different results.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>It is probably an end-of-line issue. Execute <code>git config --list</code> both in cmd and in Babun and compare the
@@ -321,7 +329,7 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_can_i_change_the_default_fonts_and_size_of_babun_s_mintty_window_on_startup"><a class="anchor" href="#_how_can_i_change_the_default_fonts_and_size_of_babun_s_mintty_window_on_startup"></a>16. How can I change the default fonts and size of Babun&#8217;s (mintty) window on startup.</h2>
+<h2 id="_how_can_i_change_the_default_fonts_and_size_of_babun_s_mintty_window_on_startup"><a class="anchor" href="#_how_can_i_change_the_default_fonts_and_size_of_babun_s_mintty_window_on_startup"></a>17. How can I change the default fonts and size of Babun&#8217;s (mintty) window on startup.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Add / edit <code>~/.minttyrc</code></p>
@@ -329,7 +337,7 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_babun_cannot_connect_to_the_internet"><a class="anchor" href="#_babun_cannot_connect_to_the_internet"></a>17. Babun cannot connect to the Internet.</h2>
+<h2 id="_babun_cannot_connect_to_the_internet"><a class="anchor" href="#_babun_cannot_connect_to_the_internet"></a>18. Babun cannot connect to the Internet.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Babun supports HTTP(s) proxying, but corporate firewalls can be tricky&#8230;&#8203; Have a look at this thread: <a href="https://github.com/babun/babun/issues/95">#95</a></p>
@@ -337,7 +345,7 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_cannot_copy_paste_into_vim"><a class="anchor" href="#_cannot_copy_paste_into_vim"></a>18. Cannot copy/paste into VIM.</h2>
+<h2 id="_cannot_copy_paste_into_vim"><a class="anchor" href="#_cannot_copy_paste_into_vim"></a>19. Cannot copy/paste into VIM.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Follow this <a href="https://github.com/babun/babun/issues/97">link</a>.</p>
@@ -345,7 +353,7 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_is_pact_based_on_apt_cyg"><a class="anchor" href="#_is_pact_based_on_apt_cyg"></a>19. Is pact based on apt-cyg?</h2>
+<h2 id="_is_pact_based_on_apt_cyg"><a class="anchor" href="#_is_pact_based_on_apt_cyg"></a>20. Is pact based on apt-cyg?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Yes, it is. It diverged a bit, some functions have been changed, some things have been added to provide better integration with babun and make it a first class citizen.</p>
@@ -353,7 +361,7 @@ fatal: bad config file line 11 in /cygdrive/c/Users/ryan.seto/.gitconfig</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_could_i_install_and_update_babun_on_a_computer_not_directly_connected_to_the_internet"><a class="anchor" href="#_how_could_i_install_and_update_babun_on_a_computer_not_directly_connected_to_the_internet"></a>20. How could I install and update babun on a computer not directly connected to the internet?</h2>
+<h2 id="_how_could_i_install_and_update_babun_on_a_computer_not_directly_connected_to_the_internet"><a class="anchor" href="#_how_could_i_install_and_update_babun_on_a_computer_not_directly_connected_to_the_internet"></a>21. How could I install and update babun on a computer not directly connected to the internet?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can install Babun without any problems while being offline. Just download the ZIP file with the distribution.
@@ -362,7 +370,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_do_i_install_gvm_tool"><a class="anchor" href="#_how_do_i_install_gvm_tool"></a>21. How do I install gvm tool?</h2>
+<h2 id="_how_do_i_install_gvm_tool"><a class="anchor" href="#_how_do_i_install_gvm_tool"></a>22. How do I install gvm tool?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -380,7 +388,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_do_i_install_ruby"><a class="anchor" href="#_how_do_i_install_ruby"></a>22. How do I install ruby?</h2>
+<h2 id="_how_do_i_install_ruby"><a class="anchor" href="#_how_do_i_install_ruby"></a>23. How do I install ruby?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Execute <code>pact install ruby</code>. If you need a newer version have a look at this <a href="https://github.com/babun/babun/issues/93">link</a>.</p>
@@ -388,7 +396,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_why_multtiple_shells_share_the_same_history"><a class="anchor" href="#_why_multtiple_shells_share_the_same_history"></a>23. Why multtiple shells share the same history?</h2>
+<h2 id="_why_multtiple_shells_share_the_same_history"><a class="anchor" href="#_why_multtiple_shells_share_the_same_history"></a>24. Why multtiple shells share the same history?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a feature of zsh. oh-my-zsh has <code>INC_APPEND_HISTORY</code> on as default. To disable this put this in your .zshrc: ` setopt APPEND_HISTORY`</p>
@@ -396,7 +404,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_i_tried_to_run_python_scripts_but_get_modules_not_found"><a class="anchor" href="#_i_tried_to_run_python_scripts_but_get_modules_not_found"></a>24. I tried to run python scripts but get 'modules not found'.</h2>
+<h2 id="_i_tried_to_run_python_scripts_but_get_modules_not_found"><a class="anchor" href="#_i_tried_to_run_python_scripts_but_get_modules_not_found"></a>25. I tried to run python scripts but get 'modules not found'.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="https://github.com/babun/babun/issues/104">Issue 104</a></p>
@@ -404,7 +412,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_to_run_an_x_server"><a class="anchor" href="#_how_to_run_an_x_server"></a>25. How to run an X-Server?</h2>
+<h2 id="_how_to_run_an_x_server"><a class="anchor" href="#_how_to_run_an_x_server"></a>26. How to run an X-Server?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="https://github.com/babun/babun/issues/105">Issue 105</a></p>
@@ -412,7 +420,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_i_have_a_problem_with_windows_line_endings"><a class="anchor" href="#_i_have_a_problem_with_windows_line_endings"></a>26. I have a problem with Windows line endings.</h2>
+<h2 id="_i_have_a_problem_with_windows_line_endings"><a class="anchor" href="#_i_have_a_problem_with_windows_line_endings"></a>27. I have a problem with Windows line endings.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Try running dos2unix on these files.</p>
@@ -420,7 +428,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_no_display_name_and_no_display_environment_variable"><a class="anchor" href="#_no_display_name_and_no_display_environment_variable"></a>27. No display name and no $DISPLAY environment variable</h2>
+<h2 id="_no_display_name_and_no_display_environment_variable"><a class="anchor" href="#_no_display_name_and_no_display_environment_variable"></a>28. No display name and no $DISPLAY environment variable</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="https://github.com/babun/babun/issues/130">Issue 130</a></p>
@@ -428,7 +436,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_to_install_virtualenvwrapper"><a class="anchor" href="#_how_to_install_virtualenvwrapper"></a>28. How to install virtualenvwrapper?</h2>
+<h2 id="_how_to_install_virtualenvwrapper"><a class="anchor" href="#_how_to_install_virtualenvwrapper"></a>29. How to install virtualenvwrapper?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="https://github.com/babun/babun/issues/147">Issue 147</a></p>
@@ -436,7 +444,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_chmod_does_not_work_as_expected"><a class="anchor" href="#_chmod_does_not_work_as_expected"></a>29. chmod does not work as expected</h2>
+<h2 id="_chmod_does_not_work_as_expected"><a class="anchor" href="#_chmod_does_not_work_as_expected"></a>30. chmod does not work as expected</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See</p>
@@ -450,7 +458,7 @@ You need to be online in order to update Babun - you can configure a proxy if th
 </div>
 </div>
 <div class="sect1">
-<h2 id="_i_see_compdef_unknown_command_or_service_git"><a class="anchor" href="#_i_see_compdef_unknown_command_or_service_git"></a>30. I see: compdef: unknown command or service: git</h2>
+<h2 id="_i_see_compdef_unknown_command_or_service_git"><a class="anchor" href="#_i_see_compdef_unknown_command_or_service_git"></a>31. I see: compdef: unknown command or service: git</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Execute:</p>
@@ -464,7 +472,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ps_option_u_and_o_unknown"><a class="anchor" href="#_ps_option_u_and_o_unknown"></a>31. ps option -U and -o unknown</h2>
+<h2 id="_ps_option_u_and_o_unknown"><a class="anchor" href="#_ps_option_u_and_o_unknown"></a>32. ps option -U and -o unknown</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See <a href="https://github.com/babun/babun/issues/172">#172</a></p>
@@ -472,7 +480,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_zsh_command_not_found_emacs"><a class="anchor" href="#_zsh_command_not_found_emacs"></a>32. zsh: command not found: emacs</h2>
+<h2 id="_zsh_command_not_found_emacs"><a class="anchor" href="#_zsh_command_not_found_emacs"></a>33. zsh: command not found: emacs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Try emacs-nox</p>
@@ -480,7 +488,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="__c_as_target_directory_on_installation_fails"><a class="anchor" href="#__c_as_target_directory_on_installation_fails"></a>33. "C:\" as target directory on installation fails</h2>
+<h2 id="__c_as_target_directory_on_installation_fails"><a class="anchor" href="#__c_as_target_directory_on_installation_fails"></a>34. "C:\" as target directory on installation fails</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>use C:\\</p>
@@ -491,7 +499,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_to_use_sshfs_command"><a class="anchor" href="#_how_to_use_sshfs_command"></a>34. How to use sshfs command</h2>
+<h2 id="_how_to_use_sshfs_command"><a class="anchor" href="#_how_to_use_sshfs_command"></a>35. How to use sshfs command</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Use Dokan sshfs. Free and open source.</p>
@@ -499,7 +507,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_use_ssh_id_rsa_key_from_windows"><a class="anchor" href="#_use_ssh_id_rsa_key_from_windows"></a>35. Use SSH id_rsa key from Windows</h2>
+<h2 id="_use_ssh_id_rsa_key_from_windows"><a class="anchor" href="#_use_ssh_id_rsa_key_from_windows"></a>36. Use SSH id_rsa key from Windows</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>see <a href="https://github.com/babun/babun/issues/208">Issue 208</a></p>
@@ -507,7 +515,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_when_i_start_babun_bat_three_shell_windows_open"><a class="anchor" href="#_when_i_start_babun_bat_three_shell_windows_open"></a>36. When I start babun.bat three shell windows open.</h2>
+<h2 id="_when_i_start_babun_bat_three_shell_windows_open"><a class="anchor" href="#_when_i_start_babun_bat_three_shell_windows_open"></a>37. When I start babun.bat three shell windows open.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is a known issue on Windows 10. To workaround it go to <code>.babun/cygwin/bin</code> and change <code>mintty.exe</code> to Windows 8 compatibility mode.</p>
@@ -515,7 +523,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_do_i_update_the_underlying_cygwin_version"><a class="anchor" href="#_how_do_i_update_the_underlying_cygwin_version"></a>37. How do I update the underlying cygwin version?</h2>
+<h2 id="_how_do_i_update_the_underlying_cygwin_version"><a class="anchor" href="#_how_do_i_update_the_underlying_cygwin_version"></a>38. How do I update the underlying cygwin version?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>just execute <code>babun update</code>. If there is a new supported cygwin version babun will upgrade it</p>
@@ -523,7 +531,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_i_get_chmod_permission_denied_errors_during_update"><a class="anchor" href="#_i_get_chmod_permission_denied_errors_during_update"></a>38. I get chmod: permission denied errors during update.</h2>
+<h2 id="_i_get_chmod_permission_denied_errors_during_update"><a class="anchor" href="#_i_get_chmod_permission_denied_errors_during_update"></a>39. I get chmod: permission denied errors during update.</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You have probably installed babun as an admin an try to upgrade it now without admin rights or using a different user. Please restart the update as an admin, or as a user you used to install babun with.</p>
@@ -531,10 +539,58 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-5.0.2</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_do_i_launch_windows_applications_from_command_line_with_correct_path_arguments"><a class="anchor" href="#_how_do_i_launch_windows_applications_from_command_line_with_correct_path_arguments"></a>39. How do I launch Windows applications from command line with correct path arguments?</h2>
+<h2 id="_how_do_i_launch_windows_applications_from_command_line_with_correct_path_arguments"><a class="anchor" href="#_how_do_i_launch_windows_applications_from_command_line_with_correct_path_arguments"></a>40. How do I launch Windows applications from command line with correct path arguments?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You have to convert the path with the 'cygpath -w' command. See <a href="https://github.com/babun/babun/issues/299">#299</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_open_babun_here_context_menu_doesnt_work"><a class="anchor" href="#_open_babun_here_context_menu_doesnt_work"></a>41. Open Babun here context menu doesnt work</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Execute <code>babun shell-here init</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_open_babun_here_context_menu_opens_the_wrong_babun_instance"><a class="anchor" href="#_open_babun_here_context_menu_opens_the_wrong_babun_instance"></a>42. Open Babun here context menu opens the wrong babun instance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>It is possible to have multiple Babun instances installed but the context menu can be linked to only one. If you want to change the link to a particular instance open the babun instance and execute <code>babun shell-here init</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_don_t_want_the_open_babun_here_option_in_the_context_menu"><a class="anchor" href="#_i_don_t_want_the_open_babun_here_option_in_the_context_menu"></a>43. I don&#8217;t want the 'Open Babun here' option in the context menu</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Execute <code>babun shell-here remove</code></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_ping_ipv6"><a class="anchor" href="#_how_to_use_ping_ipv6"></a>44. How to use ping IPv6</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Execute <code>ping -6</code>. Babun uses the native Windows ping.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_the_cygwin_s_ping"><a class="anchor" href="#_how_to_use_the_cygwin_s_ping"></a>45. How to use the cygwin&#8217;s ping</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Babun is unsing Windows native ping.exe because Cygwin&#8217;s ping requires admin rights to be executed. If you still want to use the cygwin ping use 'cygping'.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_autocompletion_on_tab_seems_slow"><a class="anchor" href="#_autocompletion_on_tab_seems_slow"></a>46. Autocompletion 'on tab' seems slow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Close all babun instances (kill all pending processes if necessary, e.g. git-credentials-.*.exe) and run <code>rebase.bat</code> which is located in babun&#8217;s root folder.</p>
 </div>
 </div>
 </div></p>
