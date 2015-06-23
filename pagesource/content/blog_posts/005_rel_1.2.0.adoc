@@ -1,12 +1,12 @@
-title=Babun 1.2.0 is out
-date=2015-06-22
+title=Babun 1.2.0 released at DevoxxPL
+date=2015-06-23
 type=post
 tags=blog, asciidoc
 status=published
 author=Lukasz Pielak
 ~~~~~~
 
-Babun 1.2.0 was just released. We added the following:
+Babun 1.2.0 was just released at http://devoxx.pl/[#DevoxxPL]! We added the following:
 
 *Brand new 'shell-here' plugin*
 
