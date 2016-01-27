@@ -202,7 +202,7 @@ The above mentioned packages will be downloaded together with the whole dependen
 <h2 id="_building_from_source">Building from source</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The project is regularly build on Jenkins, on a slave node featuring the Windows Server OS. The Windows OS is required to fully build the distribution package as one of the goals invokes the native <code>cygwin.exe</code> installer. The artifacts created by each module are cached/stored in the target folder after a successful build of each step. This mechanism is not intelligent enough to calculate the diffs so if you would like to fully rebuild the whole dist package make sure to invoke the <code>clean</code> goal before the <code>package</code> goal. For now it&#8217;s not possible to invoke a build of a selective modules only.</p>
+<p>The project is regularly built using Jenkins, on a slave node featuring the Windows Server OS. The Windows OS is required to fully build the distribution package as one of the goals invokes the native <code>cygwin.exe</code> installer. The artifacts created by each module are cached/stored in the target folder after a successful build of each step. This mechanism is not intelligent enough to calculate the diffs so if you would like to fully rebuild the whole dist package make sure to invoke the <code>clean</code> goal before the <code>package</code> goal. For now it&#8217;s not possible to invoke a build of selective modules only.</p>
 </div>
 <div class="paragraph">
 <p>In order to build the dist package invoke:</p>
@@ -451,7 +451,7 @@ The folder structure looks like this:</p>
     <div id="footer">
       <div class="container">
         <p class="muted credit">
-          &copy; Babun Team 2015 | Babun is licensed under the Apache License v2. | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a>.
+          &copy; Babun Team 2015 | Babun is licensed under the Apache License v2. | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.2</a>.
         </p>
       </div>
     </div>

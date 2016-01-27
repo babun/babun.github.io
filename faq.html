@@ -280,7 +280,7 @@ But when you execute <code>babun check</code> it is usually ok again. In such ca
 <p>Task parameters - /icon "%userprofile%\.babun\cygwin\bin\mintty.exe" /dir "%userprofile%"</p>
 </li>
 <li>
-<p>Commands %userprofile%\.babun\cygwin\bin\mintty.exe -</p>
+<p>Commands %userprofile%\.babun\cygwin\bin\mintty.exe /bin/env CHERE_INVOKING=1 /bin/zsh.exe</p>
 </li>
 </ul>
 </div>
@@ -591,7 +591,84 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-$ZSH_VERSION</pre>
 <h2 id="_how_to_use_the_cygwin_s_ping"><a class="anchor" href="#_how_to_use_the_cygwin_s_ping"></a>45. How to use the cygwin&#8217;s ping</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Babun is unsing Windows native ping.exe because Cygwin&#8217;s ping requires admin rights to be executed. If you still want to use the cygwin ping use 'cygping'.</p>
+<p>Babun is using Windows native ping.exe because Cygwin&#8217;s ping requires admin rights to be executed. If you still want to use the cygwin ping use 'cygping'.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_i_see_error_command_gcc_failed_with_exit_status_1"><a class="anchor" href="#_i_see_error_command_gcc_failed_with_exit_status_1"></a>46. I see "error: command 'gcc' failed with exit status 1"</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Execute <code>pact install libffi-devel</code> and try again.
+see <a href="https://github.com/babun/babun/issues/191">Issue 191</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_sublime_text_3_as_editor_for_commit_message"><a class="anchor" href="#_how_to_use_sublime_text_3_as_editor_for_commit_message"></a>47. How to use Sublime Text 3 as editor for commit message</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>see <a href="https://github.com/babun/babun/issues/421">Issue 421</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_the_windows_user_profile_directory_as_my_home_directory_in_babun"><a class="anchor" href="#_how_to_use_the_windows_user_profile_directory_as_my_home_directory_in_babun"></a>48. How to use the Windows' user profile directory as my home directory in babun ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You need to add the environment variable HOME into your windows account.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit your environment variables</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can execute this command :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>rundll32 sysdm.cpl,EditEnvironmentVariables</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>or you search in the start menu "env" and select "Select Edit environment variables for your account"</p>
+</li>
+<li>
+<p>Select New</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name: HOME</p>
+</li>
+<li>
+<p>Value: C:\Users\login</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Launch babun</p>
+</li>
+<li>
+<p>Type: babun install</p>
+</li>
+<li>
+<p>Restart babun</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Your babun home directory should now be your windows user profile directory, usually c:\user\login\</p>
+</div>
+<div class="paragraph">
+<p>see <a href="https://github.com/babun/babun/issues/289">Issue 289</a></p>
 </div>
 </div>
 </div></p>
@@ -606,7 +683,7 @@ $ cp .zcompdump .zcompdump-$HOSTNAME-$ZSH_VERSION</pre>
     <div id="footer">
       <div class="container">
         <p class="muted credit">
-          &copy; Babun Team 2015 | Babun is licensed under the Apache License v2. | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a>.
+          &copy; Babun Team 2015 | Babun is licensed under the Apache License v2. | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.3.2</a>.
         </p>
       </div>
     </div>
