@@ -71,7 +71,7 @@ Also, have a look at this https://github.com/babun/babun/issues/143[thread].
 ** Go to Settings>Startup>Tasks
 ** Create a new task
 *** Task parameters - /icon "%userprofile%\.babun\cygwin\bin\mintty.exe" /dir "%userprofile%"
-*** Commands %userprofile%\.babun\cygwin\bin\mintty.exe -
+*** Commands %userprofile%\.babun\cygwin\bin\mintty.exe /bin/env CHERE_INVOKING=1 /bin/zsh.exe
 
 Babun is available in the "Create new console" menu.
 
@@ -230,4 +230,34 @@ Execute `ping -6`. Babun uses the native Windows ping.
 
 == How to use the cygwin's ping
 
-Babun is unsing Windows native ping.exe because Cygwin's ping requires admin rights to be executed. If you still want to use the cygwin ping use 'cygping'.
+Babun is using Windows native ping.exe because Cygwin's ping requires admin rights to be executed. If you still want to use the cygwin ping use 'cygping'.
+
+== I see "error: command 'gcc' failed with exit status 1"
+
+Execute `pact install libffi-devel` and try again.
+see https://github.com/babun/babun/issues/191[Issue 191]
+
+== How to use Sublime Text 3 as editor for commit message
+
+see https://github.com/babun/babun/issues/421[Issue 421]
+
+== How to use the Windows' user profile directory as my home directory in babun ? 
+
+You need to add the environment variable HOME into your windows account.
+
+* Edit your environment variables
+** You can execute this command :
+*** rundll32 sysdm.cpl,EditEnvironmentVariables
+** or you search in the start menu "env" and select "Select Edit environment variables for your account"
+**  Select New
+*** Name: HOME
+*** Value: C:\Users\login
+* Launch babun
+* Type: babun install
+* Restart babun
+
+Your babun home directory should now be your windows user profile directory, usually c:\user\login\
+
+see https://github.com/babun/babun/issues/289[Issue 289]
+
+
