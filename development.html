@@ -166,7 +166,7 @@ The above mentioned packages will be downloaded together with the whole dependen
 <p>The main goal of the <code>babun-cygwin</code> module is to download and invoke the native cygwin.exe installer. The packages downloaded by the babun-packages module are used as the input - all of them will be installed in the offline cygwin installation.</p>
 </div>
 <div class="paragraph">
-<p>It is not trivial to install and zip a local instance of Cygwin - there are problems with the symlinks as the symlink-file-flags are lost during the compression process. Babun can work it around though. At first, just after the installation, the <code>symlinks_find.sh</code> script is invoked in order to store the list of all cygwin&#8217;s symlinks. This file is delivered as a part of the the babun&#8217;s core. Then, after babun is installed from the zip file on the user&#8217;s host the <code>symlinks_repair.sh</code> script is invoked - it will correct all the broken symlinks listed in the above mentioned file.</p>
+<p>It is not trivial to install and zip a local instance of Cygwin - there are problems with the symlinks as the symlink-file-flags are lost during the compression process. Babun can work it around though. At first, just after the installation, the <code>symlinks_find.sh</code> script is invoked in order to store the list of all cygwin&#8217;s symlinks. This file is delivered as a part of the babun&#8217;s core. Then, after babun is installed from the zip file on the user&#8217;s host the <code>symlinks_repair.sh</code> script is invoked - it will correct all the broken symlinks listed in the above mentioned file.</p>
 </div>
 <div class="paragraph">
 <p>Preinstalled cygwin is located in the <code>target/babun-cygwin</code> folder.</p>
@@ -175,7 +175,7 @@ The above mentioned packages will be downloaded together with the whole dependen
 <div class="sect2">
 <h3 id="_babun_core">babun-core</h3>
 <div class="paragraph">
-<p>The main goal of the <code>babun-core</code> module is to install babun&#8217;s core along with all the plugins and tools. <code>install.sh</code> script is invoked during the creation of the distribution package in order to preinstall the plugins. Whenever babun is installed on the user&#8217;s host the <code>install_home.sh</code> script is invoke in order to install the babun-related files to the cygwin-user&#8217;s home folder.</p>
+<p>The main goal of the <code>babun-core</code> module is to install babun&#8217;s core along with all the plugins and tools. <code>install.sh</code> script is invoked during the creation of the distribution package in order to preinstall the plugins. Whenever babun is installed on the user&#8217;s host the <code>install_home.sh</code> script is invoked in order to install the babun-related files to the cygwin-user&#8217;s home folder.</p>
 </div>
 <div class="paragraph">
 <p>Preinstalled cygwin with installed babun is located in the <code>target/babun-cygwin</code> folder.</p>

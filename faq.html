@@ -258,7 +258,7 @@ But when you execute <code>babun check</code> it is usually ok again. In such ca
 </div>
 </div>
 <div class="sect1">
-<h2 id="_how_do_i_integrate_babun_with_conemu"><a class="anchor" href="#_how_do_i_integrate_babun_with_conemu"></a>12. How do I integrate Babun with ConEmu?</h2>
+<h2 id="_how_do_i_integrate_babun_with_conemu_cmder"><a class="anchor" href="#_how_do_i_integrate_babun_with_conemu_cmder"></a>12. How do I integrate Babun with ConEmu / cmder ?</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -625,27 +625,17 @@ see <a href="https://github.com/babun/babun/issues/191">Issue 191</a></p>
 <div class="ulist">
 <ul>
 <li>
-<p>You can execute this command :</p>
-<div class="ulist">
-<ul>
-<li>
-<p>rundll32 sysdm.cpl,EditEnvironmentVariables</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>or you search in the start menu "env" and select "Select Edit environment variables for your account"</p>
+<p>execute <code>rundll32 sysdm.cpl,EditEnvironmentVariables</code> or search in the start menu for <code>env</code> and select "Select Edit environment variables for your account"</p>
 </li>
 <li>
 <p>Select New</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Name: HOME</p>
+<p>Name: <code>HOME</code></p>
 </li>
 <li>
-<p>Value: C:\Users\login</p>
+<p>Value: <code>C:\Users\USERNAME</code></p>
 </li>
 </ul>
 </div>
@@ -657,7 +647,7 @@ see <a href="https://github.com/babun/babun/issues/191">Issue 191</a></p>
 <p>Launch babun</p>
 </li>
 <li>
-<p>Type: babun install</p>
+<p>Type <code>babun install</code></p>
 </li>
 <li>
 <p>Restart babun</p>
@@ -665,10 +655,10 @@ see <a href="https://github.com/babun/babun/issues/191">Issue 191</a></p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Your babun home directory should now be your windows user profile directory, usually c:\user\login\</p>
+<p>Your babun home directory should now be your windows user profile directory, usually <code>c:\user\USERNAME</code></p>
 </div>
 <div class="paragraph">
-<p>see <a href="https://github.com/babun/babun/issues/289">Issue 289</a></p>
+<p>See <a href="https://github.com/babun/babun/issues/289">Issue 289</a>.</p>
 </div>
 </div>
 </div></p>
