@@ -14,13 +14,6 @@
                  <i class="fa fa-github"></i> &nbsp; Visit us on GitHub
               </a>              
           </p>
-
-          <script>
-            var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;   
-            if (is_chrome) {
-              document.write('<font color="#BC451A">Note: Chrome currently blocks the downloaded file. Please download using differen browser until the <a href="https://github.com/babun/babun/issues/464" target="_blank"><u>problem</u></a> is resolved.</font>');
-            }        
-          </script>
           
           <%include "social.gsp"%>
         </div>
