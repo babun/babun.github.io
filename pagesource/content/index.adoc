@@ -1,4 +1,4 @@
-= Babun - a windows shell you will love
+= Babun - a windows shell you will love [https://github.com/babun/babun/issues/868[PROJECT DISCONTINUED]]
 :jbake-type: page
 :jbake-status: published
 :jbake-tags: blog, asciidoc
